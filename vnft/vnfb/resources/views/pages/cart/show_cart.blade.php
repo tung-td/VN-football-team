@@ -41,7 +41,7 @@
             </div>
             <div class="col-1">
                 @if(Session::get('cart') == true)
-                <button href="{{url('/del-all-pro')}}" id="clear-cart">
+                <button onclick="location.href='{{url('/del-all-pro')}}';" id="clear-cart">
                     Clear Cart
                 </button>
                 @endif
