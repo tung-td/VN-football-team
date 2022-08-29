@@ -25,9 +25,9 @@ class CartController extends Controller {
     }
 
     public function show_cart(Request $request) {
-        $meta_desc = "Giỏ hàng Laptop LT - Thế giới công nghệ";
-        $meta_keywords = "Giỏ hàng Laptop LT";
-        $meta_title = "Giỏ hàng Laptop LT - Thế giới công nghệ";
+        $meta_desc = "Cart";
+        $meta_keywords = "Cart";
+        $meta_title = "Cart";
         $url_canonical = $request->url();
 
         $cate_product = DB::table('categories_product')->where('category_status', '1')->orderBy('category_id', 'desc')->get();
@@ -94,9 +94,9 @@ class CartController extends Controller {
                 }
             }
             Session::put('cart', $cart);
-            return redirect()->back()->with('message', 'Xóa sản phẩm thành công!');
+            return redirect()->back()->with('message', 'Delete successful!');
         } else {
-            return redirect()->back()->with('message', 'Xóa sản phẩm thất bại!');
+            return redirect()->back()->with('message', 'Delete fail!');
         }
     }
 
@@ -112,9 +112,9 @@ class CartController extends Controller {
                 }
             }
             Session::put('cart', $cart);
-            return redirect()->back()->with('message', 'Cập nhật số lượng thành công!');
+            return redirect()->back()->with('message', 'Update successful!');
         } else {
-            return redirect()->back()->with('message', 'Cập nhật số lượng thất bại!');
+            return redirect()->back()->with('message', 'Update fail!');
         }
     }
 
@@ -123,7 +123,7 @@ class CartController extends Controller {
         if ($cart == true) {
             Session::forget('cart');
             Session::forget('coupon');
-            return redirect()->back()->with('message', 'Xóa giỏ hàng thành công!');
+            return redirect()->back()->with('message', 'Clear cart successful!');
         }
     }
 
@@ -153,10 +153,10 @@ class CartController extends Controller {
                     Session::put('coupon', $cou);
                 }
                 Session::save();
-                return redirect()->back()->with('message', 'Thêm mã giảm giá thành công');
+                return redirect()->back()->with('message', 'Add coupon successful');
             }
         } else {
-            return redirect()->back()->with('message', 'Mã giảm giá không tồn tại');
+            return redirect()->back()->with('message', 'Add coupon fail');
         }
     }
 }
