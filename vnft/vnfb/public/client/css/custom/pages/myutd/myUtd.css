@@ -1,0 +1,364 @@
+/* RESET CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --main-bg-color: brown;
+    --basic-red: #c70101;
+    --basic-black: #1A1A1A;
+    --dirty-white: #F8F8F8;
+    --basic-grey: #2A2A2A;
+    --text-grey: #666666;
+    --font-moments: 'Emojis', Arial, Helvetica, sans-serif;
+}
+
+.mt-2em {
+    margin-top: 2em;
+}
+
+.pt-2em {
+    padding-top: 2em;
+}
+
+#main__my-utd {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: inherit;
+    text-transform: uppercase;
+    font-weight: 500;
+    position: relative;
+    color: #F8F8F8;
+    height: 650px;
+    margin: 0em;
+}
+
+#header {
+    /* font-family: 'Poppins', sans-serif !important;
+    font-weight: 550; */
+}
+
+.ml-15 {
+    margin-left: -1.5em;
+}
+
+.content {}
+
+#first-team {
+    position: relative;
+    margin: 0 auto;
+    width: 66.66%;
+    padding-bottom: 4em;
+}
+
+.roler {
+    font-size: 30px;
+    margin-bottom: 1em;
+    margin-top: 0em;
+    color: black;
+    margin-left: -3em;
+    text-transform: uppercase;
+}
+
+.roler::after {
+    display: block;
+    content: " ";
+    height: 3px;
+    width: 163px;
+    background-color: red;
+}
+
+.team-position {}
+
+.position-names {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: black;
+    border-bottom: solid rgb(216, 216, 216) 1px;
+    text-transform: uppercase;
+}
+
+.sub-position {
+    display: flex;
+    width: inherit;
+    justify-content: space-evenly;
+}
+
+.position-btn:hover {
+    cursor: pointer;
+}
+
+.position-btn {
+    width: 200px;
+    height: 220px;
+    background-color: black;
+    border-radius: 10px;
+    margin: 1em;
+    position: relative;
+    overflow: hidden;
+}
+
+.position-btn:hover .position-img {
+    transform: scale(1.1);
+}
+
+.position-img {
+    width: 250px;
+    transition: 1s;
+    height: auto;
+}
+
+.position-info {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    color: white;
+    font-weight: bold;
+}
+
+.position-number {
+    font-size: 15px;
+}
+
+.position-btn:hover .position-number::after {
+    /* transform: scale(2.0); */
+    width: 45px;
+    height: 2px;
+}
+
+.position-number::after {
+    display: block;
+    content: " ";
+    height: 2px;
+    width: 20px;
+    background-color: red;
+    transition: 1s;
+}
+
+.position-name {
+    width: 50%;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+
+/* end first team */
+
+
+/* start man-players */
+
+.grey-wall {
+    background-color: #3f3f3f;
+}
+
+.list-part {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    padding-bottom: 4em;
+}
+
+.role {
+    /* padding-bottom: 1em; */
+    font-size: 1.9em;
+    position: relative;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    margin-left: -3em;
+    color: #fff !important;
+    text-transform: uppercase;
+}
+
+.role::after {
+    display: block;
+    content: " ";
+    height: 3px;
+    width: 150px;
+    background-color: red;
+}
+
+.sub-button {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.player-btn {
+    width: 250px;
+    height: 300px;
+    background-color: black;
+    border-radius: 10px;
+    margin: 1em;
+    position: relative;
+    overflow: hidden;
+}
+
+.player-btn:hover {
+    cursor: pointer;
+}
+
+.player-btn:hover .position-img {
+    transform: scale(1.1);
+}
+
+.player-btn:hover .position-number::after {
+    /* transform: scale(2.0); */
+    width: 65px;
+    height: 2.5px;
+}
+
+.player-btn .position-number::after {
+    display: block;
+    content: " ";
+    height: 2px;
+    width: 30px;
+    background-color: red;
+    transition: 1s;
+}
+
+
+/* MAIN MY UNITED PAGE */
+
+.slider_my-utd {
+    margin-top: 75px;
+    padding-top: 50%;
+    background: url(https://toigingiuvedep.vn/wp-content/uploads/2021/02/hinh-nen-laptop-pc-full-hd-co-vu-doi-tuyen-bong-da-viet-nam.jpg) top center / cover;
+    position: relative;
+}
+
+.my-utd_text_heading {
+    max-width: 85%;
+    padding-left: 90px;
+    line-height: 1;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 3;
+    transform: translateY(-50%);
+    font-size: 60px;
+    /* font-family: Helvetica, Arial, sans-serif !important; */
+    /* padding: 0 20px; */
+}
+
+.content_my-utd {
+    width: 80%;
+    max-width: 100%;
+    padding: 34px 0 68px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.my-btn {
+    border-radius: 10px !important;
+}
+
+.my-btn a {
+    border-radius: 10px !important;
+    color: #fff;
+    background: linear-gradient(90deg, rgba(25, 18, 147, 1) 0%, rgba(131, 10, 79, 1) 50%, rgba(255, 0, 0, 1) 100%);
+    text-decoration: none;
+    padding: 11px 16px;
+    display: block;
+    /* margin-top: 15px; */
+    border: none;
+    text-align: center;
+}
+
+.my-btn:hover a {
+    cursor: pointer;
+    background-color: #ccc;
+    color: #000;
+    text-decoration: none;
+}
+
+.my-row {}
+
+.my-col {}
+
+.my-col-full {}
+
+.player-list {
+    margin-top: 30px;
+}
+
+.my-team {
+    position: relative;
+    height: 450px;
+    border-radius: 20px;
+}
+
+.man {
+    background: url(https://photo-cms-nhandan.zadn.vn/w800/Files/Images/2021/07/26/DTVN_V3-1627318094380.jpg) top / cover;
+}
+
+.woman {
+    background: url(https://image.vtc.vn/resize/th/upload/2020/08/16/cac-cau-thu-bong-da-nu-viet-nam-duoc-moi-di-hoc-voi-hoc-bong-90-toan-khoa1575911256-09580538.jpg) top / cover;
+}
+
+.youngs {
+    background: url(https://image.thanhnien.vn/w1024/Uploaded/2022/ycwkdqmb/2022_06_08/manh-dung-viet-anh-nguyen-thanh-nhan-u23vn-u23malaysia-phuc-thang-5462.jpg) center / cover;
+}
+
+.legends {
+    background: url(https://media1.nguoiduatin.vn/media/ton-duc-vy/2018/12/13/cac-nha-vo-dich-2008-te-tuu-tai-chung-ket-aff-cup-2018.JPG) center / cover;
+}
+
+.my-team .my-heading {
+    position: absolute;
+    padding-top: 300px;
+    padding-left: 5%;
+}
+
+.my-team .my-heading h2::before {
+    display: block;
+    content: " ";
+    height: 1.5px;
+    width: 70px;
+    background-color: red;
+}
+
+.my-team .my-heading {
+    font-weight: 500;
+}
+
+.my-breadcrumbs__items .breadcrumb-item {
+    font-size: 20px;
+}
+
+.my-breadcrumbs__items .breadcrumb-item {
+    font-size: 16px;
+    color: #000;
+    font-weight: 700;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.sSize-players .player-btn {
+    width: 240px !important;
+    height: 235px !important;
+}
+
+.player-btn-legend {
+    width: 250px;
+    height: 250px !important;
+    background-color: black;
+    border-radius: 10px;
+    margin: 1em;
+    position: relative;
+    overflow: hidden;
+}
