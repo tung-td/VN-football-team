@@ -33,10 +33,10 @@
                             <span class="mini-click-non">Banner Manage</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="Add Partner" href="{{('them-doi-tac')}}"><span class="mini-sub-pro">Add Partner</span></a></li>
-                            <li><a title="Partner List" href="{{('doi-tac')}}"><span class="mini-sub-pro">Partner List</span></a></li>
-                            <li><a title="Add Slider" href="{{('them-slider')}}"><span class="mini-sub-pro">Add Slider</span></a></li>
-                            <li><a title="Slider List" href="{{('slider')}}"><span class="mini-sub-pro">Slider List</span></a></li>
+                            <li><a title="Add Partner" href="{{route('partner.add')}}"><span class="mini-sub-pro">Add Partner</span></a></li>
+                            <li><a title="Partner List" href="{{route('partner.list')}}"><span class="mini-sub-pro">Partner List</span></a></li>
+                            <li><a title="Add Slider" href="{{route('slider.add')}}"><span class="mini-sub-pro">Add Slider</span></a></li>
+                            <li><a title="Slider List" href="{{route('slider.list')}}"><span class="mini-sub-pro">Slider List</span></a></li>
                         </ul>
                     </li>
 
@@ -75,10 +75,10 @@
                             <span class="mini-click-non">Product Manage</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="Add Product" href="{{('add-product')}}"><span class="mini-sub-pro">Add Product</span></a></li>
-                            <li><a title="Product List" href="{{('list-product')}}"><span class="mini-sub-pro">Product List</span></a></li>
-                            <li><a title="Add Product Category" href="{{('add-category-product')}}"><span class="mini-sub-pro">Add Product Category</span></a></li>
-                            <li><a title="Product Category List" href="{{('list-categories-product')}}"><span class="mini-sub-pro">Product Category List</span></a></li>
+                            <li><a title="Add Product" href="{{route('product.add')}}"><span class="mini-sub-pro">Add Product</span></a></li>
+                            <li><a title="Product List" href="{{route('product.list')}}"><span class="mini-sub-pro">Product List</span></a></li>
+                            <li><a title="Add Product Category" href="{{route('cate.product.add')}}"><span class="mini-sub-pro">Add Product Category</span></a></li>
+                            <li><a title="Product Category List" href="{{route('cate.product.list')}}"><span class="mini-sub-pro">Product Category List</span></a></li>
                         </ul>
                     </li>
 
@@ -170,8 +170,8 @@
                             <span class="mini-click-non">Coupon Manage</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="Add Coupon" href="{{('insert-coupon')}}"><span class="mini-sub-pro">Add Coupon</span></a></li>
-                            <li><a title="Coupon List" href="{{('list-coupon')}}"><span class="mini-sub-pro">Coupon List</span></a></li>
+                            <li><a title="Add Coupon" href="{{route('coupon.add')}}"><span class="mini-sub-pro">Add Coupon</span></a></li>
+                            <li><a title="Coupon List" href="{{route('coupon.list')}}"><span class="mini-sub-pro">Coupon List</span></a></li>
                         </ul>
                     </li>
 
@@ -183,7 +183,7 @@
                             <span class="mini-click-non">Delivery Manage</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="Delivery Manage" href="{{('delivery')}}"><span class="mini-sub-pro">Delivery Manage</span></a></li>
+                            <li><a title="Delivery Manage" href="{{route('delivery')}}"><span class="mini-sub-pro">Delivery Manage</span></a></li>
                         </ul>
                     </li>
 

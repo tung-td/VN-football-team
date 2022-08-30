@@ -87,9 +87,9 @@ Route::get('/show-cart-qty', [CartController::class, 'show_cart_qty']);
     //------Coupon------
 Route::post('/check-coupon', [CartController::class, 'check_coupon']);
 
-Route::get('/insert-coupon', [CouponController::class, 'insert_coupon']);
+Route::get('/insert-coupon', [CouponController::class, 'insert_coupon'])->name('coupon.add');
 Route::post('/insert-coupon-code', [CouponController::class, 'insert_coupon_code']);
-Route::get('/list-coupon', [CouponController::class, 'list_coupon']);
+Route::get('/list-coupon', [CouponController::class, 'list_coupon'])->name('coupon.list');
 Route::get('/unset-coupon', [CouponController::class, 'unset_coupon']);
 Route::get('/delete-coupon/{coupon_id}', [CouponController::class, 'delete_coupon']);
 
@@ -119,10 +119,10 @@ Route::get('/logout', [AdminController::class, 'logout']);
 Route::post('/admin-dashboard', [AdminController::class, 'dashboard']);
 
     // ----- Categories Product -----
-Route::get('add-category-product', [CategoriesProduct::class, 'add_category_product']);
+Route::get('add-category-product', [CategoriesProduct::class, 'add_category_product'])->name('cate.product.add');
 Route::get('edit-category-product/{category_product_id}', [CategoriesProduct::class, 'edit_category_product']);
 Route::get('/delete-category-product/{category_product_id}', [CategoriesProduct::class, 'delete_category_product']);
-Route::get('list-categories-product', [CategoriesProduct::class, 'list_categories_product']);
+Route::get('list-categories-product', [CategoriesProduct::class, 'list_categories_product'])->name('cate.product.list');
 Route::post('/save-category-product', [CategoriesProduct::class, 'save_category_product']);
 Route::post('update-category-product/{category_product_id}', [CategoriesProduct::class, 'update_category_product']);
     
@@ -139,10 +139,10 @@ Route::post('/save-category-post', [CategoriesPost::class, 'save_category_post']
 Route::post('update-category-post/{category_post_id}', [CategoriesPost::class, 'update_category_post']);
 
     // ----- Product -----
-Route::get('/add-product', [ProductController::class, 'add_product']);
-Route::get('/edit-product/{product_id}', [ProductController::class, 'edit_product']);
+Route::get('/add-product', [ProductController::class, 'add_product'])->name('product.add');
+Route::get('/edit-product/{product_id}', [ProductController::class, 'edit_product'])->name('product.edit');
 Route::get('/delete-product/{product_id}', [ProductController::class, 'delete_product']);
-Route::get('/list-product', [ProductController::class, 'list_product']);
+Route::get('/list-product', [ProductController::class, 'list_product'])->name('product.list');
 Route::get('/show-product', [ProductController::class, 'show_product'])->name('product.show');
 
 Route::get('/unactive-product/{product_id}', [ProductController::class, 'unactive_product']);
@@ -197,21 +197,21 @@ Route::post('/save-player', [PlayerController::class, 'save_player']);
 // Route::post('/update-player/{player_id}', [PlayerController::class, 'update_player']);
 
     //----Delivery----
-Route::get('delivery', [DeliveryController::class, 'delivery']);
+Route::get('delivery', [DeliveryController::class, 'delivery'])->name('delivery');
 Route::post('/select-delivery', [DeliveryController::class, 'select_delivery']);
 Route::post('/insert-delivery', [DeliveryController::class, 'insert_delivery']);
 Route::post('/select-feeship', [DeliveryController::class, 'select_feeship']);
 Route::post('/update-delivery', [DeliveryController::class, 'update_delivery']);
 
     // ----- Slider -----
-Route::get('/slider', [BannerController::class, 'manage_slider'])->name('slider');
-Route::get('/them-slider', [BannerController::class, 'add_slider']);
+Route::get('/slider', [BannerController::class, 'manage_slider'])->name('slider.list');
+Route::get('/slider/add', [BannerController::class, 'add_slider'])->name('slider.add');
 Route::get('/xoa-slider/{slider_id}', [BannerController::class, 'delete_slider']);
 Route::post('/luu-slider', [BannerController::class, 'insert_slider']);
     
     // ----- Partner -----
-Route::get('/doi-tac', [BannerController::class, 'manage_partner']);
-Route::get('/them-doi-tac', [BannerController::class, 'add_partner']);
+Route::get('/partner', [BannerController::class, 'manage_partner'])->name('partner.list');
+Route::get('/partner/add', [BannerController::class, 'add_partner'])->name('partner.add');
 Route::get('/xoa-doi-tac/{partner_id}', [BannerController::class, 'delete_partner']);
 Route::post('/luu-doi-tac', [BannerController::class, 'insert_partner']);
 

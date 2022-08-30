@@ -125,6 +125,7 @@ class ProductController extends Controller
         $data['product_content'] = $request->product_content;
         $data['product_details'] = $request->product_details;
         $data['product_parameters'] = $request->product_parameters;
+        $data['product_status'] = $request->product_status;
         if($request->product_image != null) {
             $data['product_image'] = $request->product_image;
         }
