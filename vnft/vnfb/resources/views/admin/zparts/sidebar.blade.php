@@ -161,6 +161,21 @@
                             <li><a title="Handled orders" href="{{route('order.handled')}}"><span class="mini-sub-pro">Handled orders</span></a></li>
                         </ul>
                     </li>
+
+                    <!-- sidebar Match Reference -->
+                    <li>
+                        <a class="has-arrow" href="#">
+                            <!-- <i class="icon nalika-home icon-wrap"></i> -->
+                            <span class="material-icons">settings_accessibility</span>
+                            <span class="mini-click-non">Match Reference</span>
+                        </a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <!-- <li><a title="Add Team" href="{{route('team.add')}}"><span class="mini-sub-pro">Team Add</span></a></li> -->
+                            <li><a title="List Team" href="{{route('team.list')}}"><span class="mini-sub-pro">Team List</span></a></li>
+                            <!-- <li><a title="Add Tournament" href="{{route('tournament.add')}}"><span class="mini-sub-pro">Tournament Add</span></a></li> -->
+                            <li><a title="List Tournament" href="{{route('tournament.list')}}"><span class="mini-sub-pro">Tournament List</span></a></li>
+                        </ul>
+                    </li>
                     
                     <!-- sidebar Coupon -->
                     <li>

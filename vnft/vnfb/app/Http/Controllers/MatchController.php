@@ -47,6 +47,85 @@ class MatchController extends Controller
         return view('pages.ticket.ticket')->with('category', $cate_product)->with('category_post', $cate_post)->with('list_product', $list_product)->with('partner', $partner)->with('slider', $slider);
     }
 
+    // === DASHBOARD ===
+
+    // Team
+    public function add_team() {
+        $this->AuthLogin(); //Gọi hàm kiểm tra đăng nhập
+        return view('admin.team.add_team');
+    }
+
+    public function list_team() {
+        $this->AuthLogin(); //Gọi hàm kiểm tra đăng nhập
+        $list_team = DB::table('tbl_team')->orderBy('id', 'desc')->get();
+        $manager_team = view('admin.team.list_team')->with('list_team', $list_team);
+        // echo '<pre>';
+        // print_r($list_team);
+        // echo '</pre>';
+        return view('admin.layout')->with('admin.team.list_team', $manager_team);
+    }
+
+    public function save_team(Request $request) {
+        $this->AuthLogin();
+        $data = array();
+        $data['team_name'] = $request->team_name;
+        $get_image = $request->file('team_image');
+
+        if($get_image) {
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image.rand(0,999).'.'.$get_image->getClientOriginalExtension();
+            $get_image->move('public/uploads/team', $new_image);
+            $data['team_image'] = $new_image;
+            DB::table('tbl_team')->insert($data);
+            Session::put('message', 'Add team successfully!');
+            return redirect()->route('team.list');
+        }
+        $data['team_image'] = '';
+        DB::table('tbl_team')->insert($data);
+        Session::put('message', 'Add team successfully!');
+        return redirect()->route('team.list');
+    }
+
+    // Tournament
+    public function add_tournament() {
+        $this->AuthLogin(); //Gọi hàm kiểm tra đăng nhập
+        return view('admin.tournament.add_tournament');
+    }
+
+    public function list_tournament() {
+        $this->AuthLogin(); //Gọi hàm kiểm tra đăng nhập
+        $list_tournament = DB::table('tbl_tournament')->orderBy('id', 'desc')->get();
+        $manager_tournament = view('admin.tournament.list_tournament')->with('list_tournament', $list_tournament);
+        // echo '<pre>';
+        // print_r($list_tournament);
+        // echo '</pre>';
+        return view('admin.layout')->with('admin.tournament.list_tournament', $manager_tournament);
+    }
+
+    public function save_tournament(Request $request) {
+        $this->AuthLogin();
+        $data = array();
+        $data['tournament_name'] = $request->tournament_name;
+        $data['status'] = $request->tournament_status;
+        $get_image = $request->file('tournament_image');
+
+        if($get_image) {
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image.rand(0,999).'.'.$get_image->getClientOriginalExtension();
+            $get_image->move('public/uploads/tournament', $new_image);
+            $data['tournament_image'] = $new_image;
+            DB::table('tbl_tournament')->insert($data);
+            Session::put('message', 'Add tournament successfully!');
+            return redirect()->route('tournament.list');
+        }
+        $data['tournament_image'] = '';
+        DB::table('tbl_tournament')->insert($data);
+        Session::put('message', 'Add tournament successfully!');
+        return redirect()->route('tournament.list');
+    }
+
     /**
      * Display a listing of the resource.
      *

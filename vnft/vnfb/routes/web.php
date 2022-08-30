@@ -231,3 +231,19 @@ Route::any('/ckfinder/browser', '\CKSource\CKFinderBridge\Controller\CKFinderCon
 
 //Route::any('/ckfinder/examples/{example?}', '\CKSource\CKFinderBridge\Controller\CKFinderController@examplesAction')
 //    ->name('ckfinder_examples');
+
+    // ----- Team -----
+    Route::get('/team/add', [MatchController::class, 'add_team'])->name('team.add');
+    Route::get('/team/list', [MatchController::class, 'list_team'])->name('team.list');
+    Route::post('/save-team', [MatchController::class, 'save_team']);
+    // Route::get('/edit-team/{team_id}', [MatchController::class, 'edit_team']);
+    Route::get('/delete-team/{team_id}', [MatchController::class, 'delete_team']);
+    Route::post('/update-team/{team_id}', [MatchController::class, 'update_team']);
+
+    // ----- Tournament -----
+    Route::get('/tournament/add', [MatchController::class, 'add_tournament'])->name('tournament.add');
+    Route::get('/tournament/list', [MatchController::class, 'list_tournament'])->name('tournament.list');
+    Route::post('/save-tournament', [MatchController::class, 'save_tournament']);
+    // Route::get('/edit-tournament/{tournament_id}', [MatchController::class, 'edit_tournament']);
+    Route::get('/delete-tournament/{tournament_id}', [MatchController::class, 'delete_tournament']);
+    Route::post('/update-tournament/{tournament_id}', [MatchController::class, 'update_tournament']);
