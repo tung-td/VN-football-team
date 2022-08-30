@@ -17,11 +17,25 @@
                 <label for="product_name">Tên sản phẩm</label>
                 <input type="text" class="form-control" id="product_name" name="product_name" value="{{$pro->product_name}}" placeholder="Tên sản phẩm...">
             </div>
+
             <div class="form-group">
-                <label for="product_image">Hình ảnh sản phẩm</label>
+                <label for="product_image">Product Image</label>
                 <input style="padding: .2rem .75rem;" type="file" class="form-control" id="product_image" name="product_image">
                 <img src="{{URL('public/uploads/product/'.$pro->product_image)}}" alt="{{$pro->product_name}}" width="100" height="100">
             </div>
+            
+            <div class="form-group">
+                <label for="product_image">Product Image 1</label>
+                <input style="padding: .2rem .75rem;" type="file" class="form-control" id="product_image1" name="product_image1">
+                <img src="{{URL('public/uploads/product/'.$pro->product_image1)}}" alt="{{$pro->product_name}}" width="100" height="100">
+            </div>
+            
+            <div class="form-group">
+                <label for="product_image">Product Image 2</label>
+                <input style="padding: .2rem .75rem;" type="file" class="form-control" id="product_image2" name="product_image2">
+                <img src="{{URL('public/uploads/product/'.$pro->product_image2)}}" alt="{{$pro->product_name}}" width="100" height="100">
+            </div>
+
             <div class="form-group">
                 <label for="product_cate">Danh mục sản phẩm</label>
                 <select id="product_cate" name="product_cate" class="form-control form-control-sm">

@@ -140,7 +140,7 @@
                                     <div class="product-image">
                                         <a href="{{URL('chi-tiet-san-pham/'.$product->product_id)}}" class="image">
                                             <img class="pic-1" src="{{URL('public/uploads/product/'.$product->product_image)}}">
-                                            <img class="pic-2" src="{{URL('public/uploads/product/'.$product->product_image)}}">
+                                            <img class="pic-2" src="{{URL('public/uploads/product/'.$product->product_image1)}}">
                                         </a>
                                         <ul class="product-links">
                                             <li>

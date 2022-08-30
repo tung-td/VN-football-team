@@ -45,6 +45,8 @@ class ProductController extends Controller
         $data['product_name'] = $request->product_name;
         $data['category_id'] = $request->product_cate;
         $data['product_image'] = $request->product_image;
+        $data['product_image1'] = $request->product_image1;
+        $data['product_image2'] = $request->product_image2;
         $data['product_price'] = $request->product_price;
         $data['product_desc'] = $request->product_desc;
         $data['product_content'] = $request->product_content;
@@ -52,7 +54,25 @@ class ProductController extends Controller
         $data['product_parameters'] = $request->product_parameters;
         $data['product_status'] = $request->product_status;
         $get_image = $request->file('product_image');
+        $get_image1 = $request->file('product_image1');
+        $get_image2 = $request->file('product_image2');
 
+        if($get_image1) {
+            $get_name_image = $get_image1->getClientOriginalName();
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image.rand(0,99).'.'.$get_image1->getClientOriginalExtension();
+            $get_image1->move('public/uploads/product', $new_image);
+            $data['product_image1'] = $new_image;
+            DB::table('product')->insert($data);
+        }
+        if($get_image2) {
+            $get_name_image = $get_image2->getClientOriginalName();
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image.rand(0,99).'.'.$get_image2->getClientOriginalExtension();
+            $get_image2->move('public/uploads/product', $new_image);
+            $data['product_image2'] = $new_image;
+            DB::table('product')->insert($data);
+        }
         if($get_image) {
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));
@@ -64,6 +84,9 @@ class ProductController extends Controller
             return redirect('list-product');
         }
         $data['product_image'] = '';
+        $data['product_image1'] = '';
+        $data['product_image2'] = '';
+        
         DB::table('product')->insert($data);
         Session::put('message', 'Thêm sản phẩm thành công!');
         return redirect('list-product');
@@ -97,14 +120,40 @@ class ProductController extends Controller
         $data = array();
         $data['product_name'] = $request->product_name;
         $data['category_id'] = $request->product_cate;
-        $data['product_image'] = $request->product_image;
         $data['product_price'] = $request->product_price;
         $data['product_desc'] = $request->product_desc;
         $data['product_content'] = $request->product_content;
         $data['product_details'] = $request->product_details;
         $data['product_parameters'] = $request->product_parameters;
+        if($request->product_image != null) {
+            $data['product_image'] = $request->product_image;
+        }
+        if($request->product_image != null) {
+            $data['product_image1'] = $request->product_image1;
+        }
+        if($request->product_image != null) {
+            $data['product_image2'] = $request->product_image2;
+        }
         $get_image = $request->file('product_image');
+        $get_image1 = $request->file('product_image1');
+        $get_image2 = $request->file('product_image2');
 
+        if($get_image1) {
+            $get_name_image = $get_image1->getClientOriginalName();
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image.rand(0,99).'.'.$get_image1->getClientOriginalExtension();
+            $get_image1->move('public/uploads/product', $new_image);
+            $data['product_image1'] = $new_image;
+            DB::table('product')->where('product_id', $product_id)->update($data);
+        }
+        if($get_image2) {
+            $get_name_image = $get_image2->getClientOriginalName();
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image.rand(0,99).'.'.$get_image2->getClientOriginalExtension();
+            $get_image2->move('public/uploads/product', $new_image);
+            $data['product_image2'] = $new_image;
+            DB::table('product')->where('product_id', $product_id)->update($data);
+        }
         if($get_image) {
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));

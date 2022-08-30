@@ -36,8 +36,8 @@
                 <div id="slide-wrapper">
                     <div id="slider">
                         <img class="thumbnail active" src="{{URL('/public/uploads/product/'.$value->product_image)}}">
-                        <img class="thumbnail" src="{{URL('/public/uploads/product/'.$value->product_image)}}">
-                        <img class="thumbnail" src="{{URL('/public/uploads/product/'.$value->product_image)}}">
+                        <img class="thumbnail" src="{{URL('/public/uploads/product/'.$value->product_image1)}}">
+                        <img class="thumbnail" src="{{URL('/public/uploads/product/'.$value->product_image2)}}">
                     </div>
                 </div>
             </div>
@@ -209,7 +209,7 @@
                                 <div class="product-image">
                                     <a href="{{URL('chi-tiet-san-pham/'.$product->product_id)}}" class="image">
                                         <img class="pic-1" src="{{URL('public/uploads/product/'.$product->product_image)}}">
-                                        <img class="pic-2" src="{{URL('public/uploads/product/'.$product->product_image)}}">
+                                        <img class="pic-2" src="{{URL('public/uploads/product/'.$product->product_image1)}}">
                                     </a>
                                     <ul class="product-links">
                                         <li><button type="button" class="buy-product form-control btn add-to-cart" data-id_product="{{$product->product_id}}" name="add-to-cart" style="border-radius: 50px;;">
@@ -263,7 +263,7 @@
                                 <div class="product-image">
                                     <a href="{{URL('chi-tiet-san-pham/'.$product->product_id)}}" class="image">
                                         <img class="pic-1" src="{{URL('public/uploads/product/'.$product->product_image)}}">
-                                        <img class="pic-2" src="{{URL('public/uploads/product/'.$product->product_image)}}">
+                                        <img class="pic-2" src="{{URL('public/uploads/product/'.$product->product_image1)}}">
                                     </a>
                                     <ul class="product-links">
                                         <li><button type="button" class="buy-product form-control btn add-to-cart" data-id_product="{{$product->product_id}}" name="add-to-cart" style="border-radius: 50px;;">

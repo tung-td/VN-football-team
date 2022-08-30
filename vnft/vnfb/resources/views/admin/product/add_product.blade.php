@@ -38,6 +38,20 @@
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
+                                                        <!-- <i class="icon nalika-edit" aria-hidden="true"></i> -->
+                                                        <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
+                                                    </span>
+                                                    <input name="product_image1" type="file" class="form-control" placeholder="Product Image">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <!-- <i class="icon nalika-edit" aria-hidden="true"></i> -->
+                                                        <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
+                                                    </span>
+                                                    <input name="product_image2" type="file" class="form-control" placeholder="Product Image">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
                                                         <!-- <i class="fa fa-usd" aria-hidden="true"></i> -->
                                                         <i class="material-icons" aria-hidden="true">request_quote</i>
                                                     </span>
