@@ -105,7 +105,7 @@ class PlayerController extends Controller
                 # code...
                 break;
         }
-        return view('pages.vnsquad.squad')->with('category', $cate_product)->with('squad_by_id', $squad_by_id)->with('category_post', $cate_post)->with('partner', $partner)->with('squad_name', $squad_name)->with('slider', $slider);
+        return view('pages.vnsquad.squad')->with('category', $cate_product)->with('squad_by_id', $squad_by_id)->with('category_post', $cate_post)->with('partner', $partner)->with('squad_name', $squad_name)->with('slider', $slider)->with('squad_id', $squad_id);
     }
 
     /**

@@ -28,17 +28,26 @@
                                                     </span>
                                                     <input name="slider_name" type="text" class="form-control" placeholder="Slider Name">
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <div class="review-content-section">
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
                                                         <!-- <i class="icon nalika-edit" aria-hidden="true"></i> -->
                                                         <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
                                                     </span>
-                                                    <input name="slider_image" type="file" class="form-control" placeholder="Partner Image">
+                                                    <input name="slider_image" type="file" class="form-control" placeholder="Partner Image" accept="image/*" onchange="loadDemoImgFile(event,1)">
+                                                    <img id="output1" style="max-width:50px">
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                <select name="slider_level" class="form-control pro-edt-select form-control-primary">
+                                                    <option value="1" selected>Slider Homepage</option>
+                                                    <option value="2">Slider Men Squad</option>
+                                                    <option value="3">Slider Women Squad</option>
+                                                    <option value="4">Slider Young Squad</option>
+                                                    <option value="5">Slider Legend Squad</option>
+                                                    <!-- <option value="6">Slider backup</option> -->
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -62,4 +71,13 @@
     </div>
 </div>
 <!-- Success Modal ???-->
+<script>
+var loadDemoImgFile = function(event,x) {
+    var output = document.getElementById('output'+x);
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+    URL.revokeObjectURL(output.src) // free memory
+    }
+};
+</script>
 @endsection

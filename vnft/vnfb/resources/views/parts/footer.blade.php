@@ -29,10 +29,6 @@
 
     <div class="footer-sponsor ">
         <div class="sponsor__primary ">
-            <!-- <img src="{{asset('public/client/img/custom/img2/sponsor/adidas.png')}} " alt=" ">
-            <img src="{{asset('public/client/img/custom/img2/sponsor/acecook.png')}}" alt=" ">
-            <img src="{{asset('public/client/img/custom/img2/sponsor/Herbalife-Logo.png')}}" alt=" ">
-            <img src="{{asset('public/client/img/custom/img2/sponsor/honda.png')}}" alt=" "> -->
             @foreach($partner as $key => $part)
                 @if($part->partner_level == 1)
                 <!-- <a href="@if($part->partner_link != '') {{$part->partner_link}} @else # @endif"> -->

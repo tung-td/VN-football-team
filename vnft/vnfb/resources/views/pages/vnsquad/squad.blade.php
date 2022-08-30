@@ -1,8 +1,8 @@
 @extends('layout')
-@section('title',$squad_name)
+@section('title',$squad_name.' Squad')
 @section('content')
 <!-- Slider -->
-<div class="slider-homepage" style="margin-bottom: 200px;">
+<!-- <div class="slider-homepage" style="margin-bottom: 200px;">
     <div class=" position-relative " style="width: 100%; height:1000px;">
         <div class="d-flex " style="position: absolute; width: inherit; ">
             <div class="slider-previous ti-angle-left " style="top: 17rem ;"></div>
@@ -16,26 +16,46 @@
             @endforeach
         </div>
     </div>
-</div>
-<!-- <div class="slider-homepage" style="margin: 117px 0px;">
+</div> -->
+<div class="slider-homepage" style="margin: 117px 0px;">
     <div class=" position-relative ">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                @php
+                    $slider_level = $squad_id + 1;
+                    $count = 0;
+                @endphp
+                @foreach($slider as $key => $slide)
+                    @if($slide->slider_level == $slider_level)
+                        @if($count == 0)
+                            <li data-target="#carouselExampleIndicators" data-slide-to="{{$count}}" class="active"></li>
+                        @else
+                            <li data-target="#carouselExampleIndicators" data-slide-to="{{$count}}"></li>
+                        @endif
+                        @php
+                            $count++;
+                        @endphp
+                    @endif
+                @endforeach
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{asset('public/client/img/custom/img2/carousel/u23-3.jpeg')}}" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{{asset('public/client/img/custom/img2/carousel/pic8.jpeg')}} " alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{{asset('public/client/img/custom/img2/carousel/fanHamMo.jpg')}} "
-                        alt="Third slide">
-                </div>
+                @php
+                    $count = 0;
+                @endphp
+                @foreach($slider as $key => $slide)
+                    @if($slide->slider_level == $slider_level)
+                        @if($count == 0)
+                            <div class="carousel-item active">
+                        @else
+                            <div class="carousel-item">
+                        @endif
+                                <img src="{{url('public/uploads/slider/'.$slide->slider_image)}}" alt="{{$slide->slider_name}}" class="d-block w-100">
+                            </div>
+                        @php
+                            $count++;
+                        @endphp
+                    @endif
+                @endforeach
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
                 data-slide="prev">
@@ -49,7 +69,7 @@
             </a>
         </div>
     </div>
-</div> -->
+</div>
 
 <!-- Start Content -->
 <div class="content_first-team">

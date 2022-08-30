@@ -29,7 +29,7 @@
                                                     <span class="input-group-addon">
                                                         <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
                                                     </span>
-                                                    <input name="product_image" type="file" class="form-control" placeholder="Product Image" accept="image/*" onchange="loadFile(event,1)">
+                                                    <input name="product_image" type="file" class="form-control" placeholder="Product Image" accept="image/*" onchange="loadDemoImgFile(event,1)">
                                                     @if($pro->product_image == null)
                                                         <img id="output1" style="max-width:50px">
                                                     @else
@@ -40,7 +40,7 @@
                                                     <span class="input-group-addon">
                                                         <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
                                                     </span>
-                                                    <input name="product_image1" type="file" class="form-control" placeholder="Product Image" accept="image/*" onchange="loadFile(event,2)">
+                                                    <input name="product_image1" type="file" class="form-control" placeholder="Product Image" accept="image/*" onchange="loadDemoImgFile(event,2)">
                                                     @if($pro->product_image1 == null)
                                                         <img id="output2" style="max-width:50px">
                                                     @else
@@ -51,7 +51,7 @@
                                                     <span class="input-group-addon">
                                                         <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
                                                     </span>
-                                                    <input name="product_image2" type="file" class="form-control" placeholder="Product Image" accept="image/*" onchange="loadFile(event,3)">
+                                                    <input name="product_image2" type="file" class="form-control" placeholder="Product Image" accept="image/*" onchange="loadDemoImgFile(event,3)">
                                                     @if($pro->product_image2 == null)
                                                         <img id="output3" style="max-width:50px">
                                                     @else
@@ -133,7 +133,7 @@
     </div>
 </div>
 <script>
-var loadFile = function(event,x) {
+var loadDemoImgFile = function(event,x) {
     var output = document.getElementById('output'+x);
     output.src = URL.createObjectURL(event.target.files[0]);
     output.onload = function() {

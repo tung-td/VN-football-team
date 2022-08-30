@@ -46,7 +46,8 @@
                                                         <!-- <i class="icon nalika-edit" aria-hidden="true"></i> -->
                                                         <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
                                                     </span>
-                                                    <input name="partner_image" type="file" class="form-control" placeholder="Partner Image">
+                                                    <input name="partner_image" type="file" class="form-control" placeholder="Partner Image" accept="image/*" onchange="loadDemoImgFile(event,1)">
+                                                    <img id="output1" style="max-width:50px">
                                                 </div>
                                             </div>
                                             <select name="partner_level" class="form-control pro-edt-select form-control-primary">
@@ -75,4 +76,13 @@
     </div>
 </div>
 <!-- Success Modal ???-->
+<script>
+var loadDemoImgFile = function(event,x) {
+    var output = document.getElementById('output'+x);
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+    URL.revokeObjectURL(output.src) // free memory
+    }
+};
+</script>
 @endsection

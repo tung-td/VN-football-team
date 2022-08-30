@@ -729,7 +729,7 @@
     <!-- End Manager -->
 
     <!-- Slider -->
-    <div class="slider-homepage" style="margin-bottom: 200px;">
+    <!-- <div class="slider-homepage" style="margin-bottom: 200px;">
         <div class=" position-relative " style="width: 100%; height:1000px;">
             <div class="d-flex " style="position: absolute; width: inherit; ">
                 <div class="slider-previous ti-angle-left " style="top: 17rem ;"></div>
@@ -743,20 +743,44 @@
                 @endforeach
             </div>
         </div>
-    </div>
-    <!-- <div class="slider-homepage">
+    </div> -->
+    <div class="slider-homepage">
         <div class=" position-relative "  data-aos="zoom-in">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    @php
+                        $count = 0;
+                    @endphp
+                    @foreach($slider as $key => $slide)
+                        @if($slide->slider_level == 1)
+                            @if($count == 0)
+                                <li data-target="#carouselExampleIndicators" data-slide-to="{{$count}}" class="active"></li>
+                            @else
+                                <li data-target="#carouselExampleIndicators" data-slide-to="{{$count}}"></li>
+                            @endif
+                            @php
+                                $count++;
+                            @endphp
+                        @endif
+                    @endforeach
                 </ol>
                 <div class="carousel-inner">
+                    @php
+                        $count = 0;
+                    @endphp
                     @foreach($slider as $key => $slide)
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="{{url('public/uploads/slider/'.$slide->slider_image)}}" alt="{{$slide->slide_name}}">
-                    </div>
+                        @if($slide->slider_level == 1)
+                            @if($count == 0)
+                                <div class="carousel-item active">
+                            @else
+                                <div class="carousel-item">
+                            @endif
+                                    <img src="{{url('public/uploads/slider/'.$slide->slider_image)}}" alt="{{$slide->slider_name}}" class="d-block w-100">
+                                </div>
+                            @php
+                                $count++;
+                            @endphp
+                        @endif
                     @endforeach
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
@@ -771,7 +795,7 @@
                 </a>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- End Slider -->
 
     <!-- STORE -->

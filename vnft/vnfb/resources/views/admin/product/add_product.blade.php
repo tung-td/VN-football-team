@@ -34,21 +34,24 @@
                                                         <!-- <i class="icon nalika-edit" aria-hidden="true"></i> -->
                                                         <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
                                                     </span>
-                                                    <input name="product_image" type="file" class="form-control" placeholder="Product Image">
+                                                    <input name="product_image" type="file" class="form-control" placeholder="Product Image" accept="image/*" onchange="loadDemoImgFile(event,1)">
+                                                    <img id="output1" style="max-width:50px">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
                                                         <!-- <i class="icon nalika-edit" aria-hidden="true"></i> -->
                                                         <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
                                                     </span>
-                                                    <input name="product_image1" type="file" class="form-control" placeholder="Product Image">
+                                                    <input name="product_image1" type="file" class="form-control" placeholder="Product Image" accept="image/*" onchange="loadDemoImgFile(event,2)">
+                                                    <img id="output2" style="max-width:50px">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
                                                         <!-- <i class="icon nalika-edit" aria-hidden="true"></i> -->
                                                         <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
                                                     </span>
-                                                    <input name="product_image2" type="file" class="form-control" placeholder="Product Image">
+                                                    <input name="product_image2" type="file" class="form-control" placeholder="Product Image" accept="image/*" onchange="loadDemoImgFile(event,3)">
+                                                    <img id="output3" style="max-width:50px">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
@@ -122,4 +125,13 @@
     </div>
 </div>
 <!-- Success Modal ???-->
+<script>
+var loadDemoImgFile = function(event,x) {
+    var output = document.getElementById('output'+x);
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+    URL.revokeObjectURL(output.src) // free memory
+    }
+};
+</script>
 @endsection
