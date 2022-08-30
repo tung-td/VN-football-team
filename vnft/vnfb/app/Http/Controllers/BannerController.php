@@ -112,12 +112,13 @@ class BannerController extends Controller {
             $partner->partner_name = $data['partner_name'];
             $partner->partner_image = $new_image;
             $partner->partner_link = $data['partner_link'];
+            $partner->partner_level = $data['partner_level'];
             $partner->save();
 
             Session::put('message', 'Thêm đối tác thành công!');
-            return redirect('/doi-tac');
+            return redirect()->route('partner.list');
         } else {
-            return redirect('/them-doi-tac');
+            return redirect()->route('partner.add');
         }
 
     }

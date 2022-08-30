@@ -13,7 +13,7 @@
         <div class="row">
             <h5 class="col-md-6 m-0 font-weight-bold text-primary">Danh sách Đối tác</h5>
             <div style="text-align: right;" class="col-md-6">
-                <a class="btn btn-grape" href="{{url('/them-doi-tac')}}">Thêm đối tác</a>
+                <a class="btn btn-grape" href="{{route('partner.add')}}">Thêm đối tác</a>
             </div>
         </div>
     </div>

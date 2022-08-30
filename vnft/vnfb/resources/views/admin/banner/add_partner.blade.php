@@ -49,6 +49,10 @@
                                                     <input name="partner_image" type="file" class="form-control" placeholder="Partner Image">
                                                 </div>
                                             </div>
+                                            <select name="partner_level" class="form-control pro-edt-select form-control-primary">
+                                                <option value="1" selected>Primary Partner</option>
+                                                <option value="2">Secondary Partner</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="row">

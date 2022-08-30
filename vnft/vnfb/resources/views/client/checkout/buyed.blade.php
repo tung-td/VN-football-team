@@ -9,7 +9,7 @@
 				  <h1 class="display-3">CẢM ƠN QUÝ KHÁCH!</h1>
 				  <p class="lead"><strong>Hãy kiểm tra email của quý khách!</strong> Để kiểm tra đơn hàng đã được gửi đến chúng tôi xử lí hay chưa.</p>
 				  <hr>
-				  <p>Chân thành gửi lời cảm ơn đến quý khách đã ủng hộ cửa hàng Laptop LT của chúng tôi. Đừng quên theo dõi các cập nhật trên trang web cũng như các liến kết mạng xác hội khác từ Laptop LT để nhận nhiều ưu đãi nhé!</p>
+				  <p>Chân thành gửi lời cảm ơn đến quý khách! Đừng quên theo dõi các cập nhật trên trang web cũng như các liến kết mạng xác hội khác từ Laptop LT để nhận nhiều ưu đãi nhé!</p>
 				  <p>
 				    Quý khách gặp vấn đề? <a href="{{URL::to('/lien-he')}}">Hãy liên hệ với chúng tôi</a>
 				  </p>
