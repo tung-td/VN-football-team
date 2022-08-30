@@ -1,14 +1,138 @@
 @extends('admin.layout')
 @section('admin_content')
-<!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Sản phẩm</h1>
-<p class="mb-4"></p>
+
+<!-- Single pro tab start-->
+<!-- <div class="single-product-tab-area mg-b-30">
+    <div class="single-pro-review-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="review-tab-pro-inner">
+                        <div id="myTabContent" class="tab-content custom-product-edit">
+                            <div class="product-tab-list tab-pane fade active in" id="description">
+                                @foreach($edit_product as $key => $pro)
+                                <form action="{{URL('/update-product/'.$pro->product_id)}}" method="post" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">drive_file_rename_outline</i>
+                                                    </span>
+                                                    <input name="product_name" value="{{$pro->product_name}}" type="text" class="form-control" placeholder="Product Name">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
+                                                    </span>
+                                                    <input name="product_image" type="file" class="form-control" placeholder="Product Image" accept="image/*" onchange="loadFile(event,1)">
+                                                    @if($pro->product_image == null)
+                                                        <img id="output1" style="max-width:50px">
+                                                    @else
+                                                        <img id="output1" src="{{URL('public/uploads/product/'.$pro->product_image)}}" alt="{{$pro->product_name}}" style="max-width:50px">
+                                                    @endif
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
+                                                    </span>
+                                                    <input name="product_image1" type="file" class="form-control" placeholder="Product Image" accept="image/*" onchange="loadFile(event,2)">
+                                                    @if($pro->product_image1 == null)
+                                                        <img id="output2" style="max-width:50px">
+                                                    @else
+                                                        <img id="output2" src="{{URL('public/uploads/product/'.$pro->product_image1)}}" alt="{{$pro->product_name}}" style="max-width:50px">
+                                                    @endif
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
+                                                    </span>
+                                                    <input name="product_image2" type="file" class="form-control" placeholder="Product Image" accept="image/*" onchange="loadFile(event,3)">
+                                                    @if($pro->product_image2 == null)
+                                                        <img id="output3" style="max-width:50px">
+                                                    @else
+                                                        <img id="output3" src="{{URL('public/uploads/product/'.$pro->product_image2)}}" alt="{{$pro->product_name}}" style="max-width:50px">
+                                                    @endif
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">request_quote</i>
+                                                    </span>
+                                                    <input name="product_price" type="text" class="form-control" placeholder="Price">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">assessment</i>
+                                                    </span>
+                                                    <input name="product_parameters" type="text" class="form-control" placeholder="Product Parameters">
+                                                </div>
+                                                <select name="product_cate" class="form-control pro-edt-select form-control-primary">
+                                                    <option value="">Choose product category</option>
+                                                    @foreach($cate_product as $key => $cate)
+                                                        <option value="{{$cate->category_id}}">{{$cate->category_name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">description</i>
+                                                    </span>
+                                                    <textarea name="product_desc" row="3" type="text" class="form-control" placeholder="Product Description"></textarea>
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">edit_note</i>
+                                                    </span>
+                                                    <textarea name="product_content" row="3" type="text" class="form-control" placeholder="Product Content"></textarea>
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">info</i>
+                                                    </span>
+                                                    <textarea name="product_details" row="3" type="text" class="form-control" placeholder="Product Details"></textarea>
+                                                </div>
+                                                <select name="product_status" class="form-control pro-edt-select form-control-primary">
+                                                    <option value="1">Stocking</option>
+                                                    <option value="0">Out of stock</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="text-center custom-pro-edt-ds">
+                                                <button name="add_product" type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Add
+                                                    </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+var loadFile = function(event,x) {
+    var output = document.getElementById('output'+x);
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+    URL.revokeObjectURL(output.src) // free memory
+    }
+};
+</script> -->
+
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Chỉnh sửa sản phẩm</h6>
-    </div>
     <div class="container card-body">
         @foreach($edit_product as $key => $pro)
         <form action="{{URL('/update-product/'.$pro->product_id)}}" method="post" enctype="multipart/form-data">
