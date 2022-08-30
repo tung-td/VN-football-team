@@ -14,7 +14,17 @@
 -> 30, 31, 1, 2: Trình hoàn thành 4. 5. 6.
 -> 30, 31, 1, 2: Tùng CSS lại 1. 2. 3. 9.
 
-- slider trang chủ (done, cần change data slider/page)
-- xoá order, xoá data order cũ (sau khi hoàn thành check chuỗi thao tác mua hàng)
+- Frontend:
+	+ create page: edit register info, player details.
+	+ update: validate input form
+- Backend:
+	+ Update data slider/page
+	+ Update data News (format follow word form)
+	+ DB: update foreign key and relationship for tables
 
-- Frontend: edit register info, player details.
+
+* Trình:
+- xoá order, xoá data order cũ (sau khi hoàn thành check chuỗi thao tác mua hàng)
+- design get data focus in controller
+- Complete integrate user register/login actions
+- Add manage title (last)
