@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 30, 2022 lúc 09:44 AM
+-- Thời gian đã tạo: Th8 31, 2022 lúc 01:50 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -177,9 +177,8 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`id`, `user_id`, `zip_code`, `payment_status`, `credit_card_name`, `credit_card_num`, `exp_month`, `exp_year`, `cvv_cvc`, `created_at`, `updated_at`) VALUES
-(1, '12', 550000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-11-30 13:00:13'),
-(2, '13', 55000, NULL, 'PHAN VAN LINH', '0000 1111 2222 9999', 'tháng 12', '2022', '352', '2021-12-03 13:11:03', '2021-12-04 10:13:33'),
-(3, '14', 550000, NULL, 'client2', '1345-2413-5755', 'Tháng 12', '2030', '423', '2022-08-12 21:38:50', '2022-08-12 22:07:13');
+(3, '14', 550000, NULL, 'client2', '1345-2413-5755', 'Tháng 12', '2030', '423', '2022-08-12 21:38:50', '2022-08-12 22:07:13'),
+(4, '1', 550000, NULL, 'client1', '1345-2413-5755', 'Tháng 12', '2030', '423', '2022-08-12 21:38:50', '2022-08-12 22:07:13');
 
 -- --------------------------------------------------------
 
@@ -236,7 +235,7 @@ INSERT INTO `product` (`product_id`, `category_id`, `product_name`, `product_par
 (41, 35, 'Grand Sport Bag - Black', 'Product ID: 12052601 - Inner back neck signoff - Devil signoff below back collar - Regular fit - Ribbed crewneck 100% recycled polyester piqué - Moisture absorbing - Ribbed cuffs - Grand Sport', '- Youth. Courage. Success. The three pillars of VIETNAM\'s motto have brought the club more than a century of triumphs.\r\n\r\n- With its clean red design and white ribbed crewneck, this adidas home jersey takes inspiration from the iconic kit that carried them to some of their most memorable moments.\r\n\r\n- Made for fans, its soft fabric and moisture-absorbing Grand Sport will keep you comfortable as a new generation of players target supremacy. A woven badge on the chest and devil signoff under the back collar put your football loyalty on display.', 'Product ID: 12052601\r\nInner back neck signoff\r\nDevil signoff below back collar\r\nRegular fit\r\nRibbed crewneck\r\n100% recycled polyester piqué\r\nMoisture absorbing\r\nRibbed cuffs\r\nGrand Sport', '295000', 'bag_1_black6.jpg', '', '', 'Product ID: 12052601\r\nInner back neck signoff\r\nDevil signoff below back collar\r\nRegular fit\r\nRibbed crewneck\r\n100% recycled polyester piqué\r\nMoisture absorbing\r\nRibbed cuffs\r\nGrand Sport', 1, NULL, NULL),
 (42, 35, 'Grand Sport Shoe Bag - Red', 'Product ID: 12052601 - Inner back neck signoff - Devil signoff below back collar - Regular fit - Ribbed crewneck 100% recycled polyester piqué - Moisture absorbing - Ribbed cuffs - Grand Sport', '- Youth. Courage. Success. The three pillars of VIETNAM\'s motto have brought the club more than a century of triumphs.\r\n\r\n- With its clean red design and white ribbed crewneck, this adidas home jersey takes inspiration from the iconic kit that carried them to some of their most memorable moments.\r\n\r\n- Made for fans, its soft fabric and moisture-absorbing Grand Sport will keep you comfortable as a new generation of players target supremacy. A woven badge on the chest and devil signoff under the back collar put your football loyalty on display.', 'Product ID: 12052601\r\nInner back neck signoff\r\nDevil signoff below back collar\r\nRegular fit\r\nRibbed crewneck\r\n100% recycled polyester piqué\r\nMoisture absorbing\r\nRibbed cuffs\r\nGrand Sport', '235000', 'bag_159.jpg', '', '', 'Product ID: 12052601\r\nInner back neck signoff\r\nDevil signoff below back collar\r\nRegular fit\r\nRibbed crewneck\r\n100% recycled polyester piqué\r\nMoisture absorbing\r\nRibbed cuffs\r\nGrand Sport', 1, NULL, NULL),
 (43, 37, 'Academy Hybrid Grand Ball', 'Product ID: 12052601 - Inner back neck signoff - Devil signoff below back collar - Regular fit - Ribbed crewneck 100% recycled polyester piqué - Moisture absorbing - Ribbed cuffs - Grand Sport', '- Youth. Courage. Success. The three pillars of VIETNAM\'s motto have brought the club more than a century of triumphs.\r\n\r\n- With its clean red design and white ribbed crewneck, this adidas home jersey takes inspiration from the iconic kit that carried them to some of their most memorable moments.\r\n\r\n- Made for fans, its soft fabric and moisture-absorbing Grand Sport will keep you comfortable as a new generation of players target supremacy. A woven badge on the chest and devil signoff under the back collar put your football loyalty on display.', 'Product ID: 12052601\r\nInner back neck signoff\r\nDevil signoff below back collar\r\nRegular fit\r\nRibbed crewneck\r\n100% recycled polyester piqué\r\nMoisture absorbing\r\nRibbed cuffs\r\nGrand Sport', '515000', 'ball_1_blue0.jpg', '', '', 'Product ID: 12052601\r\nInner back neck signoff\r\nDevil signoff below back collar\r\nRegular fit\r\nRibbed crewneck\r\n100% recycled polyester piqué\r\nMoisture absorbing\r\nRibbed cuffs\r\nGrand Sport', 1, NULL, NULL),
-(44, 37, 'Sonix Hybrid Grand Ball', 'Product ID: 12052601 - Inner back neck signoff - Devil signoff below back collar - Regular fit - Ribbed crewneck 100% recycled polyester piqué - Moisture absorbing - Ribbed cuffs - Grand Sport', '- Youth. Courage. Success. The three pillars of VIETNAM\'s motto have brought the club more than a century of triumphs.\r\n\r\n- With its clean red design and white ribbed crewneck, this adidas home jersey takes inspiration from the iconic kit that carried them to some of their most memorable moments.\r\n\r\n- Made for fans, its soft fabric and moisture-absorbing Grand Sport will keep you comfortable as a new generation of players target supremacy. A woven badge on the chest and devil signoff under the back collar put your football loyalty on display.', 'Product ID: 12052601\r\nInner back neck signoff\r\nDevil signoff below back collar\r\nRegular fit\r\nRibbed crewneck\r\n100% recycled polyester piqué\r\nMoisture absorbing\r\nRibbed cuffs\r\nGrand Sport', '515000', 'ball_1_white70.jpg', '', '', 'Product ID: 12052601\r\nInner back neck signoff\r\nDevil signoff below back collar\r\nRegular fit\r\nRibbed crewneck\r\n100% recycled polyester piqué\r\nMoisture absorbing\r\nRibbed cuffs\r\nGrand Sport', 1, NULL, NULL);
+(44, 37, 'Sonix Hybrid Grand Ball', 'Product ID: 12052601 - Inner back neck signoff - Devil signoff below back collar - Regular fit - Ribbed crewneck 100% recycled polyester piqué - Moisture absorbing - Ribbed cuffs - Grand Sport', '- Youth. Courage. Success. The three pillars of VIETNAM\'s motto have brought the club more than a century of triumphs.\r\n\r\n- With its clean red design and white ribbed crewneck, this adidas home jersey takes inspiration from the iconic kit that carried them to some of their most memorable moments.\r\n\r\n- Made for fans, its soft fabric and moisture-absorbing Grand Sport will keep you comfortable as a new generation of players target supremacy. A woven badge on the chest and devil signoff under the back collar put your football loyalty on display.', 'Product ID: 12052601\r\nInner back neck signoff\r\nDevil signoff below back collar\r\nRegular fit\r\nRibbed crewneck\r\n100% recycled polyester piqué\r\nMoisture absorbing\r\nRibbed cuffs\r\nGrand Sport', '515000', 'ball_1_white70.jpg', 'ball_2_white26.jpg', '', 'Product ID: 12052601\r\nInner back neck signoff\r\nDevil signoff below back collar\r\nRegular fit\r\nRibbed crewneck\r\n100% recycled polyester piqué\r\nMoisture absorbing\r\nRibbed cuffs\r\nGrand Sport', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -263,7 +262,8 @@ INSERT INTO `tbl_coupon` (`coupon_id`, `coupon_name`, `coupon_code`, `coupon_tim
 (6, 'Giảm giá Giáng sinh', 'NOEL2021', 10, 1, 7),
 (9, 'Giảm giá Tết 2022', 'TET2022', 20, 2, 2000000),
 (11, 'Giảm giá 20/11', 'LT2011', 5, 2, 500000),
-(15, 'Giảm giá Tết 2022', 'TETLT', 15, 2, 1500000);
+(15, 'Giảm giá Tết 2022', 'TETLT', 15, 2, 1500000),
+(16, 'vietnam', 'vietnam', 1000, 1, 10);
 
 -- --------------------------------------------------------
 
@@ -287,6 +287,24 @@ INSERT INTO `tbl_feeship` (`fee_id`, `fee_matp`, `fee_maqh`, `fee_xaid`, `fee_fe
 (1, 2, 26, 715, '70000'),
 (2, 1, 1, 1, '50000'),
 (3, 49, 502, 20335, '45000');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_match`
+--
+
+CREATE TABLE `tbl_match` (
+  `id` int(11) NOT NULL,
+  `squad` int(10) NOT NULL,
+  `teamA_id` int(10) NOT NULL,
+  `teamB_id` int(10) NOT NULL,
+  `tournament_id` int(10) NOT NULL,
+  `type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `stadium` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `stadium_background` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `datetime` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -360,21 +378,27 @@ CREATE TABLE `tbl_partner` (
   `partner_id` int(11) NOT NULL,
   `partner_name` varchar(255) NOT NULL,
   `partner_image` varchar(100) NOT NULL,
-  `partner_link` varchar(100) NOT NULL
+  `partner_link` varchar(100) NOT NULL,
+  `partner_level` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_partner`
 --
 
-INSERT INTO `tbl_partner` (`partner_id`, `partner_name`, `partner_image`, `partner_link`) VALUES
-(17, 'hungthinhcorporation', 'hungthinhcorporation22.png', 'http://www.hungthinhcorp.com.vn/'),
-(19, 'kingcoffe', 'kingcoffe-logo36.png', 'https://kingcoffee.com'),
-(20, 'vku', 'viethan58.png', 'http://vku.udn.vn/'),
-(21, 'vinamilk', 'vinamilk84.png', 'https://www.vinamilk.com'),
-(22, 'yanmar', 'Yanmar-logo-94B22EC731-seeklogo5.png', 'http://www.yanmar.com/'),
-(23, 'vingroup', 'vingroup23.png', 'http://www.vingroup.net/'),
-(24, 'cadbury', 'cadbury24.png', 'http://www.cadbury.co.uk/');
+INSERT INTO `tbl_partner` (`partner_id`, `partner_name`, `partner_image`, `partner_link`, `partner_level`) VALUES
+(17, 'hungthinhcorporation', 'hungthinhcorporation22.png', 'http://www.hungthinhcorp.com.vn/', 2),
+(19, 'kingcoffe', 'kingcoffe-logo36.png', 'https://kingcoffee.com', 2),
+(20, 'vku', 'viethan58.png', 'http://vku.udn.vn/', 2),
+(21, 'vinamilk', 'vinamilk84.png', 'https://www.vinamilk.com', 2),
+(22, 'yanmar', 'Yanmar-logo-94B22EC731-seeklogo5.png', 'http://www.yanmar.com/', 2),
+(23, 'vingroup', 'vingroup23.png', 'http://www.vingroup.net/', 2),
+(24, 'cadbury', 'cadbury24.png', 'http://www.cadbury.co.uk/', 2),
+(25, 'Honda', 'honda8.png', 'https://www.honda.com/', 1),
+(26, 'Herbalife Nutrition', 'Herbalife-Logo36.png', 'https://www.herbalife-vietnam.com/', 1),
+(27, 'Acecook', 'acecook3.png', 'https://acecookvietnam.vn/', 1),
+(28, 'Adidas', 'adidas37.png', 'https://www.adidas.com', 1),
+(29, 'Grand Sport', 'grandsport47.jpg', 'https://grandsportvietnam.com/', 2);
 
 -- --------------------------------------------------------
 
@@ -527,8 +551,8 @@ INSERT INTO `tbl_post` (`post_id`, `cate_post_id`, `post_title`, `post_content`,
 (7, 5, 'U23 Vietnam is bright to beat both Thailand and Malaysia in the Asian tournament', '<p><strong>Vietnam defeated&nbsp;Malaysia 2-0&nbsp;in their final Group C game on Wednesday night to move to second place and make it to the quarterfinals of&nbsp;the 2022 AFC U23 Asian Cup in Uzbekistan.</strong></p>\r\n\r\n<p>Vietnam started confidently and pushed forward right away.</p>\r\n\r\n<p>Nguyen Thanh Nhan passed the ball from the left flank for Nham Manh Dung, who got a powerful header to defeat goalkeeper Firdaus Irman and put Vietnam ahead in the 28th minute.</p>\r\n\r\n<p>Manh Dung got another chance to score two minutes later but his shot lacked power.&nbsp;</p>\r\n\r\n<p>The ball seemed to cross the line even though keeper Irman caught it.</p>\r\n\r\n<p>However, the sideline referee said&nbsp;it was not a goal.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"&lt;em&gt;Vietnam (R) and Malaysia players vie for the ball during their final Group C game at the 2022 AFC U23 Asian Cup in Uzbekistan, June 8, 2022. Photo:&lt;/em&gt; Huu Tan / Tuoi Tre\" src=\"https://secure3.vncdn.vn/ttnew/r/2022/06/08/5-16546951428981265397448-1654700103.jpg\" /></p>\r\n\r\n<p><em>Vietnam (R) and Malaysia players vie for the ball during their final Group C game at the 2022 AFC U23 Asian Cup in Uzbekistan, June 8, 2022. Photo:</em>&nbsp;Huu Tan / Tuoi Tre</p>\r\n\r\n<p>Nguyen Hai Long, Dung Quang Nho, and Manh Dung created many chances afterward.</p>\r\n\r\n<p>Following an attack inside the box by Quang Nho, the referee gave Vietnam a penalty and Hairiey Hakim a red card for a handball offense after checking VAR for several minutes.&nbsp;</p>\r\n\r\n<p>Keeper Irman was able to block skipper Bui Hoang Viet Anh&rsquo;s penalty shot at first but could not save Viet Anh&rsquo;s tap-in.</p>\r\n\r\n<p>The referee also blew the whistle to end the first half right after the second goal for Vietnam.</p>\r\n\r\n<p>The young Golden Stars almost netted a third goal 17 minutes after the restart when Nguyen Thanh Nhan made a cross from the left flank to Nguyen Van Tung, whose shot hit the post.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"&lt;em&gt;Nham Manh Dung celebrates Vietnam’s first goal in Group C game against Malaysia at the 2022 AFC U23 Asian Cup in Uzbekistan, June 8, 2022. Photo:&lt;/em&gt; Huu Tan / Tuoi Tre\" src=\"https://secure3.vncdn.vn/ttnew/r/2022/06/08/3-1654695871350918492692-1654698842.jpg\" /></p>\r\n\r\n<p><em>Nham Manh Dung celebrates Vietnam&rsquo;s first goal in Group C game against Malaysia at the 2022 AFC U23 Asian Cup in Uzbekistan, June 8, 2022. Photo:</em>&nbsp;Huu Tan / Tuoi Tre</p>\r\n\r\n<p>Vietnam dominated possession in the remainder but did not score more as the 2-0 win was enough&nbsp;to send them to the quarterfinals as Group C&#39;s runners-up.</p>\r\n\r\n<p>South Korea regained the group&#39;s top and advanced with Vietnam after beating&nbsp;Thailand 1-0&nbsp;in the other fixture that ended a few minutes before the Vietnam-Malaysia tie.</p>\r\n\r\n<p>Thailand and Malaysia, ranked third and fourth, respectively,&nbsp;were both eliminated.</p>\r\n\r\n<p>The 2022 AFC U23 Asian Cup is the fifth edition of the biennial international football championship organized by the Asian Football Confederation (AFC) for the men&rsquo;s under-23 national teams of Asia.</p>', 'u23 vietnam beat both Thailand and Malaysia', 'u23 vietnam beat both Thailand and Malaysia', 1, 'anmung18.jpg', 13, '2022-08-12 19:17:46', NULL),
 (8, 4, 'The Vietnamese women\'s team holds the national flag to celebrate the 31st SEA Games championship.', '<p>After winning gold in javelin at the SEA Games, L&ograve; Thị Ho&agrave;ng knew immediately what she was going to do with her precious medal,&nbsp;present it to her mother.</p>\r\n\r\n<p>As a young girl growing up in&nbsp;her Th&aacute;i ethnic community, Ho&agrave;ng had always dreamed of representing her country in sports and being crowned a champion.</p>\r\n\r\n<p>And her wish came true when her throw of 56.37m at the Mỹ Đ&igrave;nh National Stadium not only sealed top spot, but also broke the the 15-year SEA Games record of 55.97m set by Buoban Pamang of Thailand in 2007.</p>\r\n\r\n<p>At the end of the competition and with the national flag draped around her shoulders, Ho&agrave;ng set off in search of her mother. When the two eventually met, the tears of joy flowed freely.</p>\r\n\r\n<p>&quot;I want to give this medal to my mother,&rdquo; Ho&agrave;ng said.</p>\r\n\r\n<p>&ldquo;When I&#39;m tired or under pressure, I can only call my mother. She told me to always try my best.</p>\r\n\r\n<p>&ldquo;As I am part of the Th&aacute;i ethnic group where few people can go to school let alone attend the SEA Games. I am very happy that my parents can come to encourage me. As you know, the journey from my house (Sơn La Province) to here is not easy.&rdquo;</p>\r\n\r\n<p>Ho&agrave;ng&#39;s gold medal was even more meaningful because it is the first gold for Vietnamese athletics in the women&#39;s javelin in the history of the SEA Games.</p>\r\n\r\n<p>Before the start of the Games 31, very few people believed that Ho&agrave;ng would win the gold because of the strength of Thailand in this event.</p>\r\n\r\n<p>Ho&agrave;ng said: &quot;In the previous competitions, Việt Nam only won silver or bronze and were always behind Thailand.</p>\r\n\r\n<p>&ldquo;However, I knew I could do it and earn a gold medal. I&#39;m extremely satisfied with this result.</p>\r\n\r\n<p>&ldquo;In 2021, I had an injury and didn&rsquo;t compete well. This year, due to the spread of the COVID-19 pandemic, there were no national tournaments so I couldn&rsquo;t perfect my skills much.&rdquo;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td><img alt=\"\" src=\"https://image.vietnamnews.vn/uploadvnnews/Article/2022/5/26/220292_hoanga.jpg\" /></td>\r\n		</tr>\r\n		<tr>\r\n			<td>L&ograve; Thị Ho&agrave;ng bursts into tears after winning the historic gold medal for Vietnamese athletics in the women&#39;s javelin throw in the SEA Games 31. &mdash; Photo nld.com.vn</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>Ho&agrave;ng was still injured while competing in the region&#39;s biggest sporting event but carried on through the pain barrier.</p>\r\n\r\n<p>&quot;I have been injured many times in my elbows, back and now in both knees,&quot; she said.</p>\r\n\r\n<p>&quot;When I compete, I have to wear long pants. I am afraid of letting the opponent see my injury. When I compete, I forget all the pain and fatigue, just focus on the shots.&quot;</p>\r\n\r\n<p>The 25-year-old was under a lot of pressure before her competition day because her colleagues had continuously won gold medals for the Vietnamese sports contingent. She suffered from insomnia because of nerves but thanks to the support of the fans and the close guidance of the coaching staff, she brought home gold.</p>\r\n\r\n<p>At the 2019 Games in the&nbsp;Philippines&nbsp;Ho&agrave;ng won silver, losing out to her opponent from Thailand. This was her chance to change the colour of the medal to gold.</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td><img alt=\"\" src=\"https://image.vietnamnews.vn/uploadvnnews/Article/2022/5/26/220293_hoangb.jpg\" /></td>\r\n		</tr>\r\n		<tr>\r\n			<td>L&ograve; Thị Ho&agrave;ng&rsquo;s father (central, in blue) waiting for his daughter&nbsp;to celebrate. &mdash; Photo dantri.com.vn</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Morale&nbsp;support from family</strong></p>\r\n\r\n<p>According to&nbsp;Ho&agrave;ng, when her injuries became so painful and&nbsp;she couldn&#39;t train, it crossed her mind to give&nbsp;up. However, her parents and coaches encouraged and helped her overcome difficulties to be successful.</p>\r\n\r\n<p>The SEA Games champion said her younger sister is also a great motivation for her to succeed. She too was an athlete, but had to give up due to her injury.</p>\r\n\r\n<p>Ho&agrave;ng got married last year and always received support from her husband&#39;s family in sports.</p>\r\n\r\n<p>&quot;I got married, but I don&rsquo;t intend to have a baby just yet,&quot; she said.</p>\r\n\r\n<p>&quot;I still want to focus on sports. I really love my husband and my in-laws. My husband has always supported me to continue my sports career. My parents-in-law understand me, treat me like their daughter, so I am given all conditions to follow sports.&rdquo;</p>\r\n\r\n<p>Ho&agrave;ng came to this sport quite late when she was in ninth grade and it changed her life.</p>\r\n\r\n<p>&ldquo;I was born in a poor countryside where there are still pathways so I determined to change my life. I have practiced and studied for many years and now I have graduated from the Bắc Ninh University of Sport. I want to dedicate the gold medal to my whole family, who have always supported me,&rdquo; Ho&agrave;ng said. &mdash; VNS</p>', 'Viet nam women team', 'Viet nam women team', 1, 'woman38.jpg', 0, '2022-08-12 19:21:40', NULL),
 (9, 4, 'Determining the future of the coach to bring Vietnam to the Women\'s World Cup', '<p>In an interview with Vietnam Football Federation, coach Mai Duc Chung said it&#39;s remarkable Vietnam could qualify for Women&#39;s World Cup despite a player shortage due to Covid-19.</p>\r\n\r\n<p><em>How did you feel when Vietnam secured 2023 Women&rsquo;s World Cup qualification?</em></p>\r\n\r\n<p>I must say it&rsquo;s a miracle, not just because we have qualified for the World Cup, but since no team has been able to achieve such a great feat after being hit by Covid-19. We have managed to play six games in 16 days, all thanks to our resilience and team spirit.</p>\r\n\r\n<p>The players showed their determination. We also had suitable plans to help them improve their stamina. It&#39;s painful to watch my players run on low stamina since some have just recovered (from Covid-19). I was once a player so I really sympathized with them, especially as women. Therefore, I only put those players on for about 10 minutes, just so they could get familiar with the field.</p>\r\n\r\n<p><em>What did you do to boost the players mentally?</em></p>\r\n\r\n<p>Each coach has their own way of encouraging their players and I&#39;m no exception. In the team, there were players who were too tired after 10 days without training, so their touch on the ball was not good. At that time, I could only encourage them to try harder and if we do it, we do it together. They just need to play comfortably - the responsibility is mine. Every single person on the team had to overcome their own obstacles, or else it would have impossible to get this achievement. There were times when we thought we won&#39;t be able to play, but we made it through.</p>\r\n\r\n<p>When the first group flew to India, there were only 11 members (head coach, manager, six players and four staff), we were so worried. Three of the six players had a stamina problem. All I could do was try maintain their form during training.</p>\r\n\r\n<table align=\"center\" border=\"0\" cellpadding=\"3\" cellspacing=\"0\">\r\n	<tbody>\r\n		<tr>\r\n			<td><img alt=\"Coach Mai Duc Chung stands on the sideline during the game between Vietnam and South Korea in the Womens Asian Cup in India on January 21, 2022. Photo by VnExpress/Thu Trang\" src=\"https://i-english.vnecdn.net/2022/02/10/madch-1644469919-6666-16444700-8544-6084-1644477988.jpg\" /></td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Coach Mai Duc Chung stands on the sideline during the game between Vietnam and South Korea in the Women&#39;s Asian Cup in India on January 21, 2022. Photo by VnExpress/Thu Trang</p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p><em>What are some of the tactical changes you and the coaching staff made in this tournament?</em></p>\r\n\r\n<p>Tactics are really important. For games against Japan, South Korea and China, we had to calculate carefully to field the best lineup.</p>\r\n\r\n<p>We also have a strategy for each game. For instance, when we faced China in the quarterfinals, we knew they are a strong team in Asia, having won the title before, so we didn&#39;t need to win that game at any cost. Instead, our target was to preserve our stamina for the playoffs against Thailand and Taiwan. Our calculation proved correct.</p>\r\n\r\n<p><em>What plans do you have for the team at 2023 Women&rsquo;s World Cup?</em></p>\r\n\r\n<p>After the game with Taiwan, I didn&#39;t sleep because I was too happy and busy thinking about the plans for SEA Games, Women&#39;s AFF Cup and World Cup. We are thinking about some potential young players that we can call up to support the team. We will ask Vietnam Football Federation (VFF) to get the team on training trips overseas so they can learn and improve more. In the far future, we also want to develop the next generation of players.</p>\r\n\r\n<p>VFF is developing two batches at the Promotional Fund of Vietnamese Football Talent Academy (PVF). We hope clubs will cooperate to open more youth training courses, in order to recruit more young talents. The government should also invest and open more schools for talents so they can have a better opportunity to develop.</p>\r\n\r\n<table align=\"center\" border=\"0\" cellpadding=\"3\" cellspacing=\"0\">\r\n	<tbody>\r\n		<tr>\r\n			<td><img alt=\"Vietnam players celebrate after scoring against China in Womens Asian Cup India on January 30, 2022. Photo by Asian Football Confederation\" src=\"https://i-english.vnecdn.net/2022/02/10/vienm-jpeg-9224-1644470098.jpg\" /></td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Vietnam players celebrate after scoring against China in Women&#39;s Asian Cup in India on January 30, 2022. Photo by Asian Football Confederation</p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p><em>Many said you have managed to use more young players in the team while still winning titles. What do you think about this?</em></p>\r\n\r\n<p>Everyone knows that in a game, I never field a squad with only experienced players. There has to be a balance in my lineup. I will put young players on the field so they can gain more experience and fit into the team better. That&#39;s my intention. When the opponent is low on stamina, I often sub in young players like Nguyen Thi Thanh Nha for more pace and strength to increase the offense. It&rsquo;s a common tactical move.</p>\r\n\r\n<p>We are heavily invested, sent to train abroad and reinforced with VFF&rsquo;s homegrown players. We have to be confident so players can give their best. Personally, I always want experienced and young players to compete together and create a connection. My wish is that (young players) will gain enough experience and composure during the game.</p>\r\n\r\n<p><em>Do you expect the historic feat this year is a stepping stone for women&rsquo;s football in Vietnam to attract more fans and sponsors?</em></p>\r\n\r\n<p>In the past, we still had fans and sponsors, but not all the time. After this tournament, I think more people will pay attention to us. But we don&rsquo;t think about it that much, because the General Department of Physical Education and Sports along with VFF always support and care about us. Thanks to that, we have become who we are today. Of course, we would be really glad if there were more sponsors because that would help us plenty.</p>', 'coach of Vietnam team', 'coach of Vietnam team', 1, 'hlv_man_woman63.jpg', 0, '2022-08-12 19:23:39', NULL),
-(10, 4, 'Coach Park had a perfect farewell with U23 Vietnam.', '<h2>After a long journey from Kyrgyzstan, the U23 Vietnam team was there at Noi Bai airport (Hanoi) on the night of November 4. Upon returning home immediately, Coach Park Hang Seo and 8 U23 players joined the Vietnamese team.</h2>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>After completing the medical declaration and completing immigration procedures, the team was divided into two groups and boarded two different buses arranged by the VFF. The first group joined the &ldquo;closed bubble&rdquo; with the Vietnamese team, along with coach Park Hang Seo and some members of the coaching staff along with 8 additional players for the Vietnamese team.</p>\r\n\r\n<p>These eight players include goalkeeper Nguyen Van Toan, defenders Bui Hoang Viet Anh, Nguyen Thanh Binh, Nham Manh Dung, midfielder Le Van Xuan, Ly Cong Hoang Anh, Le Van Do and striker Tran Van Dat.</p>\r\n\r\n<p>The second group, consisting of the remaining members, moved into concentrated isolation at the Vietnam Youth Football Training Center. On the morning of November 5, all members of the U23 Vietnam team will be sampled for RT-PCR testing to prevent Covid-19.</p>\r\n\r\n<p><img alt=\"Coach Park Hang Seo said goodbye to the U23 players and replaced the Vietnamese team - 1\" src=\"https://icdn.dantri.com.vn/thumb_w/660/2021/11/05/u23docx-1636072899749.jpeg\" title=\"Coach Park Hang Seo said goodbye to the U23 players and replaced the Vietnamese team - 1\" /></p>\r\n\r\n<p>U23 Vietnam returned to Hanoi on the night of November 4th.</p>\r\n\r\n<p>U23 Vietnam has many problems that need to be improved, but coach Park Hang Seo&rsquo;s teachers and students have already accomplished their goal of reaching the final round of U23 Asia 2022.</p>\r\n\r\n<p>In the last qualifying campaign, U23 Vietnam won both matches with the same score of 1-0, against Taiwan U23 (China) and Myanmar U23 respectively. Notably, ethnic minority player Ho Thanh Minh, the author of the goal that helped Vietnam U23 win all 3 points against Myanmar U23, was honored to be a member of the Party Central Committee, Minister, Chairman of the People&rsquo;s Committee signed by the Hau A Lenh tribe. Decision No. 740/QD-UBDT providing Certificates of Merit and 20 million VND in prize money.</p>\r\n\r\n<p>Meanwhile, in achieving to win the right to reach the final round of U23 Asia 2022, U23 Vietnam also received a total of 800 million VND from VFF.</p>\r\n\r\n<p>Immediately after the 2022 Asian U23 qualifying round with the identification of 16 teams going to Uzbekistan for the final round early next year, the AFC is divided into 4 seed groups based on the performance of the U23 final round. Asia 2020.</p>\r\n\r\n<p><img alt=\"Coach Park Hang Seo said goodbye to the U23 players and replaced the Vietnamese team - 2\" src=\"https://icdn.dantri.com.vn/thumb_w/660/2021/11/05/u23docx-1636072899924.jpeg\" title=\"Coach Park Hang Seo said goodbye to the U23 players and replaced the Vietnamese team - 2\" /></p>\r\n\r\n<p>U23 Vietnam won tickets to the final round of U23 Asia for the fourth consecutive time.</p>\r\n\r\n<p>Accordingly, U23 Vietnam is in group 3 along with Iraq, Qatar, and Japan. 4 teams in group 1 host Uzbekistan, South Korea, Saudi Arabia and Australia. Group 2 includes Jordan, Thailand, UAE, Iran and the last group includes Tajikistan, Malaysia, Kuwait and Turkmenistan.</p>\r\n\r\n<p>Returning to the Vietnam team, Coach Park Hang Seo immediately shook hands with work just a week after the match against Japan. The good news for Mr. Park has Minh Vuong back in training, but midfielder Do Hung Dung is currently unclear if he will join the national team, after the Hanoi club wanted the player to continue receiving treatment at the club for almost a month .again.</p>\r\n\r\n<p>The match between the Vietnamese team and Japan took place on November 11, followed by a five -day reception in Saudi Arabia at My Dinh Stadium. After 4 matches, coach Park Hang Seo&rsquo;s teachers and students are still not receiving any marks.</p>', 'Coach Park', 'Coach Park', 1, 'hlv_chiatay37.jpg', 2, '2022-08-12 19:25:57', NULL),
-(11, 5, 'Thailand received a loss in the final against U23 Vietnam', '<p><strong>Hanoi (VNA)</strong>&nbsp;&ndash; Nham Manh Dung&rsquo;s leaping header in the 83rd minute giving Vietnam the&nbsp;<a href=\"https://en.vietnamplus.vn/tags/SEA-Games-31.vnp\"><strong>SEA Games 31</strong></a>&nbsp;men&#39;s football crown has made headlines on Thailand&rsquo;s media, describing the news as a heartbreak for Thai fans.<br />\r\n<br />\r\nNews site Sports Trueid said the&nbsp;<a href=\"https://en.vietnamplus.vn/tags/Thai-War-Elephants.vnp\"><strong>Thai War Elephants</strong></a>&nbsp;suffered a heartbreaking 0-1 loss to Vietnam and missed the SEA Games gold medal.<br />\r\n<br />\r\nNational daily newspaper Matichon run a story headlined &ldquo;the whole country is in tears, the War Elephants could not fulfill dream, losing 0-1 to Vietnam&rsquo;s U23 team.&rdquo; It reported the developments of the SEA Games men&rsquo;s&nbsp;<a href=\"https://en.vietnamplus.vn/tags/football.vnp\"><strong>football</strong></a>&nbsp;final match, noting that Thailand&rsquo;s team received a painful defeat and they had never thought of losing to Vietnam.<br />\r\n<br />\r\nSMM Sport highlighted Nham Manh Dung as a hero of the Vietnamese team while Siamrath&rsquo;s article also showed regrets that Thailand could not reach to the championship this year./.</p>', 'Thailand', 'Thailand', 1, 'thailand_team0.jpg', 3, '2022-08-12 19:28:36', NULL);
+(10, 4, 'Coach Park had a perfect farewell with U23 Vietnam.', '<h2>After a long journey from Kyrgyzstan, the U23 Vietnam team was there at Noi Bai airport (Hanoi) on the night of November 4. Upon returning home immediately, Coach Park Hang Seo and 8 U23 players joined the Vietnamese team.</h2>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>After completing the medical declaration and completing immigration procedures, the team was divided into two groups and boarded two different buses arranged by the VFF. The first group joined the &ldquo;closed bubble&rdquo; with the Vietnamese team, along with coach Park Hang Seo and some members of the coaching staff along with 8 additional players for the Vietnamese team.</p>\r\n\r\n<p>These eight players include goalkeeper Nguyen Van Toan, defenders Bui Hoang Viet Anh, Nguyen Thanh Binh, Nham Manh Dung, midfielder Le Van Xuan, Ly Cong Hoang Anh, Le Van Do and striker Tran Van Dat.</p>\r\n\r\n<p>The second group, consisting of the remaining members, moved into concentrated isolation at the Vietnam Youth Football Training Center. On the morning of November 5, all members of the U23 Vietnam team will be sampled for RT-PCR testing to prevent Covid-19.</p>\r\n\r\n<p><img alt=\"Coach Park Hang Seo said goodbye to the U23 players and replaced the Vietnamese team - 1\" src=\"https://icdn.dantri.com.vn/thumb_w/660/2021/11/05/u23docx-1636072899749.jpeg\" title=\"Coach Park Hang Seo said goodbye to the U23 players and replaced the Vietnamese team - 1\" /></p>\r\n\r\n<p>U23 Vietnam returned to Hanoi on the night of November 4th.</p>\r\n\r\n<p>U23 Vietnam has many problems that need to be improved, but coach Park Hang Seo&rsquo;s teachers and students have already accomplished their goal of reaching the final round of U23 Asia 2022.</p>\r\n\r\n<p>In the last qualifying campaign, U23 Vietnam won both matches with the same score of 1-0, against Taiwan U23 (China) and Myanmar U23 respectively. Notably, ethnic minority player Ho Thanh Minh, the author of the goal that helped Vietnam U23 win all 3 points against Myanmar U23, was honored to be a member of the Party Central Committee, Minister, Chairman of the People&rsquo;s Committee signed by the Hau A Lenh tribe. Decision No. 740/QD-UBDT providing Certificates of Merit and 20 million VND in prize money.</p>\r\n\r\n<p>Meanwhile, in achieving to win the right to reach the final round of U23 Asia 2022, U23 Vietnam also received a total of 800 million VND from VFF.</p>\r\n\r\n<p>Immediately after the 2022 Asian U23 qualifying round with the identification of 16 teams going to Uzbekistan for the final round early next year, the AFC is divided into 4 seed groups based on the performance of the U23 final round. Asia 2020.</p>\r\n\r\n<p><img alt=\"Coach Park Hang Seo said goodbye to the U23 players and replaced the Vietnamese team - 2\" src=\"https://icdn.dantri.com.vn/thumb_w/660/2021/11/05/u23docx-1636072899924.jpeg\" title=\"Coach Park Hang Seo said goodbye to the U23 players and replaced the Vietnamese team - 2\" /></p>\r\n\r\n<p>U23 Vietnam won tickets to the final round of U23 Asia for the fourth consecutive time.</p>\r\n\r\n<p>Accordingly, U23 Vietnam is in group 3 along with Iraq, Qatar, and Japan. 4 teams in group 1 host Uzbekistan, South Korea, Saudi Arabia and Australia. Group 2 includes Jordan, Thailand, UAE, Iran and the last group includes Tajikistan, Malaysia, Kuwait and Turkmenistan.</p>\r\n\r\n<p>Returning to the Vietnam team, Coach Park Hang Seo immediately shook hands with work just a week after the match against Japan. The good news for Mr. Park has Minh Vuong back in training, but midfielder Do Hung Dung is currently unclear if he will join the national team, after the Hanoi club wanted the player to continue receiving treatment at the club for almost a month .again.</p>\r\n\r\n<p>The match between the Vietnamese team and Japan took place on November 11, followed by a five -day reception in Saudi Arabia at My Dinh Stadium. After 4 matches, coach Park Hang Seo&rsquo;s teachers and students are still not receiving any marks.</p>', 'Coach Park', 'Coach Park', 1, 'hlv_chiatay37.jpg', 4, '2022-08-12 19:25:57', NULL),
+(11, 5, 'Thailand received a loss in the final against U23 Vietnam', '<p><strong>Hanoi (VNA)</strong>&nbsp;&ndash; Nham Manh Dung&rsquo;s leaping header in the 83rd minute giving Vietnam the&nbsp;<a href=\"https://en.vietnamplus.vn/tags/SEA-Games-31.vnp\"><strong>SEA Games 31</strong></a>&nbsp;men&#39;s football crown has made headlines on Thailand&rsquo;s media, describing the news as a heartbreak for Thai fans.<br />\r\n<br />\r\nNews site Sports Trueid said the&nbsp;<a href=\"https://en.vietnamplus.vn/tags/Thai-War-Elephants.vnp\"><strong>Thai War Elephants</strong></a>&nbsp;suffered a heartbreaking 0-1 loss to Vietnam and missed the SEA Games gold medal.<br />\r\n<br />\r\nNational daily newspaper Matichon run a story headlined &ldquo;the whole country is in tears, the War Elephants could not fulfill dream, losing 0-1 to Vietnam&rsquo;s U23 team.&rdquo; It reported the developments of the SEA Games men&rsquo;s&nbsp;<a href=\"https://en.vietnamplus.vn/tags/football.vnp\"><strong>football</strong></a>&nbsp;final match, noting that Thailand&rsquo;s team received a painful defeat and they had never thought of losing to Vietnam.<br />\r\n<br />\r\nSMM Sport highlighted Nham Manh Dung as a hero of the Vietnamese team while Siamrath&rsquo;s article also showed regrets that Thailand could not reach to the championship this year./.</p>', 'Thailand', 'Thailand', 1, 'thailand_team0.jpg', 4, '2022-08-12 19:28:36', NULL);
 
 -- --------------------------------------------------------
 
@@ -1339,21 +1363,22 @@ INSERT INTO `tbl_shipping` (`id`, `shipping_name`, `shipping_address`, `shipping
 CREATE TABLE `tbl_slider` (
   `slider_id` int(11) NOT NULL,
   `slider_name` varchar(255) NOT NULL,
-  `slider_image` varchar(100) NOT NULL
+  `slider_image` varchar(100) NOT NULL,
+  `slider_level` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_slider`
 --
 
-INSERT INTO `tbl_slider` (`slider_id`, `slider_name`, `slider_image`) VALUES
-(14, 'slider001', 'DTVN_V3-16273180943801.jpg'),
-(15, 'slider002', 'Doi-Tuyen-Nu-549.jpg'),
-(16, 'slider003', 'fanHamMo48.jpg'),
-(18, 'slider004', 'u23-396.jpeg'),
-(19, 'slider005', 'pic38.jpg'),
-(21, 'slider006', 'u23-482.jpg'),
-(22, 'slider007', 'dt nu vietnam67.jpg');
+INSERT INTO `tbl_slider` (`slider_id`, `slider_name`, `slider_image`, `slider_level`) VALUES
+(14, 'slider001', 'DTVN_V3-16273180943801.jpg', 1),
+(15, 'slider002', 'Doi-Tuyen-Nu-549.jpg', 1),
+(16, 'slider003', 'fanHamMo48.jpg', 1),
+(18, 'slider004', 'u23-396.jpeg', 1),
+(19, 'slider005', 'pic38.jpg', 1),
+(21, 'slider006', 'u23-482.jpg', 1),
+(22, 'slider007', 'dt nu vietnam67.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -1376,6 +1401,66 @@ CREATE TABLE `tbl_statistial` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_team`
+--
+
+CREATE TABLE `tbl_team` (
+  `id` int(11) NOT NULL,
+  `team_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `team_image` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_team`
+--
+
+INSERT INTO `tbl_team` (`id`, `team_name`, `team_image`) VALUES
+(1, 'Viet Nam', 'vietnampng519.png'),
+(2, 'South Korea', 'southkorea666.svg'),
+(3, 'Thailand', 'thailand691.svg'),
+(4, 'Indonesia', 'indonesia784.png'),
+(5, 'Philippines', 'philippines150.png'),
+(6, 'Malaysia', 'malaysia964.png'),
+(7, 'Myanmar', 'myanmar963.png'),
+(8, 'Cambodia', 'cambodia250.png');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_ticket`
+--
+
+CREATE TABLE `tbl_ticket` (
+  `id` int(11) NOT NULL,
+  `match_id` int(11) NOT NULL,
+  `stand` int(10) NOT NULL,
+  `cate` int(10) NOT NULL,
+  `door` int(10) NOT NULL,
+  `seat` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `price` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `status` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_ticketprice`
+--
+
+CREATE TABLE `tbl_ticketprice` (
+  `id` int(11) NOT NULL,
+  `match_id` int(11) NOT NULL,
+  `standA1` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `standA2` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `standB1` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `standB2` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `standC` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `standD` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -1457,6 +1542,26 @@ INSERT INTO `tbl_tinhthanhpho` (`matp`, `name_city`, `type`) VALUES
 ('94', 'Tỉnh Sóc Trăng', 'Tỉnh'),
 ('95', 'Tỉnh Bạc Liêu', 'Tỉnh'),
 ('96', 'Tỉnh Cà Mau', 'Tỉnh');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_tournament`
+--
+
+CREATE TABLE `tbl_tournament` (
+  `id` int(11) NOT NULL,
+  `tournament_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `tournament_image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `status` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_tournament`
+--
+
+INSERT INTO `tbl_tournament` (`id`, `tournament_name`, `tournament_image`, `status`) VALUES
+(1, 'AFC U-23 Asian Cup', 'AFC_U-23_Asian_Cup_logo913.png', 1);
 
 -- --------------------------------------------------------
 
@@ -12675,11 +12780,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `phone`, `street_address`, `ward_id`, `district_id`, `city_id`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'client1', 'client1@client1.com', NULL, 'a165dd3c2e98d5d607181d0b87a4c66b', '012565564', 'đường client1', NULL, NULL, NULL, 'locked', NULL, '2021-11-16 18:45:58', '2021-11-17 06:37:29'),
-(3, 'staff1', 'staff1@staff1.com', NULL, '4d7d719ac0cf3d78ea8a94701913fe47', '032845164', '25 đường Trần Phú', NULL, NULL, NULL, 'unlocked', '1', '2021-11-17 05:39:09', '2021-11-17 06:39:32'),
-(4, 'staff2', 'staff2@staff2.com', NULL, '8bc01711b8163ec3f2aa0688d12cdf3b', '0354186462', '85 đường Ông Ích Khiêm', NULL, NULL, NULL, 'locked', '1', '2021-11-17 05:41:04', NULL),
-(12, 'Alex', 'alex@gmail.com', NULL, '534b44a19bf18d20b71ecc4eb77c572f', '0351247896', 'Tổ 5, Bình Kỳ 1', 20287, 494, 48, 'unlocked', NULL, '2021-11-29 06:33:51', '2021-11-30 06:00:13'),
-(13, 'linhphan', 'linh@vku.udn.vn', NULL, 'd9dbc31cdc21153953ec0a9ba2027019', '0909999999', 'Khái Tây 1', 20287, 494, 48, 'unlocked', NULL, '2021-12-03 13:11:03', '2021-12-04 10:13:33'),
+(1, 'client1', 'client1@client1.com', NULL, 'a165dd3c2e98d5d607181d0b87a4c66b', '012565564', 'đường client1', 20287, 494, 48, 'locked', NULL, '2021-11-16 18:45:58', '2021-11-17 06:37:29'),
+(3, 'staff1', 'staff1@staff1.com', NULL, '4d7d719ac0cf3d78ea8a94701913fe47', '032845164', '25 đường Trần Phú', 20287, 494, 48, 'unlocked', '1', '2021-11-17 05:39:09', '2021-11-17 06:39:32'),
+(4, 'staff2', 'staff2@staff2.com', NULL, '8bc01711b8163ec3f2aa0688d12cdf3b', '0354186462', '85 đường Ông Ích Khiêm', 20287, 494, 48, 'locked', '1', '2021-11-17 05:41:04', NULL),
 (14, 'client2', 'client2@gmail.com', NULL, '2c66045d4e4a90814ce9280272e510ec', '0748923940', '123 Nam Kì Khởi Nghĩa', 20287, 494, 48, 'unlocked', NULL, '2022-08-12 21:38:50', '2022-08-12 22:07:13');
 
 --
@@ -12751,6 +12854,12 @@ ALTER TABLE `tbl_feeship`
   ADD PRIMARY KEY (`fee_id`);
 
 --
+-- Chỉ mục cho bảng `tbl_match`
+--
+ALTER TABLE `tbl_match`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `tbl_order`
 --
 ALTER TABLE `tbl_order`
@@ -12817,10 +12926,28 @@ ALTER TABLE `tbl_statistial`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `tbl_team`
+--
+ALTER TABLE `tbl_team`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `tbl_ticket`
+--
+ALTER TABLE `tbl_ticket`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `tbl_tinhthanhpho`
 --
 ALTER TABLE `tbl_tinhthanhpho`
   ADD PRIMARY KEY (`matp`);
+
+--
+-- Chỉ mục cho bảng `tbl_tournament`
+--
+ALTER TABLE `tbl_tournament`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `tbl_xaphuongthitran`
@@ -12873,7 +13000,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`
@@ -12891,13 +13018,19 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT cho bảng `tbl_coupon`
 --
 ALTER TABLE `tbl_coupon`
-  MODIFY `coupon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `coupon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_feeship`
 --
 ALTER TABLE `tbl_feeship`
   MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_match`
+--
+ALTER TABLE `tbl_match`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_order`
@@ -12915,7 +13048,7 @@ ALTER TABLE `tbl_order_details`
 -- AUTO_INCREMENT cho bảng `tbl_partner`
 --
 ALTER TABLE `tbl_partner`
-  MODIFY `partner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `partner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_payment`
@@ -12958,6 +13091,24 @@ ALTER TABLE `tbl_slider`
 --
 ALTER TABLE `tbl_statistial`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_team`
+--
+ALTER TABLE `tbl_team`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_ticket`
+--
+ALTER TABLE `tbl_ticket`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_tournament`
+--
+ALTER TABLE `tbl_tournament`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
