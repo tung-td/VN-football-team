@@ -214,7 +214,8 @@ input {
 }
 
 #back-shop {
-    height: 40px;
+    min-width: 156px !important;
+    height: 45px !important;
     line-height: 40px;
     border: 1px solid gray;
     color: gray;
