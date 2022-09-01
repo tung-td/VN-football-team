@@ -108,6 +108,18 @@ hr:not([size]) {
     border: 1px solid #ced4da;
     border-radius: 23px;
 }
+.form-control-1 {
+    display: block;
+    width: 86px;
+    padding: .375rem 23px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 23px;
+}
 
 option {
     font-weight: normal;
@@ -135,7 +147,7 @@ option {
     display: flex;
     justify-content: center;
     height: 45px;
-    margin: 0px 62px;
+    margin: 6px 62px;
 }
 
 input {
@@ -146,12 +158,12 @@ input {
 .col-1.cs-1 {
     display: flex;
     justify-content: center;
-    height: 32px;
+    height: 37px;
     border: 1px solid #b62f2f;
     border-radius: 5px;
-    line-height: 29px;
+    line-height: 37px;
     color: #b62f2f;
-    width: auto;
+    min-width: 156px;
     padding: 0 10px;
 }
 
@@ -160,9 +172,14 @@ input {
     color: #fff;
 }
 
+.col-1.cs-1 > i {
+    line-height: 46px !important;
+}
+
 .subtotal {
     width: auto;
     line-height: 45px;
+    font-weight: 600;
 }
 
 .row.submit-button {
@@ -200,7 +217,7 @@ input {
     display: flex;
     justify-content: space-evenly;
     padding: unset;
-    width: 20%;
+    min-width: 32%;
 }
 
 .col-5.hd-5,
@@ -216,7 +233,7 @@ input {
 #back-shop {
     min-width: 156px !important;
     height: 45px !important;
-    line-height: 40px;
+    line-height: 46px;
     border: 1px solid gray;
     color: gray;
 }
@@ -260,6 +277,39 @@ input {
     line-height: 41.5px;
 }
 
+.block-subtotal {
+    width: 23%;
+}
+
+.btn-discount > form{
+    display: flex;
+}
+
+.col-1.cs-1.ip {
+    margin-top: 10px;
+    margin-left: 21px;
+}
+
+.discount {
+    display: flex;
+    margin-left: 44px;
+    margin-top: 10px;
+}
+
+.discount > strong {
+    line-height: 56px;
+}
+
+.discount > .col-1.cs-1.ip {
+    margin-left: 67px;
+}
+
+.title-cart > h1 > .material-icons-outlined {
+    font-size: 35px;
+    position: absolute;
+    top: 112px;
+    margin-left: 10px;
+}
 
 /* IPAD RESPONSIVE */
 @media only screen and (min-width: 768px) and (max-width: 1180px) {

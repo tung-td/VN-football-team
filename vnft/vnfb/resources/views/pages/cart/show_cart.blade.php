@@ -72,14 +72,7 @@
                         </div>
                         <div class="col-1">
                             <div class="number_quantity">
-                                <input type="number" min="1" name="cart_qty[{{$cart['session_id']}}]" value="{{$cart['product_qty']}}">
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                                <input class="form-control-1" type="number" min="1" name="cart_qty[{{$cart['session_id']}}]" value="{{$cart['product_qty']}}">
                             </div>
                         </div>
                         <div class="col-1 mr-1">
@@ -114,6 +107,7 @@
         @if(Session::get('cart') == true)
         <div class="row align-items-end">
             <div class="coupon-form">
+                <div class="btn-discount">
                 <form action="{{url('/check-coupon')}}" method="post">
                     @csrf
                     <div class="col-3 cs-3">
@@ -123,40 +117,45 @@
                         Apply Coupon
                     </button>
                 </form>
+                <div class="discount">
                 @if (Session::get('coupon'))
                     @foreach (Session::get('coupon') as $key => $cou)
                         <strong> Using coupon: <span class="text-danger">{{$cou['coupon_code']}}</span></strong>
-                        <a class="btn btn-danger" href="{{url('/unset-coupon')}}">Delete coupon</a>
+                        <a class="col-1 cs-1 ip" href="{{url('/unset-coupon')}}">Delete coupon</a>
                     @endforeach
                 @endif
+                </div>
+                </div>
             </div>
-            <div class="subtotal">Subtotal: {{number_format($total, 0, ',', '.')}} VNĐ</div>
-            @if (Session::get('coupon'))
-                @foreach (Session::get('coupon') as $key => $cou)
-                    @if ($cou['coupon_condition']== 1)
-                        <div class="subtotal">
-                            @php
-                                $subtotal_coupon = ($total * $cou['coupon_number']) / 100;
-                                $total_coupon = $total - $subtotal_coupon;
-                            @endphp
-                            Discount {{$cou['coupon_number']}}%: {{number_format($subtotal_coupon, 0, ',', '.')}} VNĐ
-                        </div>
-                    @else
-                        <div class="subtotal">
-                            @php
-                                $total_coupon = ($total - $cou['coupon_number']);
-                            @endphp
-                            Discount: {{number_format($cou['coupon_number'], 0, ',', '.')}} VNĐ
-                        </div>
-                    @endif
-                @endforeach
-            @endif
+            <div class="block-subtotal">
+                <div class="subtotal">Subtotal: {{number_format($total, 0, ',', '.')}} VNĐ</div>
+                @if (Session::get('coupon'))
+                    @foreach (Session::get('coupon') as $key => $cou)
+                        @if ($cou['coupon_condition']== 1)
+                            <div class="subtotal">
+                                @php
+                                    $subtotal_coupon = ($total * $cou['coupon_number']) / 100;
+                                    $total_coupon = $total - $subtotal_coupon;
+                                @endphp
+                                Discount {{$cou['coupon_number']}}%: {{number_format($subtotal_coupon, 0, ',', '.')}} VNĐ
+                            </div>
+                        @else
+                            <div class="subtotal">
+                                @php
+                                    $total_coupon = ($total - $cou['coupon_number']);
+                                @endphp
+                                Discount: {{number_format($cou['coupon_number'], 0, ',', '.')}} VNĐ
+                            </div>
+                        @endif
+                    @endforeach
+                @endif
 
-            @if (Session::get('coupon'))
-                <div class="subtotal">Total payment: {{number_format($total_coupon, 0, ',', '.')}} VNĐ </div>
-            @else
-                <div class="subtotal">Total payment: {{number_format($total, 0, ',', '.')}} VNĐ </div>
-            @endif
+                @if (Session::get('coupon'))
+                    <div class="subtotal">Total payment: {{number_format($total_coupon, 0, ',', '.')}} VNĐ </div>
+                @else
+                    <div class="subtotal">Total payment: {{number_format($total, 0, ',', '.')}} VNĐ </div>
+                @endif
+            </div>
         </div>
         @endif
 
