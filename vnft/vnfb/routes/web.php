@@ -79,7 +79,7 @@ Route::get('/bai-viet/{post_id}', [PostController::class, 'content_post']);
     // ----- Cart -----
 Route::post('/add-to-cart', [CartController::class, 'add_to_cart']);
 Route::post('/update-cart', [CartController::class, 'update_cart']);
-Route::get('/gio-hang', [CartController::class, 'show_cart']);
+Route::get('/cart', [CartController::class, 'show_cart'])->name('cart.show');
 Route::get('/del-product/{session_id}', [CartController::class, 'del_product']);
 Route::get('/del-all-pro', [CartController::class, 'del_all_pro']);
 Route::get('/show-cart-qty', [CartController::class, 'show_cart_qty']);

@@ -47,7 +47,7 @@
             <div class="column_2">
                 <h3>{{$value->product_name}}</h3>
                 <h5 class="to_red">{{number_format($value->product_price,0,',','.')}} VNĐ</h5>
-                <form action="{{URL('/save-cart')}}" method="post">
+                <form action="{{route('cart.show')}}" method="">
                     <div class="product_cart">
                         <div class="size">Size</div>
                         <div class="stuff">
@@ -94,7 +94,7 @@
                                 <a id="add_to" href="#"><button type="submit" class="buy-product form-control btn btn-grape add-to-cart" data-id_product="{{$value->product_id}}" name="add-to-cart">
                                     <i aria-hidden="true"></i> Add to cart
                                 </button></a>
-                                <!-- <a id="buy_it" href="./cart.html">Buy It Now</a> -->
+                                <a id="buy_it" href="{{route('cart.show')}}">Buy It Now</a>
                             </div>
                         </div>
 

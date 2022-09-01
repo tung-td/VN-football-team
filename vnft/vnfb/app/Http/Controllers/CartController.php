@@ -15,7 +15,7 @@ class CartController extends Controller {
     public function show_cart_qty() {
         $cart = count(Session::get('cart'));
         $output = '';
-        $output.= '<a href="'.url('/gio-hang').'">
+        $output.= '<a href="'.route('cart.show').'">
                         <span style="
                             position: absolute; top: 15px; right: 15px; background: #f00; color: #fff; padding: 2px 2px; line-height: 1; border-radius: 5px; font-size: 11px;" 
                             class="num-cart">'.$cart.'</span>

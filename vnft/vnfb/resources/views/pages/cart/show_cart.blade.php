@@ -163,7 +163,7 @@
 
         <div class="row submit-button">
             <div class="col-5 hd-5">
-                <a href="{{url('/')}}" class="col-1 cs-1" id="back-shop">
+                <a href="{{route('product.show')}}" class="col-1 cs-1" id="back-shop">
                     <!-- <i class="ti-arrow-circle-left bc-1"></i> -->
                     <i class="material-icons-outlined">arrow_circle_left</i>
                     Back to Shopping

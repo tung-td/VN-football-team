@@ -178,3 +178,4 @@ function openSearch() {
 function closeSearch() {
     document.getElementById("search-display").style.display = "none";
 }
+  
