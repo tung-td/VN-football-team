@@ -76,5 +76,7 @@ document.getElementById("hide_de").onclick = function () {
 	document.getElementById("hide_de").style.display = 'none';
 }
 
+  
+
 
 
