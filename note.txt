@@ -24,8 +24,11 @@
 
 
 * Trình:
+- link mobile menu
 - xoá order, xoá data order cũ (sau khi hoàn thành check chuỗi thao tác mua hàng)
 - design get data focus in controller
 - Complete integrate user register/login actions
 - Add manage title (last)
-- custom edit quantity product detail
+- Product detail: custom edit quantity, backend validate discount
+
+- Backend 
