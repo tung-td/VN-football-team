@@ -180,6 +180,28 @@ function closeSearch() {
 }
   
 // Toast function
+
+// config toast
+function showSuccessCartToast(type,name,quantity) {
+    if(type == 'add_to_cart') {
+        toast({
+            title: "Successful!",
+            message: "Added " + quantity + " " + name + " into your cart.",
+            type: "success",
+            duration: 3000
+        });
+    }
+}
+function showErrorToast() {
+    toast({
+        title: "Failure!",
+        message: "An error occurred, please contact the administrator.",
+        type: "error",
+        duration: 3000
+    });
+}
+
+// Base Toast function
 function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 	const main = document.getElementById("toast");
 	if (main) {

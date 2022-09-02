@@ -5,6 +5,9 @@
 @endforeach
 
 @section('content')
+<!-- Toast -->
+<div id="toast"></div>
+
 <link rel="stylesheet" href="{{asset('public/client/css/custom/pages/shop/product_detail.css')}}">
 <!-- Product guide -->
 <div class="guide">
@@ -91,19 +94,10 @@
                                 <!-- <button type="submit" class="form-control btn btn-grape">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i> Thêm vào giỏ hàng
                                 </button> -->
-                                <a id="add_to" href="#"><button type="submit" class="buy-product form-control btn btn-grape add-to-cart" data-id_product="{{$value->product_id}}" name="add-to-cart">
-                                    <i aria-hidden="true"></i> Add to cart
-                                </button></a>
-                                <a id="buy_it" href="{{route('cart.show')}}">Buy It Now</a>
-
-                                <!-- Toast -->
-                                <div id="toast"></div>
-
-                                <div>
-                                <div onclick="showSuccessToast();" class="btn-toast  btn--success">Show success toast</div>
-                                <div onclick="showErrorToast();" class="btn-toast  btn--danger">Show error toast</div>
-                                <!-- end Toast -->
-                                </div>
+                                <a onclick="showSuccessCartToast('add_to_cart','{{$value->product_name}}',1)" id="add_to" href="#"><button type="button" class="buy-product form-control btn btn-grape add-to-cart" data-id_product="{{$value->product_id}}" name="add-to-cart">
+                                    <i aria-hidden="true"></i> Add to cart </button></a>
+                                <a id="buy_it" href="#"><button type="submit" class="buy-product form-control btn btn-grape add-to-cart" data-id_product="{{$value->product_id}}" name="add-to-cart">
+                                    <i aria-hidden="true"></i> Buy It Now </button></a>
                             </div>
                         </div>
 
@@ -328,27 +322,6 @@
     </div>
 
 </div>
-
-<script>
-  function showSuccessToast() {
-    toast({
-      title: "Thành công!",
-      message: "Bạn đã đăng ký thành công tài khoản tại F8.",
-      type: "success",
-      duration: 5000
-    });
-  }
-
-  function showErrorToast() {
-    toast({
-      title: "Thất bại!",
-      message: "Có lỗi xảy ra, vui lòng liên hệ quản trị viên.",
-      type: "error",
-      duration: 5000
-    });
-  }
-</script>
-
 <script src="{{asset('public/client/js/custom/pages/shop/product_detail.js')}}"></script>
 <!-- End product detail -->
 @endsection
