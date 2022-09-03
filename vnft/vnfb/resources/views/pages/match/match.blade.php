@@ -7,7 +7,7 @@
 <div class="next-match mt-5">
     <div class="overlay position-absolute"></div>
     <div class="content position-absolute text-light text-center mt-4">
-        <div class="logo-tournament">
+        <div data-aos="fade-down" data-aos  class="logo-tournament">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/AFC_text_logo.png/1200px-AFC_text_logo.png"
                 alt="logo-tournament">
             <div class="responsive match-date">
@@ -15,12 +15,12 @@
             </div>
         </div>
         <div class="row m-0">
-            <div class="team-left text-end">
+            <div data-aos="fade-right" data-aos class="team-left text-end">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_North_Vietnam_%281955%E2%80%931976%29.svg/230px-Flag_of_North_Vietnam_%281955%E2%80%931976%29.svg.png"
                     alt="team-left">
                 <h1><b>U23 VIETNAM</b></h1>
             </div>
-            <div class="match-vs d-flex flex-column justify-content-center">
+            <div data-aos="zoom-in" data-aos  class="match-vs d-flex flex-column justify-content-center">
                 <div class="match-date">
                     <h5>Thursday 02 June 2022</h5>
                 </div>
@@ -31,18 +31,18 @@
                     <h5>Kick Off in:</h5>
                 </div>
             </div>
-            <div class="team-right text-start">
+            <div data-aos="fade-left" data-aos  class="team-right text-start">
                 <img src="https://vcdn-vnexpress.vnecdn.net/2017/03/16/thailand-2103-1489654634.jpg"
                     alt="team-right">
                 <h1><b>U23 THAILAND</b></h1>
             </div>
         </div>
         <div class="match-countdown">
-            <div class="responsive match-kick-off">
+            <div data-aos="zoom-in" data-aos  class="responsive match-kick-off">
                 <h5>Milliy Stadion</h5>
                 <h5>Kick Off in:</h5>
             </div>
-            <div class="d-flex justify-content-center">
+            <div data-aos="flip-down" data-aos  class="d-flex justify-content-center">
                 <div class="d-flex">
                     <div>
                         <div>

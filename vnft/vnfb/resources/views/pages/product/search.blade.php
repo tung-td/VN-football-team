@@ -1,6 +1,9 @@
 @extends('layout')
 @section('title','Searching')
 @section('content')
+<!-- Toast -->
+<div id="toast"></div>
+
 <div class="container" style="min-height: 750px">
     <div class="bg-white rounded d-flex align-items-center justify-content-between" id="header-container">
         <nav class="navbar navbar-expand-lg navbar-light pl-lg-0 pl-auto"> <button class="navbar-toggler" id="icon"> <span
@@ -44,7 +47,7 @@
         </div>
     </div>
     <div id="content" class="my-5">
-        <!-- <div id="filterbar" class="collapse">
+        <div id="filterbar" class="collapse">
             <div class="box border-bottom">
                 <div class="form-group text-center">
                     <div class="btn-group" data-toggle="buttons">
@@ -123,7 +126,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         <div id="products">
             <div class="row mx-0">
                 <div class="row">
@@ -148,12 +151,12 @@
                                                     $customer_id = Session::get('id');
                                                 @endphp
                                                 @if($customer_id)   
-                                                <button type="button" class="buy-product form-control btn add-to-cart" data-id_product="{{$product->product_id}}" name="add-to-cart" style="border-radius: 50px;;">
+                                                <button onclick="showSuccessCartToast('add_to_cart','{{$product->product_name}}',1)" type="button" class="buy-product form-control btn add-to-cart" data-id_product="{{$product->product_id}}" name="add-to-cart" style="border-radius: 50px;;">
                                                     <i class="fa fa-shopping-cart"></i>
                                                 </button>
                                                 @else
                                                 <a href="{{route('client.login')}}">   
-                                                <button type="button" class="buy-product form-control btn add-to-cart" name="add-to-cart" style="border-radius: 50px;;">
+                                                <button onclick="showSuccessCartToast('add_to_cart','{{$product->product_name}}',1)" type="button" class="buy-product form-control btn add-to-cart" name="add-to-cart" style="border-radius: 50px;;">
                                                     <i class="fa fa-shopping-cart"></i>
                                                 </button>
                                                 </a>

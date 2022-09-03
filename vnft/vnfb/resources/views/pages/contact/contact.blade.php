@@ -16,7 +16,7 @@
             <input class="hj" type="text" placeholder="Name"/>
             <input class="hj" type="text" placeholder="Email"/>
             <textarea class="hj" type="text" placeholder="Message" style="height: 150px;"></textarea>
-            <input id="submit_btn" class="hj sub" type="submit" placeholder="Submit">
+            <input id="submit_btn" class="hj sub" type="submit" placeholder="Submit" value="Sent">
         </form>
     </div>
 </div>

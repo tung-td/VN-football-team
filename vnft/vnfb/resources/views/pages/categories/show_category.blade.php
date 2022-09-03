@@ -5,6 +5,9 @@
 @endforeach
 
 @section('content')
+<!-- Toast -->
+<div id="toast"></div>
+
 <div class="container" style="min-height: 750px">
     <div class="bg-white rounded d-flex align-items-center justify-content-between" id="header-container">
         <nav class="navbar navbar-expand-lg navbar-light pl-lg-0 pl-auto"> <button class="navbar-toggler" id="icon"> <span
@@ -149,7 +152,7 @@
                                         <img class="pic-2" src="{{URL('public/uploads/product/'.$product->product_image1)}}">
                                     </a>
                                     <ul class="product-links">
-                                        <li><button type="button" class="buy-product form-control btn add-to-cart" data-id_product="{{$product->product_id}}" name="add-to-cart" style="border-radius: 50px;;">
+                                        <li><button onclick="showSuccessCartToast('add_to_cart','{{$product->product_name}}',1)" type="button" class="buy-product form-control btn add-to-cart" data-id_product="{{$product->product_id}}" name="add-to-cart" style="border-radius: 50px;;">
                                             <i class="fa fa-shopping-cart"></i>
                                         </button></li>
                                         <li><a href="#"><i class="far fa-heart"></i></a></li>

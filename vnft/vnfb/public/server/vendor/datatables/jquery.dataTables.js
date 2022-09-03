@@ -11508,7 +11508,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "Không có dữ liệu trong bảng",
+			"sEmptyTable": "No data available in table",
 	
 	
 			/**
@@ -11540,7 +11540,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Đang hiển thị từ _START_ tới _END_ trong số _TOTAL_ mục",
+			"sInfo": "Showing from _START_ to _END_ of _TOTAL_ items",
 	
 	
 			/**
@@ -11561,7 +11561,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Đang hiển thị từ 0 tới 0 trong số 0 mục",
+			"sInfoEmpty": "Showing from 0 to 0 of 0 items",
 	
 	
 			/**
@@ -11583,7 +11583,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(được lọc từ _MAX_ mục)",
+			"sInfoFiltered": "(filtered from _MAX_ items)",
 	
 	
 			/**
@@ -11701,7 +11701,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Hiển thị _MENU_ mục",
+			"sLengthMenu": "Display _MENU_ items",
 	
 	
 			/**
@@ -11725,7 +11725,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLoadingRecords": "Đang tải...",
+			"sLoadingRecords": "Loading records...",
 	
 	
 			/**
@@ -11746,7 +11746,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sProcessing": "Đang xử lý...",
+			"sProcessing": "Processing...",
 	
 	
 			/**
@@ -11781,7 +11781,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Tìm kiếm:",
+			"sSearch": "Search:",
 	
 	
 			/**
@@ -11792,7 +11792,7 @@
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.searchPlaceholder
 			 */
-			"sSearchPlaceholder": "Tìm kiếm...",
+			"sSearchPlaceholder": "Search...",
 	
 	
 			/**
@@ -11839,7 +11839,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "Không tìm thấy kết quả!"
+			"sZeroRecords": "No records to display!"
 		},
 	
 	

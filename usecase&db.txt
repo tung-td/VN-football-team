@@ -130,6 +130,7 @@ DATABASE:
 + type
 + stadium
 + stadium_background
++ ticket(yes/no)
 + datetime
 + timestamp
 
