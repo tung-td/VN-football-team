@@ -94,7 +94,7 @@
                                 <!-- <button type="submit" class="form-control btn btn-grape">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i> Thêm vào giỏ hàng
                                 </button> -->
-                                <a onclick="showSuccessCartToast('add_to_cart','{{$value->product_name}}',1)" id="add_to" href="#"><button type="button" class="buy-product form-control btn btn-grape add-to-cart" data-id_product="{{$value->product_id}}" name="add-to-cart">
+                                <a onclick="showSuccessCartToast('add_to_cart','{{$value->product_name}}',1,'{{URL('/cart')}}')" id="add_to" href="#"><button type="button" class="buy-product form-control btn btn-grape add-to-cart" data-id_product="{{$value->product_id}}" name="add-to-cart">
                                     <i aria-hidden="true"></i> Add to cart </button></a>
                                 <a id="buy_it" href="#"><button type="submit" class="buy-product form-control btn btn-grape add-to-cart" data-id_product="{{$value->product_id}}" name="add-to-cart">
                                     <i aria-hidden="true"></i> Buy It Now </button></a>

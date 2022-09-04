@@ -835,12 +835,12 @@
                                     <img class="pic-2" src="{{URL('public/uploads/product/'.$product->product_image1)}}">
                                 </a>
                                 <ul class="product-links">
-                                    <li><button onclick="showSuccessCartToast('add_to_cart','{{$product->product_name}}',1)" type="button" class="buy-product form-control btn add-to-cart" data-id_product="{{$product->product_id}}" name="add-to-cart" style="border-radius: 50px;;">
+                                    <li><button onclick="showSuccessCartToast('add_to_cart','{{$product->product_name}}',1,'{{URL('/cart')}}');" type="button" class="buy-product form-control btn add-to-cart" data-id_product="{{$product->product_id}}" id="add-to-cart" name="add-to-cart" style="border-radius: 50px;">
                                         <i class="fa fa-shopping-cart"></i>
                                     </button></li>
                                     <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                    <li><a href="{{URL('chi-tiet-san-pham/'.$product->product_id)}}"><i
-                                                class="fa fa-search"></i></a></li>
+                                    <li><a href="{{URL('chi-tiet-san-pham/'.$product->product_id)}}">
+                                        <i class="fa fa-search"></i></a></li>
                                 </ul>
                             </div>
                             <div class="product-content">

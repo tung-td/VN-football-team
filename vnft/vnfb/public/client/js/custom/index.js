@@ -182,13 +182,14 @@ function closeSearch() {
 // Toast function
 
 // config toast
-function showSuccessCartToast(type,name,quantity) {
+function showSuccessCartToast(type,name,quantity,link) {
     if(type == 'add_to_cart') {
         toast({
             title: "Successful!",
             message: "Added " + quantity + " " + name + " into your cart.",
             type: "success",
-            duration: 3000
+            duration: 100000,
+            link: link
         });
     }
 }
@@ -202,7 +203,7 @@ function showErrorToast() {
 }
 
 // Base Toast function
-function toast({ title = "", message = "", type = "info", duration = 3000 }) {
+function toast({ title = "", message = "", type = "info", duration = 3000, link = "" }) {
 	const main = document.getElementById("toast");
 	if (main) {
 	  const toast = document.createElement("div");
@@ -215,9 +216,11 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 	  // Remove toast when clicked
 	  toast.onclick = function (e) {
 		if (e.target.closest(".toast__close")) {
-		  main.removeChild(toast);
-		  clearTimeout(autoRemoveId);
-		}
+            main.removeChild(toast);
+            clearTimeout(autoRemoveId);
+		} else {
+            window.location.href = link;
+        }
 	  };
   
 	  const icons = {

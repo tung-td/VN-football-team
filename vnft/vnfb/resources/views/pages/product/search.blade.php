@@ -151,12 +151,12 @@
                                                     $customer_id = Session::get('id');
                                                 @endphp
                                                 @if($customer_id)   
-                                                <button onclick="showSuccessCartToast('add_to_cart','{{$product->product_name}}',1)" type="button" class="buy-product form-control btn add-to-cart" data-id_product="{{$product->product_id}}" name="add-to-cart" style="border-radius: 50px;;">
+                                                <button onclick="showSuccessCartToast('add_to_cart','{{$product->product_name}}',1,'{{URL('/cart')}}')" type="button" class="buy-product form-control btn add-to-cart" data-id_product="{{$product->product_id}}" name="add-to-cart" style="border-radius: 50px;;">
                                                     <i class="fa fa-shopping-cart"></i>
                                                 </button>
                                                 @else
                                                 <a href="{{route('client.login')}}">   
-                                                <button onclick="showSuccessCartToast('add_to_cart','{{$product->product_name}}',1)" type="button" class="buy-product form-control btn add-to-cart" name="add-to-cart" style="border-radius: 50px;;">
+                                                <button onclick="showSuccessCartToast('add_to_cart','{{$product->product_name}}',1,'{{URL('/cart')}}')" type="button" class="buy-product form-control btn add-to-cart" name="add-to-cart" style="border-radius: 50px;;">
                                                     <i class="fa fa-shopping-cart"></i>
                                                 </button>
                                                 </a>

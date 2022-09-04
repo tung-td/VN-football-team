@@ -55,7 +55,7 @@
             </ul>
         </li>
         <li><a href="{{route('match')}}">Tickets</a></li>
-        <li><a href="{{url('/lien-he')}}">Contact</a></li>
+        <li><a href="{{route('contact')}}">Contact</a></li>
 
     </ul>
 
@@ -101,9 +101,9 @@
             <!-- <i class="menu-icon ti-menu"></i> -->
             <i class="material-icons">menu</i>
             <div class="subnav">
-                <li><a href="{{route('contact')}}">VN Squad</a></li>
-                <li><a href="{{route('contact')}}">News</a></li>
-                <li><a href="{{route('contact')}}">Shop</a></li>
+                <li><a href="{{route('vnsquad')}}">VN Squad</a></li>
+                <li><a href="{{route('news')}}">News</a></li>
+                <li><a href="{{route('product.show')}}">Shop</a></li>
                 <li><a href="{{route('match')}}">Tickets</a></li>
                 <li><a href="{{route('contact')}}">Contact</a></li>
             </div>

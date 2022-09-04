@@ -185,7 +185,7 @@
 </script>
 
 <!-- Thông báo Cart -->
-<script type="text/javascript">
+<script>
     $(document).ready(function() {
         // Show cart Quantity
         show_cart_qty();
@@ -220,19 +220,19 @@
                     
                 },
                 success:function(data) {
-                    swal({
-                        title: "Đã thêm vào giỏ hàng",
-                        text: "Bạn có thể tiếp tục mua sắm hoặc đi đến giỏ hàng để thanh toán",
-                        showCancelButton: true,
-                        cancelButtonText: "Trở lại",
-                        cancelButtonClass: "btn-danger",
-                        confirmButtonClass: "btn-grape",
-                        confirmButtonText: "Đi đến giỏ hàng",
-                        closeOnConfirm: false
-                    },
-                    function() {
-                        window.location.href = "{{url('/gio-hang')}}";
-                    });
+                    // swal({
+                    //     title: "Đã thêm vào giỏ hàng",
+                    //     text: "Bạn có thể tiếp tục mua sắm hoặc đi đến giỏ hàng để thanh toán",
+                    //     showCancelButton: true,
+                    //     cancelButtonText: "Trở lại",
+                    //     cancelButtonClass: "btn-danger",
+                    //     confirmButtonClass: "btn-grape",
+                    //     confirmButtonText: "Đi đến giỏ hàng",
+                    //     closeOnConfirm: false
+                    // },
+                    // function() {
+                    //     window.location.href = "{{url('/gio-hang')}}";
+                    // });
                     show_cart_qty();
                 }
             });
