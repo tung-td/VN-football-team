@@ -173,7 +173,8 @@ var loadDemoImgFile = function(event,x) {
             //     }
             // });
             $('#hehe').html("Hello <b>world</b>!");
-        });
+        }); 
+        // oafgoqejgoqejwgjeq
     });
 </script>
 @endsection
