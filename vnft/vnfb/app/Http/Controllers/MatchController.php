@@ -57,10 +57,16 @@ class MatchController extends Controller
 
     public function showTeaminSquad(Request $request)
 	{
-		if ($request->ajax()) {
-			$teams = DB::table('tbl_team')->where('squad', $request)->select('id', 'team_name')->get();
-			return response()->json($teams);
-		}
+        $data = $request->all();
+        if($data['action']){
+            $output = '';
+            $select_team = DB::table('tbl_team')->where('squad',$data['squad'])->get();
+            $output.= '<option> --- Select team --- </option>';
+            foreach($select_team as $key => $team){
+                $output.= '<option value=" '.$team->id.' ">'.$team->team_name.'</option>';
+            }
+        }
+        echo $output;
 	}
 
     public function list_team() {

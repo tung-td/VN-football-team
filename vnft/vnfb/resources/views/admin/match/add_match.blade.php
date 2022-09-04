@@ -105,15 +105,16 @@
                                 </form>
                                 <form action="" method="">
                                     @csrf
-                                    <select class="form-control pro-edt-select form-control-primary" name="squad">
+                                    <select id="squad" class="form-control pro-edt-select form-control-primary choose" name="squad">
                                         <option value="">---</option>
                                         <option value="1">Men</option>
                                         <option value="2">Women</option>
                                         <option value="3">Youngs</option>
                                         <option value="4">Legends</option>
                                     </select>
-                                    <select class="form-control pro-edt-select form-control-primary" name="team">
-                                    </select>
+                                    <!-- <select id="team" class="form-control pro-edt-select form-control-primary" name="team">
+                                    </select> -->
+                                    <div id="hehe" class="team">oke</div>
                                 </form>
                             </div>
                         </div>
@@ -133,7 +134,7 @@ var loadDemoImgFile = function(event,x) {
     }
 };
 </script>
-
+<!-- 
 <script type="text/javascript">
     var url = "{{ route('team.select') }}";
     $("select[name='squad']").change(function(){
@@ -156,30 +157,23 @@ var loadDemoImgFile = function(event,x) {
             }
         });
     });
-</script>
-<script type="text/javascript">
+</script> -->
+<script>
     $(document).ready(function(){
-        $('.choose').on('change',function(){
-            var action = $(this).attr('id');
-            var ma_id = $(this).val();
-            var _token = $('input[name="_token"]').val();
-            var result = '';
-
-            if(action == 'city') {
-                result = 'province';
-            } else {
-                result = 'wards';
-            }
-            $.ajax({
-                url : '{{url('/select-delivery')}}',
-                method: 'POST',
-                data:{action:action, ma_id:ma_id, _token:_token},
-                success:function(data){
-                    $('#'+result).html(data); 
-                }
-            });
+        $("#squad").change(function(){
+            // var action = $(this).attr('id');
+            // var squad = $(this).val();
+            // var _token = $('input[name="_token"]').val();
+            // $.ajax({
+            //     url : '{{url('/showTeaminSquad')}}',
+            //     method: 'POST',
+            //     data:{action:action, squad:squad, _token:_token},
+            //     success:function(data){
+            //         $('#team').html(data);
+            //     }
+            // });
+            $('#hehe').html("Hello <b>world</b>!");
         });
-    })   
-        
+    });
 </script>
 @endsection
