@@ -101,11 +101,11 @@
             <!-- <i class="menu-icon ti-menu"></i> -->
             <i class="material-icons">menu</i>
             <div class="subnav">
-                <li><a href="./pages/myutd/myUtd.html">VN Squad</a></li>
-                <li><a href="./pages/news/news.html">News</a></li>
-                <li><a href="./pages/shop/collections.html">Shop</a></li>
-                <li><a href="./pages/ticket/ticket_match.html">Tickets</a></li>
-                <li><a href="{{url('/lien-he')}}">Contact</a></li>
+                <li><a href="{{route('contact')}}">VN Squad</a></li>
+                <li><a href="{{route('contact')}}">News</a></li>
+                <li><a href="{{route('contact')}}">Shop</a></li>
+                <li><a href="{{route('match')}}">Tickets</a></li>
+                <li><a href="{{route('contact')}}">Contact</a></li>
             </div>
         </div>
     </div>

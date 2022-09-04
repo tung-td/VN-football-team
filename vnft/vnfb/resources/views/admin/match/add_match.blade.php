@@ -51,6 +51,16 @@
                                                     </span>
                                                     <input name="match_parameters" type="text" class="form-control" placeholder="Match Parameters">
                                                 </div>
+                                                <select id="squad" class="form-control pro-edt-select form-control-primary choose" name="squad">
+                                                    <option value=""> --- Select Squad --- </option>
+                                                    <option value="1">Men</option>
+                                                    <option value="2">Women</option>
+                                                    <option value="3">Youngs</option>
+                                                    <option value="4">Legends</option>
+                                                </select>
+                                                <select id="team" class="form-control pro-edt-select form-control-primary" name="team">
+                                                    <option value=""> --- Select Team --- </option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -80,15 +90,6 @@
                                                     <option value="1">Stocking</option>
                                                     <option value="0">Out of stock</option>
                                                 </select>
-                                                <!-- <select class="form-control pro-edt-select form-control-primary" name="squad">
-                                                    <option value="">---</option>
-                                                    <option value="1">Men</option>
-                                                    <option value="2">Women</option>
-                                                    <option value="3">Youngs</option>
-                                                    <option value="4">Legends</option>
-                                                </select>
-                                                <select class="form-control pro-edt-select form-control-primary" name="team">
-                                                </select> -->
                                             </div>
                                         </div>
                                     </div>
@@ -103,7 +104,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <form action="" method="">
+                                <!-- <form action="" method="">
                                     @csrf
                                     <select id="squad" class="form-control pro-edt-select form-control-primary choose" name="squad">
                                         <option value="">---</option>
@@ -112,10 +113,10 @@
                                         <option value="3">Youngs</option>
                                         <option value="4">Legends</option>
                                     </select>
-                                    <!-- <select id="team" class="form-control pro-edt-select form-control-primary" name="team">
-                                    </select> -->
+                                    <select id="team" class="form-control pro-edt-select form-control-primary" name="team">
+                                    </select>
                                     <div id="hehe" class="team">oke</div>
-                                </form>
+                                </form> -->
                             </div>
                         </div>
                     </div>
@@ -158,23 +159,23 @@ var loadDemoImgFile = function(event,x) {
         });
     });
 </script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
         $("#squad").change(function(){
-            // var action = $(this).attr('id');
-            // var squad = $(this).val();
-            // var _token = $('input[name="_token"]').val();
-            // $.ajax({
-            //     url : '{{url('/showTeaminSquad')}}',
-            //     method: 'POST',
-            //     data:{action:action, squad:squad, _token:_token},
-            //     success:function(data){
-            //         $('#team').html(data);
-            //     }
-            // });
-            $('#hehe').html("Hello <b>world</b>!");
-        }); 
-        // oafgoqejgoqejwgjeq
+            var action = $(this).attr('id');
+            var squad = $(this).val();
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url : '{{url('/showTeaminSquad')}}',
+                method: 'POST',
+                data:{action:action, squad:squad, _token:_token},
+                success:function(data){
+                    $('#team').html(data);
+                }
+            });
+        });
+        // <div id="hehe" class="team">oke</div>
     });
 </script>
 @endsection
