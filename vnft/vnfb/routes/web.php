@@ -239,6 +239,7 @@ Route::any('/ckfinder/browser', '\CKSource\CKFinderBridge\Controller\CKFinderCon
     // Route::get('/edit-team/{team_id}', [MatchController::class, 'edit_team']);
     Route::get('/delete-team/{team_id}', [MatchController::class, 'delete_team']);
     Route::post('/update-team/{team_id}', [MatchController::class, 'update_team']);
+    Route::post('/showTeaminSquad', [MatchController::class, 'showTeaminSquad'])->name('team.select');
 
     // ----- Tournament -----
     Route::get('/tournament/add', [MatchController::class, 'add_tournament'])->name('tournament.add');
@@ -247,3 +248,11 @@ Route::any('/ckfinder/browser', '\CKSource\CKFinderBridge\Controller\CKFinderCon
     // Route::get('/edit-tournament/{tournament_id}', [MatchController::class, 'edit_tournament']);
     Route::get('/delete-tournament/{tournament_id}', [MatchController::class, 'delete_tournament']);
     Route::post('/update-tournament/{tournament_id}', [MatchController::class, 'update_tournament']);
+
+    // ----- Match -----
+    Route::get('/match/add', [MatchController::class, 'add_match'])->name('match.add');
+    Route::get('/match/list', [MatchController::class, 'list_match'])->name('match.list');
+    Route::post('/save-match', [MatchController::class, 'save_match']);
+    // Route::get('/edit-match/{match_id}', [MatchController::class, 'edit_match']);
+    Route::get('/delete-match/{match_id}', [MatchController::class, 'delete_match']);
+    Route::post('/update-match/{match_id}', [MatchController::class, 'update_match']);

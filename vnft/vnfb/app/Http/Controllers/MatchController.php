@@ -55,6 +55,14 @@ class MatchController extends Controller
         return view('admin.team.add_team');
     }
 
+    public function showTeaminSquad(Request $request)
+	{
+		if ($request->ajax()) {
+			$teams = DB::table('tbl_team')->where('squad', $request)->select('id', 'team_name')->get();
+			return response()->json($teams);
+		}
+	}
+
     public function list_team() {
         $this->AuthLogin(); //Gọi hàm kiểm tra đăng nhập
         $list_team = DB::table('tbl_team')->orderBy('id', 'desc')->get();
@@ -69,6 +77,7 @@ class MatchController extends Controller
         $this->AuthLogin();
         $data = array();
         $data['team_name'] = $request->team_name;
+        $data['squad'] = $request->squad;
         $get_image = $request->file('team_image');
 
         if($get_image) {
@@ -124,6 +133,44 @@ class MatchController extends Controller
         DB::table('tbl_tournament')->insert($data);
         Session::put('message', 'Add tournament successfully!');
         return redirect()->route('tournament.list');
+    }
+
+    // Match
+    public function add_match() {
+        $this->AuthLogin(); //Gọi hàm kiểm tra đăng nhập
+        return view('admin.match.add_match');
+    }
+
+    public function list_match() {
+        $this->AuthLogin(); //Gọi hàm kiểm tra đăng nhập
+        $list_match = DB::table('tbl_match')->orderBy('id', 'desc')->get();
+        $manager_match = view('admin.match.list_match')->with('list_match', $list_match);
+        // echo '<pre>';
+        // print_r($list_match);
+        // echo '</pre>';
+        return view('admin.layout')->with('admin.match.list_match', $manager_match);
+    }
+
+    public function save_match(Request $request) {
+        $this->AuthLogin();
+        $data = array();
+        $data['match_name'] = $request->match_name;
+        $get_image = $request->file('match_image');
+
+        if($get_image) {
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image.rand(0,999).'.'.$get_image->getClientOriginalExtension();
+            $get_image->move('public/uploads/match', $new_image);
+            $data['match_image'] = $new_image;
+            DB::table('tbl_match')->insert($data);
+            Session::put('message', 'Add match successfully!');
+            return redirect()->route('match.list');
+        }
+        $data['match_image'] = '';
+        DB::table('tbl_match')->insert($data);
+        Session::put('message', 'Add match successfully!');
+        return redirect()->route('match.list');
     }
 
     /**

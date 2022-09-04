@@ -144,10 +144,12 @@
                             <span class="mini-click-non">Matches</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <!-- <li><a title="Add Team" href="{{route('team.add')}}"><span class="mini-sub-pro">Team Add</span></a></li> -->
-                            <li><a title="List Team" href="{{route('team.list')}}"><span class="mini-sub-pro">Team List</span></a></li>
+                            <li><a title="Add Match" href="{{route('match.add')}}"><span class="mini-sub-pro">Match Add</span></a></li>
+                            <li><a title="List Match" href="{{route('match.list')}}"><span class="mini-sub-pro">Match List</span></a></li>
                             <!-- <li><a title="Add Tournament" href="{{route('tournament.add')}}"><span class="mini-sub-pro">Tournament Add</span></a></li> -->
                             <li><a title="List Tournament" href="{{route('tournament.list')}}"><span class="mini-sub-pro">Tournament List</span></a></li>
+                            <!-- <li><a title="Add Team" href="{{route('team.add')}}"><span class="mini-sub-pro">Team Add</span></a></li> -->
+                            <li><a title="List Team" href="{{route('team.list')}}"><span class="mini-sub-pro">Team List</span></a></li>
                         </ul>
                     </li>
 

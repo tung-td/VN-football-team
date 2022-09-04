@@ -29,10 +29,6 @@
                                                     </span>
                                                     <input name="team_name" type="text" class="form-control" placeholder="Team Name">
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <div class="review-content-section">
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
                                                         <!-- <i class="icon nalika-edit" aria-hidden="true"></i> -->
@@ -41,6 +37,16 @@
                                                     <input name="team_image" type="file" class="form-control" placeholder="Team Image" accept="image/*" onchange="loadDemoImgFile(event,1)">
                                                     <img id="output1" style="max-width:50px">
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                <select name="squad" class="form-control pro-edt-select form-control-primary">
+                                                    <option value="1">Men</option>
+                                                    <option value="2">Women</option>
+                                                    <option value="3">Youngs</option>
+                                                    <option value="4">Legends</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>

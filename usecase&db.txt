@@ -112,6 +112,7 @@ DATABASE:
 + id
 + team_name
 + team_image
++ squad
 + timestamp
 
 - Tournament:

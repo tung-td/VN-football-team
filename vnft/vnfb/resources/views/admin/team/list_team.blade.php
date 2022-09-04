@@ -32,6 +32,7 @@
                         <th class="text-center">#</th>
                         <th style="width: 80px;" class="text-center">Image</th>
                         <th>Name</th>
+                        <th>Squad</th>
                         <th class="text-center">Action</th>
                     </tr>
                 </thead>
@@ -43,6 +44,15 @@
                             <th class="text-center-height text-center">{{$i}}</th>
                             <td style="padding: .5rem;" class="text-center"><img src="{{URL('public/uploads/team/'.$team->team_image)}}" width="80" height="80" alt="{{ $team->team_name}}"></td>
                             <td>{{ $team->team_name}}</td>
+                            <td>
+                                @switch($team->squad)
+                                    @case(1) Men @break
+                                    @case(2) Women @break
+                                    @case(3) Youngs @break
+                                    @case(4) Legends @break
+                                    @default None
+                                @endswitch
+                            </td>
                             <td class="text-center">
                                 <a href="{{URL('/edit-team/'.$team->id)}}"><button class="btn btn-warning mb-1"><i class="fas fa-edit"></i></button></a>
                                 <a href="{{URL('/delete-team/'.$team->id)}}" onclick="return confirm('Sure you wanna delete this team?')"><button class="btn btn-danger mb-1"><i class="fas fa-trash-alt"></i></button></a>

@@ -48,38 +48,20 @@
                         <td>{{ $player->player_name}}</td>
                         <td>
                             @switch($player->player_squad)
-                                @case(1)
-                                    Men
-                                    @break
-                                @case(2)
-                                    Women
-                                    @break
-                                @case(3)
-                                    Youngs
-                                    @break
-                                @case(4)
-                                    Legends
-                                    @break
-                                @default
-                                    None
+                                @case(1) Men @break
+                                @case(2) Women @break
+                                @case(3) Youngs @break
+                                @case(4) Legends @break
+                                @default None
                             @endswitch
                         </td>
                         <td>
                             @switch($player->player_position)
-                                @case(1)
-                                    Goalkeeper
-                                    @break
-                                @case(2)
-                                    Defender
-                                    @break
-                                @case(3)
-                                    Midfielder
-                                    @break
-                                @case(4)
-                                    Forward
-                                    @break
-                                @default
-                                    None
+                                @case(1) Goalkeeper @break
+                                @case(2) Defender @break
+                                @case(3) Midfielder @break
+                                @case(4) Forward @break
+                                @default None
                             @endswitch
                         </td>
                         <td>{{ $player->player_shirt_num}}</td>
