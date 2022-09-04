@@ -97,7 +97,7 @@ Route::get('/delete-coupon/{coupon_id}', [CouponController::class, 'delete_coupo
 Route::get('/gioi-thieu', [IntroduceController::class, 'index'])->name('introduce');
 
     //------Contact-----
-Route::get('/lien-he', [ContactController::class, 'contact']);
+Route::get('/lien-he', [ContactController::class, 'contact'])->name('contact');
 Route::get('/cam-on', [ContactController::class, 'thankyou'])->name('thankyou');
 
     //------Match-----

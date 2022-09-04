@@ -61,7 +61,7 @@ class MatchController extends Controller
         if($data['action']){
             $output = '';
             $select_team = DB::table('tbl_team')->where('squad',$data['squad'])->get();
-            $output.= '<option> --- Select team --- </option>';
+            $output.= '<option> --- Select Team --- </option>';
             foreach($select_team as $key => $team){
                 $output.= '<option value=" '.$team->id.' ">'.$team->team_name.'</option>';
             }
