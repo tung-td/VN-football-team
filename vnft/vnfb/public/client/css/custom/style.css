@@ -199,11 +199,6 @@ ul {
     padding-left: 10px;
 }
 
-.header-options .header-sign,
-#header .mobile-menu-btn {
-    padding-right: 25px !important;
-}
-
 .header-options select {
     background-color: var(--basic-red);
     white-space: pre;
@@ -218,6 +213,11 @@ ul {
     display: flex;
 }
 
+.header-sign .sign-items.material-icons {
+    line-height: 75px;
+}
+
+.header-cart .sign-items.material-icons,
 .header-sign .sign-items,
 .header-options .search-btn,
 .header-options .help-btn,
@@ -230,10 +230,15 @@ ul {
 .header-options .search-btn:hover,
 #header .mobile-menu-btn .menu-icon:hover,
 .header-sign .sign-items:hover,
-.header-options .help-btn:hover {
+.header-options > .header-cart:hover,
+.header-options > .help-btn:hover{
     opacity: 0.6;
     cursor: pointer;
-    margin-top: -7px;
+    margin-top: -7px!important;
+}
+
+#show-cart-qty {
+    margin: 2px 22px 0px 8px;
 }
 
 .sign-items.fa.fa-user-o {

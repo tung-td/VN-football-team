@@ -83,11 +83,11 @@
         @endif
 
         @if(Session::get('cart') == true)
-        <div id="show-cart-qty" class="header-sign">
+        <div id="show-cart-qty" class="header-cart">
             <i class="sign-items material-icons">shopping_cart</i>
         </div>
         @else
-        <div id="show-cart-qty" class="header-sign">
+        <div id="show-cart-qty" class="header-cart">
             <a href="{{route('cart.show')}}">
                 <span style="
                     position: absolute; top: 15px; right: 15px; background: #f00; color: #fff; padding: 2px 2px; line-height: 1; border-radius: 5px; font-size: 11px;" 
