@@ -30,7 +30,7 @@
 <!-- End Slider -->
 
 <!-- START CONTENT -->
-<div class="content" style="padding-top: 30px">
+<div class="content" style="padding-top: 3.5em">
 
     <!-- Matches / Tickets -->
     <div class="matches-tickets bg-dark m-auto my-4">
@@ -866,7 +866,7 @@
 
     <!-- Moments -->
     <div class="Moments "
-        style="background: url(public/client/img/custom/img2/background/san-my-dinh-ap-dung-nhieu-bien-phap-gian-cach-khi-don-cdv-den-san-14-16363575343192139524093.jpg); background-size: cover; ">
+        style="background: url(https://st.quantrimang.com/photos/image/2021/02/04/Hinh-nen-Quoc-Ky-VN-13.jpg); background-position: center; background-size: cover">
         <div class="moments-content ">
             <div class="Moment_header ">
                 <img class="header_logo " src="{{asset('public/client/img/custom/img2/logo/LogoVN.webp')}}" alt=" ">
@@ -1046,9 +1046,9 @@
 
     <!-- Cup Trophies -->
     <div class="content__cup ">
-        <div class="cup-logo ">
+        <div class="cup-logo">
             <!-- <img src="./assests/img2/logo/225px-Flag_of_Vietnam.svg.png" alt=" "> -->
-            <h2>Vietnam's Titles</h2>
+            <h2 class="h3">Vietnam's Titles</h2>
         </div>
 
         <div class="cups__slider " style="color: #000; ">

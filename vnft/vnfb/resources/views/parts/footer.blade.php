@@ -1,4 +1,4 @@
-<div class="footer " style="margin-bottom: -42px; ">
+<div class="footer " style="margin-bottom:; ">
     <div class="footer__social-links ">
         <div class="footer-logo ">
             <img src="{{asset('public/client/img/custom/img2/logo/LogoVN.webp')}} " alt=" ">
@@ -51,6 +51,14 @@
     </div>
 
     <div class="footer-copyright ">
+        <!-- <div class="col footer_copyright_text">
+            <ul style="display: flex; flex-direction: row;">
+                <li>privacy policy</li>
+                <li>cookies policy</li>
+                <li>contact us</li>
+                <li>notification management</li>
+            </ul>
+        </div> -->
         <div class="col footer_copyright_text">
             VIETNAM © 2022 All rights reserved
         </div>
