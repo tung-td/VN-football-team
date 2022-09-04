@@ -213,8 +213,8 @@ ul {
     display: flex;
 }
 
-.header-sign .sign-items.material-icons {
-    line-height: 75px;
+.header-sign > .sign-items {
+    line-height: 70px;
 }
 
 .header-cart .sign-items.material-icons,
@@ -238,7 +238,8 @@ ul {
 }
 
 #show-cart-qty {
-    margin: 2px 22px 0px 8px;
+    line-height: 70px !important;
+    margin: 5px 22px 0px 8px;
 }
 
 .sign-items.fa.fa-user-o {
