@@ -60,10 +60,18 @@ class MatchController extends Controller
         $data = $request->all();
         if($data['action']){
             $output = '';
-            $select_team = DB::table('tbl_team')->where('squad',$data['squad'])->get();
-            $output.= '<option> --- Select Team --- </option>';
-            foreach($select_team as $key => $team){
-                $output.= '<option value=" '.$team->id.' ">'.$team->team_name.'</option>';
+            if($data['action']=="squad") {
+                $select_team = DB::table('tbl_team')->where('squad',$data['squad'])->get();
+                $output.= '<option> --- Select Team A --- </option>';
+                foreach($select_team as $key => $team){
+                    $output.= '<option value=" '.$team->id.' ">'.$team->team_name.'</option>';
+                }
+            } else {
+                $select_team = DB::table('tbl_team')->where('squad',$data['squad'])->where('id','!=',$data['teamA'])->get();
+                $output.= '<option> --- Select Team B --- </option>';
+                foreach($select_team as $key => $team){
+                    $output.= '<option value=" '.$team->id.' ">'.$team->team_name.'</option>';
+                }
             }
         }
         echo $output;
@@ -144,7 +152,8 @@ class MatchController extends Controller
     // Match
     public function add_match() {
         $this->AuthLogin(); //Gọi hàm kiểm tra đăng nhập
-        return view('admin.match.add_match');
+        $tournaments = DB::table('tbl_tournament')->orderBy('id','asc')->get();
+        return view('admin.match.add_match')->with('tournaments', $tournaments);
     }
 
     public function list_match() {
@@ -160,98 +169,31 @@ class MatchController extends Controller
     public function save_match(Request $request) {
         $this->AuthLogin();
         $data = array();
-        $data['match_name'] = $request->match_name;
-        $get_image = $request->file('match_image');
+        $data['tournament_id'] = $request->tournament;
+        $data['squad'] = $request->squad;
+        $data['teamA_id'] = $request->teamA;
+        $data['teamB_id'] = $request->teamB;
+        $data['stadium'] = $request->stadium;
+        $data['ticket'] = $request->ticket;
+        $get_image = $request->file('stadium_background');
+
+        if($data['ticket'] == 1) {
+            
+        }
 
         if($get_image) {
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));
             $new_image = $name_image.rand(0,999).'.'.$get_image->getClientOriginalExtension();
             $get_image->move('public/uploads/match', $new_image);
-            $data['match_image'] = $new_image;
+            $data['stadium_background'] = $new_image;
             DB::table('tbl_match')->insert($data);
             Session::put('message', 'Add match successfully!');
             return redirect()->route('match.list');
         }
-        $data['match_image'] = '';
+        $data['stadium_background'] = '';
         DB::table('tbl_match')->insert($data);
         Session::put('message', 'Add match successfully!');
         return redirect()->route('match.list');
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

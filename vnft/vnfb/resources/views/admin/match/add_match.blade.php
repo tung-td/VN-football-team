@@ -22,44 +22,24 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="review-content-section">
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon">
-                                                        <!-- <i class="icon nalika-user" aria-hidden="true"></i> -->
-                                                        <i class="material-icons" aria-hidden="true">drive_file_rename_outline</i>
-                                                    </span>
-                                                    <input name="match_name" type="text" class="form-control" placeholder="Match Name">
-                                                </div>
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon">
-                                                        <!-- <i class="icon nalika-edit" aria-hidden="true"></i> -->
-                                                        <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
-                                                    </span>
-                                                    <input name="match_image2" type="file" class="form-control" placeholder="Match Image" accept="image/*" onchange="loadDemoImgFile(event,3)">
-                                                    <img id="output3" style="max-width:50px">
-                                                </div>
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon">
-                                                        <!-- <i class="fa fa-usd" aria-hidden="true"></i> -->
-                                                        <i class="material-icons" aria-hidden="true">request_quote</i>
-                                                    </span>
-                                                    <input name="match_price" type="text" class="form-control" placeholder="Price">
-                                                </div>
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon">
-                                                        <!-- <i class="icon nalika-new-file" aria-hidden="true"></i> -->
-                                                        <i class="material-icons" aria-hidden="true">assessment</i>
-                                                    </span>
-                                                    <input name="match_parameters" type="text" class="form-control" placeholder="Match Parameters">
-                                                </div>
-                                                <select id="squad" class="form-control pro-edt-select form-control-primary choose" name="squad">
+                                                <select id="tournament" name="tournament" class="form-control pro-edt-select form-control-primary">
+                                                    <option value=""> --- Select Tournament --- </option>
+                                                    @foreach($tournaments as $key => $tournament)
+                                                        <option value="{{$tournament->id}}">{{$tournament->tournament_name}}</option>
+                                                    @endforeach
+                                                </select>
+                                                <select id="squad" class="form-control pro-edt-select form-control-primary select-team-in-squad" name="squad">
                                                     <option value=""> --- Select Squad --- </option>
                                                     <option value="1">Men</option>
                                                     <option value="2">Women</option>
                                                     <option value="3">Youngs</option>
                                                     <option value="4">Legends</option>
                                                 </select>
-                                                <select id="team" class="form-control pro-edt-select form-control-primary" name="team">
-                                                    <option value=""> --- Select Team --- </option>
+                                                <select id="teamA" class="form-control pro-edt-select form-control-primary select-team-in-squad" name="teamA">
+                                                    <option value=""> --- Select Team A --- </option>
+                                                </select>
+                                                <select id="teamB" class="form-control pro-edt-select form-control-primary" name="teamB">
+                                                    <option value=""> --- Select Team B --- </option>
                                                 </select>
                                             </div>
                                         </div>
@@ -67,28 +47,22 @@
                                             <div class="review-content-section">
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
-                                                        <!-- <i class="icon nalika-favorites" aria-hidden="true"></i> -->
-                                                        <i class="material-icons" aria-hidden="true">description</i>
+                                                        <!-- <i class="icon nalika-user" aria-hidden="true"></i> -->
+                                                        <i class="material-icons-outlined" aria-hidden="true">stadium</i>
                                                     </span>
-                                                    <textarea name="match_desc" row="3" type="text" class="form-control" placeholder="Match Description"></textarea>
+                                                    <input name="stadium" type="text" class="form-control" placeholder="Stadium">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
-                                                        <!-- <i class="icon nalika-favorites" aria-hidden="true"></i> -->
-                                                        <i class="material-icons" aria-hidden="true">edit_note</i>
+                                                        <!-- <i class="icon nalika-edit" aria-hidden="true"></i> -->
+                                                        <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
                                                     </span>
-                                                    <textarea name="match_content" row="3" type="text" class="form-control" placeholder="Match Content"></textarea>
+                                                    <input name="stadium_background" type="file" class="form-control" placeholder="Stadium Background" accept="image/*" onchange="loadDemoImgFile(event,1)">
+                                                    <img id="output1" style="max-width:50px">
                                                 </div>
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon">
-                                                        <!-- <i class="icon nalika-favorites" aria-hidden="true"></i> -->
-                                                        <i class="material-icons" aria-hidden="true">info</i>
-                                                    </span>
-                                                    <textarea name="match_details" row="3" type="text" class="form-control" placeholder="Match Details"></textarea>
-                                                </div>
-                                                <select name="match_status" class="form-control pro-edt-select form-control-primary">
-                                                    <option value="1">Stocking</option>
-                                                    <option value="0">Out of stock</option>
+                                                <select name="ticket" class="form-control pro-edt-select form-control-primary">
+                                                    <option value="0" selected>No ticket sales</option>
+                                                    <option value="1">Tickets sales</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -104,19 +78,6 @@
                                         </div>
                                     </div>
                                 </form>
-                                <!-- <form action="" method="">
-                                    @csrf
-                                    <select id="squad" class="form-control pro-edt-select form-control-primary choose" name="squad">
-                                        <option value="">---</option>
-                                        <option value="1">Men</option>
-                                        <option value="2">Women</option>
-                                        <option value="3">Youngs</option>
-                                        <option value="4">Legends</option>
-                                    </select>
-                                    <select id="team" class="form-control pro-edt-select form-control-primary" name="team">
-                                    </select>
-                                    <div id="hehe" class="team">oke</div>
-                                </form> -->
                             </div>
                         </div>
                     </div>
@@ -135,43 +96,28 @@ var loadDemoImgFile = function(event,x) {
     }
 };
 </script>
-<!-- 
-<script type="text/javascript">
-    var url = "{{ route('team.select') }}";
-    $("select[name='squad']").change(function(){
-        var squad = $(this).val();
-        var token = $("input[name='_token']").val();
-        $.ajax({
-            url: url,
-            method: 'POST',
-            data: {
-                squad: squad,
-                _token: token
-            },
-            success: function(data) {
-                $("select[name='team'").html('');
-                $.each(data, function(key, value){
-                    $("select[name='team']").append(
-                        "<option value=" + value.id + ">" + value.name + "</option>"
-                    );
-                });
-            }
-        });
-    });
-</script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
-        $("#squad").change(function(){
+        $(".select-team-in-squad").change(function(){
             var action = $(this).attr('id');
-            var squad = $(this).val();
+            var squad = $("#squad").val();
+            var teamA = $("#teamA").val();
             var _token = $('input[name="_token"]').val();
+            var result = '';
+
+            if(action == 'squad') {
+                result = 'teamA';
+            } else {
+                result = 'teamB';
+            };
+
             $.ajax({
                 url : '{{url('/showTeaminSquad')}}',
                 method: 'POST',
-                data:{action:action, squad:squad, _token:_token},
+                data:{action:action, squad:squad, teamA:teamA, _token:_token},
                 success:function(data){
-                    $('#team').html(data);
+                    $('#'+result).html(data);
                 }
             });
         });
