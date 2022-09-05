@@ -41,6 +41,13 @@
                                                 <select id="teamB" class="form-control pro-edt-select form-control-primary" name="teamB">
                                                     <option value=""> --- Select Team B --- </option>
                                                 </select>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <!-- <i class="icon nalika-user" aria-hidden="true"></i> -->
+                                                        <i class="material-icons-outlined" aria-hidden="true">event</i>
+                                                    </span>
+                                                    <input name="datetime" type="datetime-local" class="form-control" placeholder="datetime">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -64,6 +71,13 @@
                                                     <option value="0" selected>No ticket sales</option>
                                                     <option value="1">Tickets sales</option>
                                                 </select>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <!-- <i class="icon nalika-user" aria-hidden="true"></i> -->
+                                                        <i class="material-icons-outlined" aria-hidden="true">merge_type</i>
+                                                    </span>
+                                                    <input name="type" type="text" class="form-control" placeholder="Type">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

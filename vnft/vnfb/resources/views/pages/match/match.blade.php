@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{asset('public/client/css/custom/pages/ticket/ticket.css')}}">
 <div class="content" style="margin-top:75px">
 <!-- Next Match -->
-<div class="next-match mt-5">
+<div class="next-match mt-5" style="background-image: url(https://www.footballticketnet.com/theme/images/venues_cover/Buy-Milliy_Stadium-Football-Tickets-FootballTicketNet-Cover.png);">
     <div class="overlay position-absolute"></div>
     <div class="content position-absolute text-light text-center mt-4">
         <div data-aos="fade-down" data-aos  class="logo-tournament">

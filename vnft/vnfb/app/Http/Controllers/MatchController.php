@@ -30,7 +30,15 @@ class MatchController extends Controller
         $partner = DB::table('tbl_partner')->get();
         $slider = DB::table('tbl_slider')->get();
 
-        return view('pages.match.match')->with('category', $cate_product)->with('category_post', $cate_post)->with('list_product', $list_product)->with('partner', $partner)->with('slider', $slider);
+        $list_match = DB::table('tbl_match')->orderBy('id', 'desc')->get();
+
+        return view('pages.match.match')->with([
+                'category' => $cate_product,
+                'category_post' => $cate_post,
+                'list_product' => $list_product,
+                'partner' => $partner,
+                'slider' => $slider
+            ]);
     }
 
     public function ticket() {
@@ -158,8 +166,19 @@ class MatchController extends Controller
 
     public function list_match() {
         $this->AuthLogin(); //Gọi hàm kiểm tra đăng nhập
-        $list_match = DB::table('tbl_match')->orderBy('id', 'desc')->get();
-        $manager_match = view('admin.match.list_match')->with('list_match', $list_match);
+        $list_match = DB::table('tbl_match')
+            ->join('tbl_tournament', 'tbl_match.tournament_id', '=', 'tbl_tournament.id')
+            ->select('tbl_match.*', 'tbl_tournament.tournament_name')
+            ->orderBy('tbl_match.id', 'desc')->get();
+
+        // $list_tournament = DB::table('tbl_tournament')->orderBy('id', 'desc')->get();
+        $list_team = DB::table('tbl_team')->orderBy('id', 'desc')->get();
+
+        $manager_match = view('admin.match.list_match')->with([
+                'list_match' => $list_match,
+                // 'list_tournament' => $list_tournament,
+                'list_team' => $list_team,
+            ]);
         // echo '<pre>';
         // print_r($list_match);
         // echo '</pre>';
@@ -174,6 +193,8 @@ class MatchController extends Controller
         $data['teamA_id'] = $request->teamA;
         $data['teamB_id'] = $request->teamB;
         $data['stadium'] = $request->stadium;
+        $data['type'] = $request->type;
+        $data['datetime'] = $request->datetime;
         $data['ticket'] = $request->ticket;
         $get_image = $request->file('stadium_background');
 
