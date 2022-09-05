@@ -1,6 +1,7 @@
 @extends('layout')
 @section('title',$squad_name.' Squad')
 @section('content')
+<link rel="stylesheet" href="{{asset('public/client/css/custom/responsive-myUtd.css')}}">
 <!-- Slider -->
 <!-- <div class="slider-homepage" style="margin-bottom: 200px;">
     <div class=" position-relative " style="width: 100%; height:1000px;">
