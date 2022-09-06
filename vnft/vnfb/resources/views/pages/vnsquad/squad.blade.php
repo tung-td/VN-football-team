@@ -85,7 +85,7 @@
             <div class="sub-position">
                 @foreach($squad_by_id as $key => $player)
                     @if($player->player_status == '0' && $player->player_position == '1')
-                        <div class="position-btn" data-aos="flip-left">
+                        <div class="position-btn" data-aos="flip-left" onclick="location.href='{{route('player.details')}}'" style="cursor:pointer;">
                             <img src="{{URL('public/uploads/player/'.$player->player_image)}}" alt="{{$player->player_name}}"
                                 class="position-img ml-05 ml-15" style="">
                             <div class="position-info">

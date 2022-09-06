@@ -15,7 +15,7 @@
     <div class="content position-absolute text-light text-center mt-4">
         <div data-aos="fade-down" data-aos  class="logo-tournament">
             <img src="{{URL('public/uploads/tournament/'.$next_match->tournament_image)}}"
-                alt="{{$match->tournament_name}}">
+                alt="{{$next_match->tournament_name}}">
             <div class="responsive match-date">
                 <h5>{{Carbon::createFromFormat('Y-m-d H:i:s', $next_match->datetime)->format('H:i l d M Y')}}</h5>
             </div>

@@ -67,6 +67,20 @@ class PlayerController extends Controller
         return redirect('list-player');
     }
 
+    public function player_details() {
+        $cate_product = DB::table('categories_product')->where('category_status', '1')->orderBy('category_name', 'asc')->get();
+        $cate_post = DB::table('categories_post')->where('category_status', '1')->orderBy('category_name', 'asc')->get();
+
+        // $list_product = DB::table('product')->join('categories_product','categories_product.category_id','=','product.category_id')
+        //->orderBy('product.product_id', 'desc')->get();
+
+        $list_product = DB::table('product')->where('product_status', '1')->orderBy('product_id', 'desc')->get();
+        $partner = DB::table('tbl_partner')->get();
+        $slider = DB::table('tbl_slider')->get();
+
+        return view('pages.vnsquad.player_details')->with('category', $cate_product)->with('category_post', $cate_post)->with('list_product', $list_product)->with('partner', $partner)->with('slider', $slider);
+    }
+
     public function vnsquad() {
         $cate_product = DB::table('categories_product')->where('category_status', '1')->orderBy('category_name', 'asc')->get();
         $cate_post = DB::table('categories_post')->where('category_status', '1')->orderBy('category_name', 'asc')->get();
