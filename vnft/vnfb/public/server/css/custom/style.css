@@ -4989,3 +4989,7 @@ th.fc-day-header.fc-widget-header {
 .card.shadow.mb-4 {
     margin-left: 13px;
 }
+
+.breadcome-heading > form > a {
+    line-height: 47px;
+}
