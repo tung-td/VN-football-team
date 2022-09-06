@@ -17,7 +17,7 @@
                         </div> -->
                     </div>
                     <div class="player-image-image player-image-items ">
-                        <img src="/assests/img2/player detail BG/quangHai-removebg-preview.png" alt=" ">
+                        <img src="{{asset('public/uploads/player_details/quangHai.png')}}" alt=" ">
                     </div>
                     <div data-aos="fade-left" class="player-image-statics player-image-items player-image-image-none ">
                         <div class="player-mana-match ">
