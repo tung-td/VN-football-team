@@ -33,25 +33,25 @@
                                             <div class="review-content-section">
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
-                                                        <i class="icon nalika-user" aria-hidden="true"></i>
+                                                    <i class="material-icons" aria-hidden="true">badge</i>
                                                     </span>
                                                     <input name="name" type="text" class="form-control" placeholder="User Name">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
-                                                        <i class="icon nalika-user" aria-hidden="true"></i>
+                                                    <i class="material-icons" aria-hidden="true">password</i>
                                                     </span>
                                                     <input name="password" type="text" class="form-control" placeholder="User Password">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
-                                                        <i class="icon nalika-user" aria-hidden="true"></i>
+                                                    <i class="material-icons" aria-hidden="true">email</i>
                                                     </span>
                                                     <input name="email" type="text" class="form-control" placeholder="User Email">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
-                                                        <i class="icon nalika-user" aria-hidden="true"></i>
+                                                    <i class="material-icons" aria-hidden="true">add_ic_call</i>
                                                     </span>
                                                     <input name="phone" type="text" class="form-control" placeholder="Phone Number">
                                                 </div>
@@ -65,19 +65,19 @@
                                             <div class="review-content-section">
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
-                                                        <i class="icon nalika-user" aria-hidden="true"></i>
+                                                        <i class="material-icons" aria-hidden="true">home</i>
                                                     </span>
                                                     <input name="street_address" type="text" class="form-control" placeholder="Street Address">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
-                                                        <i class="icon nalika-user" aria-hidden="true"></i>
+                                                        <i class="material-icons" aria-hidden="true">short_text</i>
                                                     </span>
                                                     <input name="district" type="text" class="form-control" placeholder="Distric">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
-                                                        <i class="icon nalika-user" aria-hidden="true"></i>
+                                                        <i class="material-icons" aria-hidden="true">apartment</i>
                                                     </span>
                                                     <input name="city" type="text" class="form-control" placeholder="City">
                                                 </div>

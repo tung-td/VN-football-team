@@ -31,6 +31,14 @@ body {
     background: #152036;
 }
 
+.section-admin.container-fluid {
+    min-height: 500px;
+}
+
+.breadcomb-icon i {
+    border-right: 1px solid #fff;
+}
+
 .floatleft {
     float: left
 }
@@ -163,8 +171,18 @@ body {}
 /*----------------------------------------*/
 
 .all-content-wrapper {
+    min-height: 672px;
     margin-left: 205px;
     transition: all 0.3s;
+}
+
+.form-group > label,
+.all-content-wrapper > .h3.mb-2.text-gray-800 {
+    color: #4678b2;
+}
+
+.h3.mb-2.text-gray-800 {
+    text-align: center;
 }
 
 .left-sidebar-pro {
@@ -411,8 +429,10 @@ ul.dtl-social li a {
 
 .footer-copyright-area {
     background: #1b2a47;
-    padding: 20px 0px;
-    margin-top: 100px;
+    padding: 10px 0px;
+    bottom: 0;
+    transform: translateX(15%);
+    width: 86.9%;
     text-align: center;
 }
 
@@ -2147,8 +2167,6 @@ ul#single-product-tab li {
 }
 
 .review-content-section {
-    margin-top: 0px;
-    margin-left: 15px;
     margin-right: 15px;
 }
 
@@ -2198,6 +2216,7 @@ ul#single-product-tab li {
 
 .form-control.pro-edt-select.form-control-primary {
     color: #fff;
+    margin-bottom: 14px;
 }
 
 .review-content-section p {
@@ -3291,7 +3310,7 @@ ul.tab-review-design li.active a {
 }
 
 .form-control {
-    background-color: #152036;
+    background-color: #172034;
     background-image: none;
     border: 1px solid #152036;
     border-radius: 1px;
@@ -3302,6 +3321,7 @@ ul.tab-review-design li.active a {
     width: 100%;
     height: 40px;
     color: #fff;
+    border-radius: 5px;
 }
 
 .custom-go-button .btn-primary,
@@ -4696,7 +4716,7 @@ ul.h-list li:hover a {
 }
 
 .checkbox.login-checkbox label {
-    padding-left: 0px;
+    padding-left: 20px;
 }
 
 .btn-success.loginbtn {
@@ -4926,5 +4946,42 @@ th.fc-day-header.fc-widget-header {
 .review-content-section .bg-btn-cl {
     background: #152036;
     border-color: #152036;
+    color: #fff;
+}
+
+.text-center {
+    color: #000;
+}
+
+.dataTables_length > label{
+    font-weight: 700;
+}
+
+.table.table-bordered {
+    margin-top: 17px;
+    width: 99%;
+}
+
+#coupon_name,
+#coupon_code,
+#coupon_time,
+#coupon_condition,
+#coupon_number {
+    border: 1px solid #fff !important;
+}
+
+#city,
+#province,
+#wards,
+#fee_ship {
+    border: 1px solid #fff !important;
+}
+
+#load_delivery > .table-responsive > .table.table-bordered {
+    color: #fff;
+}
+
+.text-center.m-b-md.custom-login > h3,
+.text-center.m-b-md.custom-login > p {
     color: #fff;
 }

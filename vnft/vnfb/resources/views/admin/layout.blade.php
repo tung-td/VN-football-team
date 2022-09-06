@@ -27,11 +27,10 @@
 
         @yield('admin_content')
 
-        @include('admin.zparts.footer')
-
     </div>
 
     @include('admin.zparts.link_foot')
+    @include('admin.zparts.footer')
 
 </body>
 </html>
