@@ -14,7 +14,8 @@
     display: flex;
     justify-content: center;
     background-color: #3F3F3F;
-    /* background: url(../img/background/ticket_background_2.jpg) bottom / cover; */
+    background: url(../../../../img/custom/img2/background/22102021_Var-MyDinh-3.jpg) bottom / cover;
+    /* background: url(../../../../img/custom/img2/background/svdmydinhbackground.webp) center / cover; */
     padding-top: 3em;
     opacity: 1;
 }
