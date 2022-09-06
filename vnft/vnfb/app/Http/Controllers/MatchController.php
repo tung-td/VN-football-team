@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use Carbon\Carbon;
 session_start();
 
 class MatchController extends Controller
@@ -20,24 +21,48 @@ class MatchController extends Controller
     }
 
     public function match() {
-        $cate_product = DB::table('categories_product')->where('category_status', '1')->orderBy('category_name', 'asc')->get();
-        $cate_post = DB::table('categories_post')->where('category_status', '1')->orderBy('category_name', 'asc')->get();
+        $cate_product = DB::table('categories_product')
+            ->where('category_status', '1')
+            ->orderBy('category_name', 'asc')->get();
+        $cate_post = DB::table('categories_post')
+            ->where('category_status', '1')
+            ->orderBy('category_name', 'asc')->get();
 
-        // $list_product = DB::table('product')->join('categories_product','categories_product.category_id','=','product.category_id')
-        //->orderBy('product.product_id', 'desc')->get();
-
-        $list_product = DB::table('product')->where('product_status', '1')->orderBy('product_id', 'desc')->get();
         $partner = DB::table('tbl_partner')->get();
         $slider = DB::table('tbl_slider')->get();
 
-        $list_match = DB::table('tbl_match')->orderBy('id', 'desc')->get();
+        // $list_match = DB::table('tbl_match')->orderBy('id', 'desc')->get();
+        $next_match = DB::table('tbl_match')
+            ->join('tbl_tournament', 'tbl_match.tournament_id', '=', 'tbl_tournament.id')
+            ->select('tbl_match.*', 'tbl_tournament.tournament_name', 'tbl_tournament.tournament_image')
+            ->where('tbl_match.datetime','>=', Carbon::now()->toDateTimeString())->first();
+        $recent_match = DB::table('tbl_match')
+            ->join('tbl_tournament', 'tbl_match.tournament_id', '=', 'tbl_tournament.id')
+            ->select('tbl_match.*', 'tbl_tournament.tournament_name', 'tbl_tournament.tournament_image')
+            ->where('datetime','<', Carbon::now()->toDateTimeString())
+            ->orderBy('datetime','asc')->get();
+
+        $count = DB::table('tbl_match')->where('datetime','>=', Carbon::now()->toDateTimeString())->count();
+        $limit = $count - 1; // the limit
+        $future_match = DB::table('tbl_match')
+            ->join('tbl_tournament', 'tbl_match.tournament_id', '=', 'tbl_tournament.id')
+            ->select('tbl_match.*', 'tbl_tournament.tournament_name', 'tbl_tournament.tournament_image')
+            ->where('datetime','>=', Carbon::now()->toDateTimeString())
+            ->skip(1)->take($limit)->orderBy('datetime','asc')->get();
+
+        $list_team = DB::table('tbl_team')->get();
+        $list_tournament = DB::table('tbl_tournament')->orderBy('id','desc')->get();
 
         return view('pages.match.match')->with([
                 'category' => $cate_product,
                 'category_post' => $cate_post,
-                'list_product' => $list_product,
                 'partner' => $partner,
-                'slider' => $slider
+                'slider' => $slider,
+                'next_match' => $next_match,
+                'recent_match' => $recent_match,
+                'future_match' => $future_match,
+                'list_team' => $list_team,
+                'list_tournament' => $list_tournament,
             ]);
     }
 
