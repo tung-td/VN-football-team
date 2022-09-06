@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 04, 2022 lúc 01:30 PM
+-- Thời gian đã tạo: Th9 06, 2022 lúc 01:00 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -178,7 +178,8 @@ CREATE TABLE `payment` (
 
 INSERT INTO `payment` (`id`, `user_id`, `zip_code`, `payment_status`, `credit_card_name`, `credit_card_num`, `exp_month`, `exp_year`, `cvv_cvc`, `created_at`, `updated_at`) VALUES
 (3, '14', 550000, NULL, 'client2', '1345-2413-5755', 'Tháng 12', '2030', '423', '2022-08-12 21:38:50', '2022-08-12 22:07:13'),
-(4, '1', 550000, NULL, 'client1', '1345-2413-5755', 'Tháng 12', '2030', '423', '2022-08-12 21:38:50', '2022-08-12 22:07:13');
+(4, '1', 550000, NULL, 'client1', '1345-2413-5755', 'Tháng 12', '2030', '423', '2022-08-12 21:38:50', '2022-08-12 22:07:13'),
+(5, '15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-04 04:42:07', NULL);
 
 -- --------------------------------------------------------
 
@@ -303,8 +304,16 @@ CREATE TABLE `tbl_match` (
   `type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `stadium` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `stadium_background` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ticket` int(10) NOT NULL,
   `datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_match`
+--
+
+INSERT INTO `tbl_match` (`id`, `squad`, `teamA_id`, `teamB_id`, `tournament_id`, `type`, `stadium`, `stadium_background`, `ticket`, `datetime`) VALUES
+(1, 1, 1, 3, 1, 'Friendly Match', 'My Dinh National Stadium', '22102021_Var-MyDinh-382.jpg', 0, '2022-09-15 11:30:00');
 
 -- --------------------------------------------------------
 
@@ -1419,22 +1428,23 @@ CREATE TABLE `tbl_statistial` (
 CREATE TABLE `tbl_team` (
   `id` int(11) NOT NULL,
   `team_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `team_image` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `team_image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `squad` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_team`
 --
 
-INSERT INTO `tbl_team` (`id`, `team_name`, `team_image`) VALUES
-(1, 'Viet Nam', 'vietnampng519.png'),
-(2, 'South Korea', 'southkorea666.svg'),
-(3, 'Thailand', 'thailand691.svg'),
-(4, 'Indonesia', 'indonesia784.png'),
-(5, 'Philippines', 'philippines150.png'),
-(6, 'Malaysia', 'malaysia964.png'),
-(7, 'Myanmar', 'myanmar963.png'),
-(8, 'Cambodia', 'cambodia250.png');
+INSERT INTO `tbl_team` (`id`, `team_name`, `team_image`, `squad`) VALUES
+(1, 'U23 Viet Nam', 'vietnampng519.png', 1),
+(2, 'U23 South Korea', 'southkorea666.svg', 1),
+(3, 'U23 Thailand', 'thailand691.svg', 1),
+(4, 'U23 Indonesia', 'indonesia784.png', 1),
+(5, 'U23 Philippines', 'philippines150.png', 1),
+(6, 'U23 Malaysia', 'malaysia964.png', 1),
+(7, 'U23 Myanmar', 'myanmar963.png', 1),
+(8, 'U23 Cambodia', 'cambodia250.png', 1);
 
 -- --------------------------------------------------------
 
@@ -1569,7 +1579,8 @@ CREATE TABLE `tbl_tournament` (
 --
 
 INSERT INTO `tbl_tournament` (`id`, `tournament_name`, `tournament_image`, `status`) VALUES
-(1, 'AFC U-23 Asian Cup', 'AFC_U-23_Asian_Cup_logo913.png', 1);
+(1, 'Friendly Match', 'friendly_match780.png', 1),
+(2, 'AFC U-23 Asian Cup', 'AFC_U-23_Asian_Cup_logo913.png', 1);
 
 -- --------------------------------------------------------
 
@@ -12791,7 +12802,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ph
 (1, 'client1', 'client1@client1.com', NULL, 'a165dd3c2e98d5d607181d0b87a4c66b', '012565564', 'đường client1', 20287, 494, 48, 'locked', NULL, '2021-11-16 18:45:58', '2021-11-17 06:37:29'),
 (3, 'staff1', 'staff1@staff1.com', NULL, '4d7d719ac0cf3d78ea8a94701913fe47', '032845164', '25 đường Trần Phú', 20287, 494, 48, 'unlocked', '1', '2021-11-17 05:39:09', '2021-11-17 06:39:32'),
 (4, 'staff2', 'staff2@staff2.com', NULL, '8bc01711b8163ec3f2aa0688d12cdf3b', '0354186462', '85 đường Ông Ích Khiêm', 20287, 494, 48, 'locked', '1', '2021-11-17 05:41:04', NULL),
-(14, 'client2', 'client2@gmail.com', NULL, '2c66045d4e4a90814ce9280272e510ec', '0748923940', '123 Nam Kì Khởi Nghĩa', 20287, 494, 48, 'unlocked', NULL, '2022-08-12 21:38:50', '2022-08-12 22:07:13');
+(14, 'client2', 'client2@gmail.com', NULL, '2c66045d4e4a90814ce9280272e510ec', '0748923940', '123 Nam Kì Khởi Nghĩa', 20287, 494, 48, 'unlocked', NULL, '2022-08-12 21:38:50', '2022-08-12 22:07:13'),
+(15, 'client3', 'client3@gmail.com', NULL, 'c27af3f6460eb10979adb366fc7f6856', NULL, NULL, NULL, NULL, NULL, 'unlocked', NULL, '2022-09-04 04:42:07', NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -13008,7 +13020,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`
@@ -13038,7 +13050,7 @@ ALTER TABLE `tbl_feeship`
 -- AUTO_INCREMENT cho bảng `tbl_match`
 --
 ALTER TABLE `tbl_match`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_order`
@@ -13116,13 +13128,13 @@ ALTER TABLE `tbl_ticket`
 -- AUTO_INCREMENT cho bảng `tbl_tournament`
 --
 ALTER TABLE `tbl_tournament`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
