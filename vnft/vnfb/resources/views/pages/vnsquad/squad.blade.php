@@ -18,7 +18,7 @@
         </div>
     </div>
 </div> -->
-<div class="slider-homepage" style="margin: 117px 0px;">
+<div class="slider-homepage" style="margin: 57px 0px;">
     <div class=" position-relative ">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
