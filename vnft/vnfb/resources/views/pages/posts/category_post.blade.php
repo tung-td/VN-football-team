@@ -42,7 +42,7 @@
     </a>
 
     <!-- Line 2 -->
-    <div class="card-columns">
+    <div class="card-group">
         <!-- 4 -->
         @php
             $count = 1;
@@ -50,7 +50,7 @@
         @foreach($all_post as $key => $post)
             <div data-aos="fade-up" data-aos class="card">
                 <a class="card-group" href="{{URL('/bai-viet/'.$post->post_id)}}">
-                <img class="card-img-top anh_4" src="{{URL('/public/uploads/post/'.$post->post_thumbnail)}}" alt="{{$hot_post->post_title}}">
+                <img class="card-img-top mb-1 anh_3" src="{{URL('/public/uploads/post/'.$post->post_thumbnail)}}" alt="{{$hot_post->post_title}}">
                 <div class="card-body">
                     <h5 class="card-title">{{$post->post_title}}</h5>
                     <div class="bottom-text">
