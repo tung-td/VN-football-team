@@ -1,6 +1,7 @@
 @extends('layout')
 @section('title','VN Squad')
 @section('content')
+<link rel="stylesheet" href="{{asset('public/client/css/custom/responsive-myUtd.css')}}">
 <!-- Start Slider-->
 <div class="slider_my-utd">
     <!-- <h1 class="my-utd_text_heading">MEET THE SQUADS</h1> -->
