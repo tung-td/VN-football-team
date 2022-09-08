@@ -33,15 +33,16 @@ class UserController extends Controller
             Session::put('id', $result->id);
 
             if($result->status == 'locked') {
-                return back()->with('status', 'Tài khoản '.$result->name.' của bạn đã bị khoá! Hãy tạo tài khoản mới hoặc dùng tài khoản khác để đăng nhập');
+                return back()->with('status', 'Account '.$result->name.' is locked! Please create a new account or use another account to log in');
             } else {
                 // echo 'login successful !!';
                 return redirect(session('back_url'));
             }
-            
+            return redirect(session('back_url'));
         } else {
-            return back()->with('status', 'Tên tài khoản hoặc mật khẩu bị sai! vui lòng nhập lại');
+            return back()->with('status', 'Wrong username or password! Please re-enter');
         }
+        
     }
 
     // LOGOUT
@@ -78,7 +79,7 @@ class UserController extends Controller
 
         Session::put('name', $request->client_user);
         Session::put('id', $insert_user_id);
-        return view('pages.home')->with('status', 'Đăng kí thành công! Hãy thử đăng nhập nào');
+        return redirect()->route('home')->with('status', 'Registration successful! Try to login');
     }
 
     //UPDATE INFO

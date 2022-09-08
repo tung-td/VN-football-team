@@ -17,7 +17,7 @@ class CheckoutController extends Controller
     public function AuthLogin() { //Kiểm tra đăng nhập Admin
         $id = Session::get('id');
         if($id) {} else {
-            return redirect('/login')->with('message','Bạn phải đăng nhập mới có thể tiếp tục vào trang thanh toán!');
+            return redirect('/login')->with('message','You must be logged in to continue to the checkout page!');
         }
     }
 
@@ -71,7 +71,7 @@ class CheckoutController extends Controller
                 ]);
         } else {
             // echo 'Chưa đăng nhập !!';
-            return redirect('/client/login')->with('status','Đăng nhập để thanh toán!');
+            return redirect('/client/login')->with('status','Sign in to checkout!');
         }
     }
 
@@ -94,7 +94,7 @@ class CheckoutController extends Controller
             return redirect('/payment')->with([
                 'category' => $cate_product,
                 'shipping_id' => session('shipping_id'),
-                'message' => 'Địa chỉ giao hàng đã lưu nhưng chưa thanh toán!',
+                'message' => 'Shipping address saved but not paid!',
             ]);
         } else {
                 $data = array();
@@ -114,7 +114,7 @@ class CheckoutController extends Controller
 
                 return redirect('/payment')->with([
                     'category' => $cate_product,
-                    'message' => 'Địa chỉ giao hàng đã được ghi nhận!',
+                    'message' => 'Delivery address has been recorded!',
                 ]);
             }
     }
@@ -204,7 +204,7 @@ class CheckoutController extends Controller
         Session::forget('data');
 
         if($data['shipping_method'] == 2){
-            return redirect('/order-success')->with('message','Đặt hàng với thanh toán trả sau thành công!');
+            return redirect('/order-success')->with('message','Order with postpaid payment successful!');
         } else if($data['shipping_method'] == 1 || $data['shipping_method'] == 3){
 
             return redirect('/order-success');

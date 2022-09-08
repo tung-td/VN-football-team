@@ -33,26 +33,52 @@
 <div class=" checkout row">
   <div class=" checkout col-100">
     <div class=" checkout container">
-      <form action="{{route('client.update.handle')}}" method="post">
+      <form action="{{route('client.update.handle')}}" method="post" class="row g-3 needs-validation" novalidate>
         @csrf
         <div class=" checkout row">
           <div class=" checkout col-50">
             <h3>Account information</h3>
-            <label for="fname"><i class=" checkout fa fa-user"></i> Full name</label>
-            <input type="text" id="fname" name="name" value="{{$name}}" placeholder="Nguyễn Văn A">
-            <label for="email"><i class=" checkout fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" value="{{$email}}" placeholder="nguyenvana@gmail.com">
-            <label for="password"><i class=" checkout fa fa-lock"></i> Password</label>
-            <input type="password" id="email" name="password" placeholder="Re-enter password or correct new password...">
-            <label for="phone"><i class=" checkout fa fa-phone"></i> Phone number</label>
-            <input type="num" id="phone" name="phone" value="{{$phone}}" placeholder="0123456789">
-            <label for="adr"><i class=" checkout fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="street_address" value="{{$street_address}}"  placeholder="470 Đường Trần Đại Nghĩa">
+            
+            <div class="col-md-12">
+              <label for="fname"><i class=" checkout fa fa-user"></i> Full name</label>
+              <input class="form-control" type="text" id="fname" name="name" value="{{$name}}" placeholder="Nguyễn Văn A" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
 
-            <div class=" checkout row">
-              <div class=" checkout col-50">
-                <label for="city"><i class=" checkout fa fa-institution"></i> City</label>
-                <select id="city" name="city" class="form-control form-control-sm choose city" style="height: 50px;">
+            <div class="col-md-12">
+              <label for="email"><i class=" checkout fa fa-envelope"></i> Email</label>
+              <input class="form-control" type="text" id="email" name="email" value="{{$email}}" placeholder="nguyenvana@gmail.com" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <label for="password"><i class=" checkout fa fa-lock"></i> Password</label>
+              <input class="form-control" type="password" id="email" name="password" placeholder="Re-enter password...">
+            </div>
+
+            <div class="col-md-5">
+              <label for="phone"><i class=" checkout fa fa-phone"></i> Phone number</label>
+              <input class="form-control" type="num" id="phone" name="phone" value="{{$phone}}" placeholder="0123456789" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            
+            <div class="col-md-12">
+              <label for="adr"><i class=" checkout fa fa-address-card-o"></i> Address</label>
+              <input class="form-control" type="text" id="adr" name="street_address" value="{{$street_address}}"  placeholder="470 Đường Trần Đại Nghĩa" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <label for="city"><i class=" checkout fa fa-institution"></i> City</label>
+              <select id="city" name="city" class="form-control form-control-sm choose city" style="height: 50px;" required>
                     <!-- <option value="">---Chọn tỉnh/thành phố---</option> -->
                     @if($city_id == null)
                       <option value="">---Choose city---</option>
@@ -64,11 +90,15 @@
                         <option value="{{ $ci->matp }}">{{ $ci->name_city }}</option>
                         @endif
                     @endforeach
-                </select>
+              </select>
+              <div class="invalid-feedback">
+                Please choose a valid city.
               </div>
-              <div class=" checkout col-50">
-                <label for="province">Choose local</label>
-                <select id="province" name="province" class="form-control form-control-sm choose province" style="height: 50px;">
+            </div>
+
+            <div class="col-md-5">
+            <label for="province">Choose local</label>
+                <select id="province" name="province" class="form-control form-control-sm choose province" style="height: 50px;" required>
                     <!-- <option value="">---Chọn quận/huyện---</option> -->
                     <option value="{{$district_id}}">
                     @if($district_id)
@@ -84,13 +114,14 @@
                     @endif
                     </option>
                 </select>
+              <div class="invalid-feedback">
+                Please choose a valid local.
               </div>
             </div>
 
-            <div class=" checkout row">
-              <div class=" checkout col-50">
-                <label for="wards">Choose wards</label>
-                <select id="wards" name="wards" class="form-control form-control-sm wards" style="height: 50px;">
+            <div class="col-md-5">
+              <label for="wards">Choose wards</label>
+              <select id="wards" name="wards" class="form-control form-control-sm wards" style="height: 50px;" required>
                     <!-- <option value="">---Chọn xã/phường---</option> -->
                     <option value="{{$ward_id}}">
                     @if($ward_id)
@@ -105,11 +136,17 @@
                     ---Choose wards---
                     @endif
                     </option>
-                </select>
+              </select>
+              <div class="invalid-feedback">
+                Please choose a valid wards.
               </div>
-              <div class=" checkout col-50">
-                <label for="zip">Zip code</label>
-                <input type="text" id="zip" name="zip_code" value="{{$zip_code}}" placeholder="550000">
+            </div>
+
+            <div class="col-md-5">
+              <label for="zip">Zip code</label>
+              <input class="form-control" type="text" id="zip" name="zip_code" value="{{$zip_code}}" placeholder="550000" required>
+              <div class="invalid-feedback">
+                Please provide a valid zip code.
               </div>
             </div>
             
@@ -124,27 +161,53 @@
               <i class=" checkout fa fa-cc-mastercard" style="color:red;"></i>
               <i class=" checkout fa fa-cc-discover" style="color:orange;"></i>
             </div> -->
-            <label for="cname">Name card</label>
-            <input type="text" id="cname" name="credit_card_name" value="{{$credit_card_name}}" placeholder="NGUYEN VAN A">
-            <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="credit_card_num" value="{{$credit_card_num}}" placeholder="1111-2222-3333-4444">
-            <label for="expmonth">Expiration month</label>
-            <input type="text" id="expmonth" name="exp_month" value="{{$exp_month}}" placeholder="Tháng 9">
-            <div class=" checkout row">
-              <div class=" checkout col-50">
-                <label for="expyear">Expiration year</label>
-                <input type="text" id="expyear" name="exp_year" value="{{$exp_year}}" placeholder="2021">
-              </div>
-              <div class=" checkout col-50">
-                <label for="cvv_cvc">Verification CVV code</label>
-                <input type="text" id="cvv_cvc" name="cvv_cvc" value="{{$cvv_cvc}}" placeholder="352">
+            <div class="col-md-12">
+              <label for="cname">Name card</label>
+              <input class="form-control" type="text" id="cname" name="credit_card_name" value="{{$credit_card_name}}" placeholder="NGUYEN VAN A" required>
+              <div class="valid-feedback">
+                Looks good!
               </div>
             </div>
+
+            <div class="col-md-12">
+              <label for="ccnum">Credit card number</label>
+              <input class="form-control" type="text" id="ccnum" name="credit_card_num" value="{{$credit_card_num}}" placeholder="1111-2222-3333-4444" required>
+              <div class="invalid-feedback">
+                Please provide a valid card number.
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <label for="expmonth">Expiration month</label>
+              <input class="form-control" type="text" id="expmonth" name="exp_month" value="{{$exp_month}}" placeholder="Tháng 9" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            
+            <div class="col-md-12">
+              <label for="expyear">Expiration year</label>
+              <input class="form-control" type="text" id="expyear" name="exp_year" value="{{$exp_year}}" placeholder="2021" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <label for="cvv_cvc">Verification CVV code</label>
+              <input class="form-control" type="text" id="cvv_cvc" name="cvv_cvc" value="{{$cvv_cvc}}" placeholder="352" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+
           </div>
           
         </div>
-        <input type="submit" value="Submit" class=" checkout btn btn-grape">
+
+        <input type="submit" value="Submit" class="col-1 checkout btn btn-grape">
       </form>
+
     </div>
   </div>
 </div>
@@ -198,7 +261,6 @@ body.checkout {
 
 input[type=text],input[type=password],input[type=num] {
   width: 100%;
-  margin-bottom: 20px;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -244,6 +306,23 @@ span.price {
   color: grey;
 }
 
+.col-md-12 {
+  margin-bottom: 20px !important;
+  max-width: 99%;
+}
+
+.col-md-5 {
+  display: inline-block;
+  max-width: 49%;
+  margin-bottom: 20px !important;
+}
+
+h3 {
+  font-weight: 700;
+  margin-top: 20px;
+  text-align: center;
+}
+
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
 @media (max-width: 800px) {
   .checkout.row {
@@ -268,4 +347,24 @@ span.price {
   font-size: 1.5em;
 }
 </style>
+
+<script>
+(function () {
+  'use strict'
+  var forms = document.querySelectorAll('.needs-validation')
+
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
+
 @endsection

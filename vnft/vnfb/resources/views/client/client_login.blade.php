@@ -51,7 +51,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot password?</a>
+                                        <!-- <a class="small" href="forgot-password.html">Forgot password?</a> -->
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="{{route('client.register')}}">Create a new account!</a>

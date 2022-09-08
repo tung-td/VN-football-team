@@ -1513,3 +1513,11 @@ h3.h3 {
 .btn-info {
     margin: 8px 17px !important;
 }
+
+.btn.btn-info.btn-block.btn-round {
+    width: 92% !important;
+}
+
+.red-font {
+    color: #c70101 !important;
+}

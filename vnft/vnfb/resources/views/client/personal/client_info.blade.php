@@ -22,6 +22,10 @@
 
   $status = session('status');
   Session::put('status',null);
+  
+  $city_name = '';
+  $district_name = '';
+  $ward_name = '';
 
   foreach ($city as $key => $ci) {
   	if($ci->matp == $city_id) $city_name = $ci->name_city;
