@@ -8,13 +8,13 @@
             <div class="player" style="font-weight: 500; ">
                 <div class="player-image-bg">
                     <div class="player-image-text player-image-items ">
-                        <div class="player-image-name ">
+                        <div class="player-image-name" style="margin-top: -3em !important;">
                             <div class="player-site ">19</div>
                             <div data-aos="fade-right" class="player-site-name ">Nguyen Quang Hai</div>
                         </div>
-                        <!-- <div data-aos="fade-right" class="player-image-message ">
+                        <div data-aos="fade-right" class="player-image-message ">
                             "When I told you a little bit about the vision. The first is that we must make the most of our current resources. The second is to create a strong team in Southeast Asia, gradually forming a strong and competitive team in Asia."
-                        </div> -->
+                        </div>
                     </div>
                     <div class="player-image-image player-image-items ">
                         <img src="{{asset('public/uploads/player_details/quangHai.png')}}" alt=" ">
@@ -73,9 +73,14 @@
                         </div>
                         <div class="player-shortcut-items ">
                             <div class="player-sub-items ">
+                                <p class="player-items-title ">Club</p>
+                                <p class="player-items-position player-items-inf "><img src="" alt=" " class="korea">PAU FC</p>
+                            </div>
+                            <div class="player-sub-items ">
                                 <p class="player-items-title ">Date of birth</p>
                                 <p class="player-items-date player-items-inf ">12 April 1997</p>
                             </div>
+                            
                         </div>
                     </div>
 
