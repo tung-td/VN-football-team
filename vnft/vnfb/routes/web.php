@@ -196,6 +196,7 @@ Route::get('/vnsquad', [PlayerController::class, 'vnsquad'])->name('vnsquad');
 
 Route::post('/save-player', [PlayerController::class, 'save_player']);
 // Route::post('/update-player/{player_id}', [PlayerController::class, 'update_player']);
+Route::post('/save-player-details', [PlayerController::class, 'save_player_details']);
 
     //----Delivery----
 Route::get('delivery', [DeliveryController::class, 'delivery'])->name('delivery');

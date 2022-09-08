@@ -122,79 +122,53 @@ class PlayerController extends Controller
         return view('pages.vnsquad.squad')->with('category', $cate_product)->with('squad_by_id', $squad_by_id)->with('category_post', $cate_post)->with('partner', $partner)->with('squad_name', $squad_name)->with('slider', $slider)->with('squad_id', $squad_id);
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    // Player Details
+
+    public function add_player_details() {
+        $this->AuthLogin(); //Gọi hàm kiểm tra đăng nhập
+        return view('admin.player.add_player_details');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function list_player_details() {
+        $this->AuthLogin();
+        $list_player = DB::table('tbl_player')->orderBy('player_id', 'desc')->get();
+        $manager_player = view('admin.player.list_player_details')->with('list_player', $list_player);
+        // echo '<pre>';
+        // print_r($list_player);
+        // echo '</pre>';
+        return view('admin.layout')->with('admin.player.list_player_details', $manager_player);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    public function save_player_details(Request $request) {
+        $this->AuthLogin();
+        $data = array();
+        $data['player_name'] = $request->player_name;
+        $data['player_shirt_num'] = $request->player_shirt_num;
+        $data['player_squad'] = $request->player_squad;
+        $data['player_position'] = $request->player_position;
+        $data['player_birth'] = $request->player_birth;
+        $data['player_club'] = $request->player_club;
+        $data['player_gender'] = $request->player_gender;
+        if($request->player_status == 'unlocked') {
+            $data['player_status'] = 0;
+        } else {
+            $data['player_status'] = 1;
+        }
+        $get_image = $request->file('player_image');
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        if($get_image) {
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image.rand(0,999).'.'.$get_image->getClientOriginalExtension();
+            $get_image->move('public/uploads/player', $new_image);
+            $data['player_image'] = $new_image;
+            DB::table('tbl_player')->insert($data);
+            Session::put('message', 'Add player successfully!');
+            return redirect('list-player');
+        }
+        $data['player_image'] = '';
+        DB::table('tbl_player')->insert($data);
+        Session::put('message', 'Add player successfully!');
+        return redirect('list-player-details');
     }
 }

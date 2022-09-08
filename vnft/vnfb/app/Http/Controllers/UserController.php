@@ -27,20 +27,25 @@ class UserController extends Controller
         $client_user = $request->client_user;
         $client_password = md5($request->client_password);
 
-        $result = DB::table('users')->where('name', $client_user)->where('password', $client_password)->first();
-        if ($result) {
-            Session::put('name', $result->name);
-            Session::put('id', $result->id);
+        // $result = DB::table('users')->where('name', $client_user)->where('password', $client_password)->first();
+        $result_name = DB::table('users')->where('name', $client_user)->first();
+        if ($result_name) {
+            $result_password = DB::table('users')->where('name', $client_user)->where('password', $client_password)->first();
+            if($result_password) {
+                Session::put('name', $result->name);
+                Session::put('id', $result->id);
 
-            if($result->status == 'locked') {
-                return back()->with('status', 'Account '.$result->name.' is locked! Please create a new account or use another account to log in');
+                if($result->status == 'locked') {
+                    return back()->with('status', 'Account '.$result->name.' is locked! Please create a new account or use another account to log in');
+                } else {
+                    // echo 'login successful !!';
+                    return redirect(session('back_url'));
+                }
             } else {
-                // echo 'login successful !!';
-                return redirect(session('back_url'));
+                return back()->with('status', 'Wrong password Please re-enter');
             }
-            return redirect(session('back_url'));
         } else {
-            return back()->with('status', 'Wrong username or password! Please re-enter');
+            return back()->with('status', 'Wrong username Please re-enter');
         }
         
     }
