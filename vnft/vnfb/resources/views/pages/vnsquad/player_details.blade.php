@@ -3,7 +3,7 @@
 @section('content')
 <link rel="stylesheet" href="{{asset('public/client/css/custom/pages/myutd/player-detail.css')}}">
         <!-- START CONTENT -->
-        <div class="content" style="padding-top: 30px">
+        <div class="content-player" style="margin-top: 40px">
             <!-- PLAYER DETAIL -->
             <div class="player" style="font-weight: 500; ">
                 <div class="player-image-bg">
@@ -63,7 +63,7 @@
                         <div class="player-shortcut-items ">
                             <div class="player-sub-items ">
                                 <p class="player-items-title ">country</p>
-                                <p class="player-items-country player-items-inf "><img src="/assests/img2/logo/vietnam_flag.png" alt=" " class="korea">Vietnam</p>
+                                <p class="player-items-country player-items-inf "><img src="{{asset('public\uploads\team\vietnampng519.png')}}" alt=" " class="korea">Vietnam</p>
                             </div>
                             <div class="player-sub-items ">
                                 <p class="player-items-title ">first match</p>
