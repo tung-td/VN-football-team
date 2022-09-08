@@ -102,7 +102,6 @@ class PostController extends Controller
         $data = array();
         $data['post_title'] = $request->post_title;
         $data['cate_post_id'] = $request->cate_post_id;
-        $data['post_thumbnail'] = $request->post_thumbnail;
         $data['post_meta_desc'] = $request->post_meta_desc;
         $data['post_meta_keywords'] = $request->post_meta_keywords;
         $data['post_content'] = $request->post_content;
