@@ -19,13 +19,12 @@
                 <div class="card o-hidden border-0 shadow-lg my-2">
                     <div class="card-body p-0">
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <form class="user" action="{{route('client.register.handle')}}" method="post">
                                     {{csrf_field()}}
                                         <div class="text-center">
-                                            <h3 class="h4 text-warning mb-4">Account</h3>
+                                            <h3 class="h4 text-warning mb-4">Register</h3>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" name="client_user" class="form-control form-control-user" placeholder="Account name..." required>
