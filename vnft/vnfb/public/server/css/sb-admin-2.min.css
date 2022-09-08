@@ -620,7 +620,6 @@ pre code {
     .container-md,
     .container-sm,
     .container-xl {
-        max-width: 1140px
     }
 }
 
@@ -628,7 +627,8 @@ pre code {
     display: flex;
     flex-wrap: wrap;
     margin-right: -.75rem;
-    margin-left: -.75rem
+    margin-left: -.75rem;
+    justify-content: center;
 }
 
 .no-gutters {
@@ -11266,9 +11266,11 @@ a:focus {
 }
 
 .bg-login-image {
-    background: url('../img/bg-login.png');
+    background: url('');
     background-position: center;
-    background-size: cover
+    height: 412px;
+    width: 454px;
+    border: unset !important;
 }
 
 .bg-register-image {

@@ -1509,3 +1509,7 @@ h3.h3 {
 .toast:not(.show) {
     display: flex !important;
 }
+
+.btn-info {
+    margin: 8px 17px !important;
+}

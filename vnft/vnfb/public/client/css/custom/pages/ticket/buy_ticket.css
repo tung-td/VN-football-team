@@ -248,6 +248,11 @@ g .door:hover~g .stand {
 .input-seat i:hover {
     cursor: pointer;
 }
+
+.border.rounded.px-3.pt-4 {
+    margin: unset !important;
+}
+
 /* END STADIUM CHOOSE */
 
 

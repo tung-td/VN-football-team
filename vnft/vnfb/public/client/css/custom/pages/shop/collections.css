@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    margin: 86px auto
+    margin: 86px auto;
 }
 
 #header-container {
@@ -627,7 +627,6 @@ input[type=range]::-webkit-slider-thumb {
 
 .product-grid .product-image img {
     width: 100%;
-    height: auto;
 }
 
 .product-image .pic-1 {
@@ -640,8 +639,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .product-image .pic-2 {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
     backface-visibility: hidden;
     opacity: 0;
     position: absolute;
@@ -758,4 +756,8 @@ input[type=range]::-webkit-slider-thumb {
     .product-grid {
         margin: 0 0 30px;
     }
+}
+
+#products > .row.mx-0 > .row {
+    justify-content: flex-start !important;
 }

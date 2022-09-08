@@ -136,6 +136,8 @@ body {
 	z-index: 1;
 	max-width: 500px;
 	position: relative;
+	display: flex;
+	justify-content: center;
 }
 
 .product_cart {
@@ -310,6 +312,7 @@ select {
 .footer_product {
 	display: flex;
 	width: 86%;
+	margin-top: 74px;
 }
 
 .footer_1,

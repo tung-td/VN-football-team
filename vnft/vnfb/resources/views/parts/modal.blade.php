@@ -105,8 +105,9 @@
                 </div>
             </div>
             <div class="modal-footer d-flex justify-content-center">
-                <div class="signup-section">Not a member yet? <a href="#sign-up_Modal" data-dismiss="modal"
-                        data-toggle="modal" class="text-inf"> Sign Up</a>.</div>
+                <div class="signup-section">Not a member yet? 
+                    <a href="{{route('client.register')}}" class="text-inf"> Sign Up</a>
+                </div>
             </div>
         </div>
     </div>
@@ -188,9 +189,7 @@
                 </div>
                 <div class="d-flex flex-column text-center">
                     <button onclick="window.location='{{ route('client.info')}}'" type="button" class="btn btn-info btn-round">Info</button>
-                    <hr>
                     <button onclick="window.location='{{ route('client.update')}}'" type="button" class="btn btn-info btn-round">Update</button>
-                    <hr>
                     <button onclick="window.location='{{ route('client.logout')}}'" type="button" class="btn btn-info btn-round">Log Out</button>
                 </div>
             </div>

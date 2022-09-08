@@ -317,7 +317,7 @@
         </div>
         <div class="footer_4">
             <p style="font-weight: 600">Stay updated on sales new items and more</p>
-            <a href="#sign-up_Modal" data-dismiss="modal" data-toggle="modal" class="btl"><p>SIGN UP & SAVE 10%</p></a>
+            <a href="{{route('client.login')}}" class="btl"><p>SIGN UP & SAVE 10%</p></a>
         </div>
     </div>
 
