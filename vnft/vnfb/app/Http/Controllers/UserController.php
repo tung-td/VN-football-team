@@ -32,8 +32,8 @@ class UserController extends Controller
         if ($result_name) {
             $result_password = DB::table('users')->where('name', $client_user)->where('password', $client_password)->first();
             if($result_password) {
-                Session::put('name', $result->name);
-                Session::put('id', $result->id);
+                Session::put('name', $result_name->name);
+                Session::put('id', $result_name->id);
 
                 if($result->status == 'locked') {
                     return back()->with('status', 'Account '.$result->name.' is locked! Please create a new account or use another account to log in');
