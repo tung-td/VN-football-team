@@ -118,8 +118,10 @@
                             <span class="mini-click-non">Player</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="Product Edit" href="{{route('player.add')}}"><span class="mini-sub-pro">Player Add</span></a></li>
-                            <li><a title="Product List" href="{{route('player.list')}}"><span class="mini-sub-pro">Player List</span></a></li>
+                            <li><a title="Player Add" href="{{route('player.add')}}"><span class="mini-sub-pro">Player Add</span></a></li>
+                            <li><a title="Player List" href="{{route('player.list')}}"><span class="mini-sub-pro">Player List</span></a></li>
+                            <li><a title="Player Details Add" href="{{route('player.details.add')}}"><span class="mini-sub-pro">Player Details Add</span></a></li>
+                            <li><a title="Player Details List" href="{{route('player.details.list')}}"><span class="mini-sub-pro">Player Details List</span></a></li>
                         </ul>
                     </li>
 

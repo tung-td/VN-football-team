@@ -68,11 +68,11 @@
                         <td class="text-center">
                             <?php if($player->player_status == 0) { ?>
                                 <a href="{{URL('/unactive-player/'.$player->player_id)}}">
-                                    <i class="fa-2x fas fa-times text-danger" title="Hết hàng"></i>
+                                    <i class="fa-2x fas fa-times text-danger" title="Official Squad"></i>
                                 </a>
                             <?php } else { ?>
                                 <a href="{{URL('/active-player/'.$player->player_id)}}">
-                                    <i class="fa-2x fas fa-check text-success" title="Còn hàng"></i>
+                                    <i class="fa-2x fas fa-check text-success" title="Reserve Squad"></i>
                                 </a>
                             <?php } ?>
                         </td>

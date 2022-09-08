@@ -1,6 +1,9 @@
 @extends('layout')
 @section('title','Player')
 @section('content')
+<?php
+    use Carbon\Carbon;
+?>
 <link rel="stylesheet" href="{{asset('public/client/css/custom/pages/myutd/player-detail.css')}}">
         <!-- START CONTENT -->
         <div class="content-player" style="margin-top: 40px">
@@ -9,24 +12,24 @@
                 <div class="player-image-bg">
                     <div class="player-image-text player-image-items ">
                         <div class="player-image-name" style="margin-top: -3em !important;">
-                            <div class="player-site ">19</div>
-                            <div data-aos="fade-right" class="player-site-name ">Nguyen Quang Hai</div>
+                            <div class="player-site ">{{$player_details->player_shirt_num}}</div>
+                            <div data-aos="fade-right" class="player-site-name ">{{$player_details->player_name}}</div>
                         </div>
                         <div data-aos="fade-right" class="player-image-message ">
-                            "When I told you a little bit about the vision. The first is that we must make the most of our current resources. The second is to create a strong team in Southeast Asia, gradually forming a strong and competitive team in Asia."
+                            "{{$player_details->quote}}"
                         </div>
                     </div>
                     <div class="player-image-image player-image-items ">
-                        <img src="{{asset('public/uploads/player_details/quangHai.png')}}" alt=" ">
+                        <img src="{{asset('public/uploads/player_details/'.$player_details->img)}}" alt="{{$player_details->player_name}}">
                     </div>
                     <div data-aos="fade-left" class="player-image-statics player-image-items player-image-image-none ">
                         <div class="player-mana-match ">
                             APPERANCES:
-                            <span class="number number-1">42</span>
+                            <span class="number number-1">{{$player_details->appearance}}</span>
                         </div>
                         <div class="player-wins ">
                             TOTAL GOALS:
-                            <span class="number number-1">10</span>
+                            <span class="number number-1">{{$player_details->total_goals}}</span>
                         </div>
                         <!-- <div class="player-draws ">
                             Draws:
@@ -38,7 +41,7 @@
                         </div> -->
                         <div class="player-trophies ">
                             TROPHIES:
-                            <span class="number number-1">2</span>
+                            <span class="number number-1">{{$player_details->trophies}}</span>
                         </div>
                     </div>
                 </div>
@@ -46,18 +49,17 @@
                 <div class="player-info ">
                     <div data-aos="fade-right" class="player-info-bio ">
                         <p class="player-bio-title ">Biography</p>
-                        <p class="player-bio-text ">Nguyen Quang Hai (born 12 April 1997) is a Vietnamese professional footballer who plays as an attacking midfielder or winger for French club Pau FC in Ligue 2 and the national team. Vietnam country . He is the player who received
-                            the Vietnam Golden Ball award in 2018 and is considered one of the best players in the history of Vietnamese football.</p>
+                        <p class="player-bio-text ">{{$player_details->bio}}</p>
                     </div>
                     <div data-aos="fade-left" class="player-info-shortcut " style="border-bottom: grey solid 1px; padding-bottom:1em ">
                         <div class="player-shortcut-items ">
                             <div class="player-sub-items ">
                                 <p class="player-items-title ">position</p>
-                                <p class="player-items-position player-items-inf ">Midfielder</p>
+                                <p class="player-items-position player-items-inf ">{{$player_details->player_position}}</p>
                             </div>
                             <div class="player-sub-items ">
                                 <p class="player-items-title ">joined</p>
-                                <p class="player-items-date player-items-inf ">2017</p>
+                                <p class="player-items-date player-items-inf ">{{$player_details->joined}}</p>
                             </div>
                         </div>
                         <div class="player-shortcut-items ">
@@ -67,18 +69,23 @@
                             </div>
                             <div class="player-sub-items ">
                                 <p class="player-items-title ">first match</p>
-                                <p class="player-items-date player-items-inf "> 9/12/2017</p>
-                                <small>v Myanmar(A)</small>
+                                <p class="player-items-date player-items-inf "> 
+                                    {{Carbon::createFromFormat('Y-m-d', $player_details->first_match)->format('d/m/Y')}}
+                                </p>
+                                <small>v {{$player_details->first_concurrent}}</small>
                             </div>
                         </div>
                         <div class="player-shortcut-items ">
                             <div class="player-sub-items ">
                                 <p class="player-items-title ">Club</p>
-                                <p class="player-items-position player-items-inf "><img src="" alt=" " class="korea">PAU FC</p>
+                                <p class="player-items-position player-items-inf ">
+                                    {{$player_details->player_club}}
+                                </p>
                             </div>
                             <div class="player-sub-items ">
                                 <p class="player-items-title ">Date of birth</p>
-                                <p class="player-items-date player-items-inf ">12 April 1997</p>
+                                <p class="player-items-date player-items-inf ">
+                                    {{Carbon::createFromFormat('Y-m-d', $player_details->player_birth)->format('d F Y')}}</p>
                             </div>
                             
                         </div>
@@ -90,13 +97,13 @@
                         <div class="player-shortcut-items player-mana-match flex-basis-3 ">
                             <div class="player-sub-items ">
                                 Apperances:
-                                <span class="number ">193</span>
+                                <span class="number ">{{$player_details->appearance}}</span>
                             </div>
                         </div>
                         <div class="player-shortcut-items wins flex-basis-4 ">
                             <div class="player-sub-items ">
                                 Total goals:
-                                <span class="number "> 41</span>
+                                <span class="number ">{{$player_details->total_goals}}</span>
                             </div>
                             <!-- <div class="player-sub-items ">Draws:
                                 <span class="number "> 175</span> Loses:
@@ -106,7 +113,7 @@
                         <div class="player-shortcut-items player-trophies flex-basis-3 ">
                             <div class="sub-items ">
                                 Trophies:
-                                <span class="number ">09</span>
+                                <span class="number ">{{$player_details->trophies}}</span>
                             </div>
                         </div>
 

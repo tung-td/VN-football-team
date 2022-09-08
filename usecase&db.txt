@@ -1,4 +1,4 @@
-1/ account; 2/ player; 3/ product; 4/ match; 5/ ticket.
+﻿1/ account; 2/ player; 3/ product; 4/ match; 5/ ticket.
 
 USE CASE:
 *Actor:
@@ -154,4 +154,14 @@ DATABASE:
 + seat (124 fixed: 10[A-J]x14 - 4[C-F]x4[6-9])
 + class (1,2,3,4)
 
-- 
+- (num) id
+- (num) player_id
+- (text) img
+- (num) appearance
+- (num) total_goals
+- (num) trophies
+- (text) bio
+- (year) joined
+- (date) first_match
+- (text) first_concurrent
+- statist thống kê

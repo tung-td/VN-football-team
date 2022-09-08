@@ -85,7 +85,7 @@
             <div class="sub-position">
                 @foreach($squad_by_id as $key => $player)
                     @if($player->player_status == '0' && $player->player_position == '1')
-                        <div class="position-btn" data-aos="flip-left" onclick="location.href='{{route('player.details')}}'" style="cursor:pointer;">
+                        <div class="position-btn" data-aos="flip-left" onclick="location.href=`{{URL('/player-details/'.$player->player_id)}}`" style="cursor:pointer;">
                             <img src="{{URL('public/uploads/player/'.$player->player_image)}}" alt="{{$player->player_name}}"
                                 class="position-img ml-05 ml-15" style="">
                             <div class="position-info">
@@ -111,7 +111,7 @@
                 @endphp
                 @foreach($squad_by_id as $key => $player)
                     @if($player->player_status == '0' && $player->player_position == '2')
-                        <div class="position-btn" data-aos="flip-left">
+                        <div class="position-btn" data-aos="flip-left" onclick="location.href=`{{URL('/player-details/'.$player->player_id)}}`" style="cursor:pointer;">
                             <img src="{{URL('public/uploads/player/'.$player->player_image)}}" alt="{{$player->player_name}}"
                                 class="position-img ml-05 ml-15" style="">
                             <div class="position-info">
@@ -141,7 +141,7 @@
                 @endphp
                 @foreach($squad_by_id as $key => $player)
                     @if($player->player_status == '0' && $player->player_position == '3')
-                        <div class="position-btn" data-aos="flip-left">
+                        <div class="position-btn" data-aos="flip-left" onclick="location.href=`{{URL('/player-details/'.$player->player_id)}}`" style="cursor:pointer;">
                             <img src="{{URL('public/uploads/player/'.$player->player_image)}}" alt="{{$player->player_name}}"
                                 class="position-img ml-05 ml-15" style="">
                             <div class="position-info">
@@ -171,7 +171,7 @@
                 @endphp
                 @foreach($squad_by_id as $key => $player)
                     @if($player->player_status == '0' && $player->player_position == '4')
-                        <div class="position-btn" data-aos="flip-left">
+                        <div class="position-btn" data-aos="flip-left" onclick="location.href=`{{URL('/player-details/'.$player->player_id)}}`" style="cursor:pointer;">
                             <img src="{{URL('public/uploads/player/'.$player->player_image)}}" alt="{{$player->player_name}}"
                                 class="position-img ml-05 ml-15" style="">
                             <div class="position-info">
@@ -207,7 +207,7 @@
                         <!-- 3 -->
                         @foreach($squad_by_id as $key => $player)
                             @if($player->player_position == '1')
-                                <div class="player-btn" data-aos="flip-left">
+                                <div class="player-btn" data-aos="flip-left" onclick="location.href=`{{URL('/player-details/'.$player->player_id)}}`" style="cursor:pointer;">
                                     <img src="{{URL('public/uploads/player/'.$player->player_image)}}" alt="{{$player->player_name}}"
                                         class="position-img" style="">
                                     <div class="position-info">
@@ -233,7 +233,7 @@
                         <!-- 10 -->
                         @foreach($squad_by_id as $key => $player)
                             @if($player->player_position == '2')
-                                <div class="player-btn" data-aos="flip-left">
+                                <div class="player-btn" data-aos="flip-left" onclick="location.href=`{{URL('/player-details/'.$player->player_id)}}`" style="cursor:pointer;">
                                     <img src="{{URL('public/uploads/player/'.$player->player_image)}}" alt="{{$player->player_name}}"
                                         class="position-img" style="">
                                     <div class="position-info">
@@ -260,7 +260,7 @@
                         <!-- 8 -->
                         @foreach($squad_by_id as $key => $player)
                             @if($player->player_position == '3')
-                                <div class="player-btn" data-aos="flip-left">
+                                <div class="player-btn" data-aos="flip-left" onclick="location.href=`{{URL('/player-details/'.$player->player_id)}}`" style="cursor:pointer;">
                                     <img src="{{URL('public/uploads/player/'.$player->player_image)}}" alt="{{$player->player_name}}"
                                         class="position-img" style="">
                                     <div class="position-info">
@@ -287,7 +287,7 @@
                         <!-- 5 -->
                         @foreach($squad_by_id as $key => $player)
                             @if($player->player_position == '4')
-                                <div class="player-btn" data-aos="flip-left">
+                                <div class="player-btn" data-aos="flip-left" onclick="location.href=`{{URL('/player-details/'.$player->player_id)}}`" style="cursor:pointer;">
                                     <img src="{{URL('public/uploads/player/'.$player->player_image)}}" alt="{{$player->player_name}}"
                                         class="position-img" style="">
                                     <div class="position-info">

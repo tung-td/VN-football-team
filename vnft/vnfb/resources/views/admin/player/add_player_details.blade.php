@@ -22,72 +22,79 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="review-content-section">
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon">
-                                                        <!-- <i class="icon nalika-user" aria-hidden="true"></i> -->
-                                                        <i class="material-icons" aria-hidden="true">drive_file_rename_outline</i>
-                                                    </span>
-                                                    <input name="player_name" type="text" class="form-control" placeholder="Player Name">
-                                                </div>
+                                                <select name="player_id" class="form-control pro-edt-select form-control-primary">
+                                                    <option value="">Choose Player</option>
+                                                    @foreach($list_player as $key => $player)
+                                                        <option value="{{$player->player_id}}">{{$player->player_name}}</option>
+                                                    @endforeach
+                                                </select>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
                                                         <!-- <i class="icon nalika-edit" aria-hidden="true"></i> -->
                                                         <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
                                                     </span>
-                                                    <input name="player_image" type="file" class="form-control" placeholder="Product Image">
+                                                    <input name="img" type="file" class="form-control" placeholder="Player Image" accept="image/*" onchange="loadDemoImgFile(event,1)">
+                                                    <img id="output1" style="max-width:50px">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
-                                                        <!-- <i class="icon nalika-new-file" aria-hidden="true"></i> -->
-                                                        <i class="material-icons" aria-hidden="true">filter_1</i>
+                                                        <i class="material-icons" aria-hidden="true">request_quote</i>
                                                     </span>
-                                                    <input name="player_shirt_num" type="number" class="form-control" placeholder="Player Shirt Number">
+                                                    <input name="appearance" type="text" class="form-control" placeholder="Appearance">
                                                 </div>
-                                                <select name="player_squad" class="form-control pro-edt-select form-control-primary">
-                                                    <option value="1">Men</option>
-                                                    <option value="2">Women</option>
-                                                    <option value="3">Youngs</option>
-                                                    <option value="4">Legends</option>
-                                                </select>
-                                                <select name="player_position" class="form-control pro-edt-select form-control-primary">
-                                                    <option value="1">Goalkeeper</option>
-                                                    <option value="2">Defender</option>
-                                                    <option value="3">Midfielder</option>
-                                                    <option value="4">Forward</option>
-                                                </select>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">request_quote</i>
+                                                    </span>
+                                                    <input name="total_goals" type="text" class="form-control" placeholder="Total Goals">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">request_quote</i>
+                                                    </span>
+                                                    <input name="trophies" type="text" class="form-control" placeholder="Trophies">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="review-content-section">
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
-                                                        <!-- <i class="icon nalika-user" aria-hidden="true"></i> -->
-                                                        <i class="material-icons" aria-hidden="true">cake</i>
+                                                        <i class="material-icons" aria-hidden="true">request_quote</i>
                                                     </span>
-                                                    <input name="player_birth" type="date" class="form-control" placeholder="Player Birthday">
+                                                    <input name="bio" type="text" class="form-control" placeholder="Biography">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
-                                                        <!-- <i class="icon nalika-user" aria-hidden="true"></i> -->
-                                                        <i class="material-icons" aria-hidden="true">sports_soccer</i>
+                                                        <i class="material-icons" aria-hidden="true">request_quote</i>
                                                     </span>
-                                                    <input name="player_club" type="text" class="form-control" placeholder="Player Club">
+                                                    <input name="joined" type="text" class="form-control" placeholder="Joined Year">
                                                 </div>
-                                                <select name="player_status" class="form-control pro-edt-select form-control-primary">
-                                                    <option value="unlocked">Unlocked</option>
-                                                    <option value="locked">Locked</option>
-                                                </select>
-                                                <select name="player_gender" class="form-control pro-edt-select form-control-primary">
-                                                    <option value="0">Male</option>
-                                                    <option value="1">Female</option>
-                                                </select>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">request_quote</i>
+                                                    </span>
+                                                    <input name="first_match" type="date" class="form-control" placeholder="First Match">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">request_quote</i>
+                                                    </span>
+                                                    <input name="first_concurrent" type="text" class="form-control" placeholder="First Concurrent">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">request_quote</i>
+                                                    </span>
+                                                    <input name="quote" type="text" class="form-control" placeholder="Quote">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="text-center custom-pro-edt-ds">
-                                                <button name="add_player" type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Add
+                                                <button name="add_player_details" type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Add
                                                     </button>
                                                 <!-- <button type="button" class="btn btn-ctl-bt waves-effect waves-light">Discard
                                                     </button> -->
@@ -104,4 +111,13 @@
     </div>
 </div>
 <!-- Success Modal ???-->
+<script>
+var loadDemoImgFile = function(event,x) {
+    var output = document.getElementById('output'+x);
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+    URL.revokeObjectURL(output.src) // free memory
+    }
+};
+</script>
 @endsection

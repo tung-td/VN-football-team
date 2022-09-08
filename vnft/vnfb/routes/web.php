@@ -185,14 +185,19 @@ Route::get('/delete-user/{user_id}', [ManageUserController::class, 'delete_user'
 
     // ----- Player -----
 Route::get('/add-player', [PlayerController::class, 'add_player'])->name('player.add');
+Route::get('/add-player-details', [PlayerController::class, 'add_player_details'])->name('player.details.add');
 // Route::get('/edit-player/{player_id}', [PlayerController::class, 'edit_player']);
 // Route::get('/delete-player/{player_id}', [PlayerController::class, 'delete_player']);
 Route::get('/list-player', [PlayerController::class, 'list_player'])->name('player.list');
 Route::get('/player-details', [PlayerController::class, 'player_details'])->name('player.details');
+Route::get('/player-details/{player_id}', [PlayerController::class, 'player_details']);
+Route::get('/list-player-details', [PlayerController::class, 'list_player_details'])->name('player.details.list');
 Route::get('/vnsquad', [PlayerController::class, 'vnsquad'])->name('vnsquad');
 
 // Route::get('/unactive-player/{player_id}', [PlayerController::class, 'unactive_player']);
 // Route::get('/active-player/{player_id}', [PlayerController::class, 'active_player']);
+// Route::get('/unactive-player-details/{id}', [PlayerController::class, 'unactive_player_details']);
+// Route::get('/active-player-details/{id}', [PlayerController::class, 'active_player_details']);
 
 Route::post('/save-player', [PlayerController::class, 'save_player']);
 // Route::post('/update-player/{player_id}', [PlayerController::class, 'update_player']);
