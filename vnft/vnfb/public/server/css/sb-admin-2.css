@@ -10278,7 +10278,7 @@ a:focus {
 }
 
 .bg-gradient-warning {
-    background-color: #f6c23e;
+    background-color: #c70101;
     background-image: linear-gradient(180deg, #f6c23e 10%, #dda20a 100%);
     background-size: cover;
 }

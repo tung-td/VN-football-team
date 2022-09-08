@@ -39,9 +39,9 @@
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb" class="main-breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="{{route('home')}}">Trang chủ</a></li>
-              <li class="breadcrumb-item"><a href="javascript:void(0)">Người dùng</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Thông tin</li>
+              <li class="breadcrumb-item"><a href="{{route('home')}}">Home page</a></li>
+              <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Information</li>
             </ol>
         </nav>
         <!-- /Breadcrumb -->
@@ -55,9 +55,9 @@
 		            <!-- https://bootdey.com/img/Content/avatar/avatar7.png -->
 		            <div class="mt-3">
 		              <h4>{{$name}}</h4>
-		              <p class="text-secondary mb-1">Khách Hàng</p>
+		              <p class="text-secondary mb-1">Customer</p>
 		              <p class="text-muted font-size-sm">{{$city_name}} ({{$zip_code}})</p>
-		              <a class="btn btn-grape col-md-12" href="{{route('client.update')}}">Sửa thông tin</a>
+		              <a class="btn btn-grape col-md-12" href="{{route('client.update')}}">Edit information</a>
 		            </div>
 		          </div>
 		        </div>
@@ -66,16 +66,16 @@
 		      <!-- CREDIT CARD -->
 		      @if($credit_card_name)
 		      <div data-aos="fade-up" data-aos class="card mt-3">
-		      	<div class="card-header"><b> Thẻ tín dụng</b></div>
+		      	<div class="card-header"><b>Credit card</b></div>
 		      	<div class="card-body table-responsive">
 		      		<table class="table table-bordered">
 					  <tbody>
 					    <tr>
-					      <th scope="row">Tên chủ thẻ</th>
+					      <th scope="row">Account name</th>
 					      <td colspan="2">{{$credit_card_name}}</td>
 					    </tr>
 					    <tr>
-					      <th scope="row">Số thẻ</th>
+					      <th scope="row">Card number</th>
 					      <td colspan="2">{{$credit_card_num}}</td>
 					    </tr>
 					    <tr>
@@ -83,7 +83,7 @@
 					      <td colspan="2">{{$cvv_cvc}}</td>
 					    </tr>
 					    <tr>
-					      <th scope="row">Hết hạn</th>
+					      <th scope="row">Expiration date</th>
 					      <td>{{$exp_month}}</td>
 					      <td>{{$exp_year}}</td>
 					    </tr>
@@ -122,11 +122,11 @@
 
 		    	<!-- Personal Info -->
 		      <div data-aos="fade-left" data-aos class="card mb-3">
-		      	<div class="card-header"><b> Thông tin cá nhân</b></div>
+		      	<div class="card-header"><b> Personal information</b></div>
 		        <div class="card-body">
 		          <div class="row">
 		            <div class="col-sm-3">
-		              <h6 class="mb-0">Họ và Tên</h6>
+		              <h6 class="mb-0">Name</h6>
 		            </div>
 		            <div class="col-sm-9 text-secondary">
 		              {{$name}}
@@ -144,39 +144,39 @@
 		          <hr>
 		          <div class="row">
 		            <div class="col-sm-3">
-		              <h6 class="mb-0">Số điện thoại</h6>
+		              <h6 class="mb-0">Phone number</h6>
 		            </div>
 		            <div class="col-sm-9 text-secondary">
 		            	@if($phone)
 		              		{{$phone}}
 		              	@else
-		              		(Quý khách Chưa cập nhật)
+		              		(Not update)
 		              	@endif
 		            </div>
 		          </div>
 		          <hr>
 		          <div class="row">
 		            <div class="col-sm-3">
-		              <h6 class="mb-0">Địa chỉ đường</h6>
+		              <h6 class="mb-0">Street address</h6>
 		            </div>
 		            <div class="col-sm-9 text-secondary">
 		              	@if($street_address)
 		              		{{$street_address}}
 		              	@else
-		              		(Quý khách Chưa cập nhật)
+		              		(Not update)
 		              	@endif
 		            </div>
 		          </div>
 		          <hr>
 		          <div class="row">
 		            <div class="col-sm-3">
-		              <h6 class="mb-0">Địa Phương</h6>
+		              <h6 class="mb-0">Local</h6>
 		            </div>
 		            <div class="col-sm-9 text-secondary">
 		            	@if($city)
 		              		{{$ward_name}}, {{$district_name}}, {{$city_name}}
 		              	@else
-		              		(Quý khách Chưa cập nhật)
+		              		(Not update)
 		              	@endif
 		            </div>
 		          </div>
@@ -185,8 +185,8 @@
 
 		      <div data-aos="fade-up" data-aos class="card mb-3">
 		      	<div class="card-header">
-		      		<b> Lịch sử mua hàng</b>
-		      		<a style="float: right;" class="btn btn-success" href="{{route('client.history')}}">Xem nhiều hơn</a>
+		      		<b> Purchase history</b>
+		      		<a style="float: right;" class="btn btn-success" href="{{route('client.history')}}">More</a>
 		      	</div>
 		        <div class="card-body">
 		          <div class="row table-responsive">
@@ -194,11 +194,11 @@
 					  <thead>
 					    <tr>
 					      <th scope="col">#</th>
-					      <th scope="col">Mã đơn</th>
-					      <th scope="col">Đặt hàng lúc</th>
-					      <th scope="col">Tổng thanh toán</th>
-					      <th scope="col">Tình trạng</th>
-					      <th scope="col">Xem thêm</th>
+					      <th scope="col">Code orders</th>
+					      <th scope="col">Time Order</th>
+					      <th scope="col">Total payment</th>
+					      <th scope="col">Status</th>
+					      <th scope="col">More</th>
 					    </tr>
 					  </thead>
 					  <tbody>
@@ -218,22 +218,22 @@
 							      <td>
 							      	@switch($order->order_status)
 									    @case(0)
-									        Chờ shop xử lí
+											Waiting for progressing
 									        @break
 									    @case(1)
-									        Shop đã xử lí nhưng chưa giao
+											Processed and not yet delivered
 									        @break
 									    @case(2)
-									        Đang giao...
+											Delivering...
 									        @break
 									    @case(3)
-									        Đã đến nơi...
+											Arrived...
 									        @break
 									    @case(4)
-									        Đã hoàn thành...
+											Complete...
 									        @break
 									    @default
-									        Lỗi...
+									        Error...
 									@endswitch
 							      </td>
 							      <td>
@@ -247,7 +247,7 @@
 									    @endif
 							    		@endforeach
 						    		@else
-						    			lỗi k có
+						    			Error
 						    		@endif
 						    		</td>
 							    </tr>
@@ -261,16 +261,16 @@
 									<table id="table{{$order->id}}" class="table table-bordered col-md-12" style="display:none;">
 									  <thead>
 									  	<tr><th colspan="4">
-									  		Chi tiết đơn hàng (mã: {{$order->id}}
+										  	Order details (Code: {{$order->id}}
 										  		@if($order->order_coupon)
-	                        	| giảm: {{number_format($order->order_coupon)}} VNĐ 
+	                        	| Reduce: {{number_format($order->order_coupon)}} VNĐ 
 	                        @endif
                       	)</th></tr>
 									    <tr>
 									      <th scope="col">#</th>
-									      <th scope="col">Tên sản phẩm</th>
-									      <th scope="col">Giá</th>
-									      <th scope="col">SL</th>
+									      <th scope="col">Product's name</th>
+									      <th scope="col">Price</th>
+									      <th scope="col">Quantity</th>
 									    </tr>
 									  </thead>
 									  <tbody>
@@ -300,7 +300,7 @@
 					  		@endphp
 						@else
 							<tr>
-								<td colspan="5">Quý khách chưa đặt đơn hàng nào!</td>
+								<td colspan="5">No orders yet!</td>
 							</tr>
 						@endif
 					  </tbody>

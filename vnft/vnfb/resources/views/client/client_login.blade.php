@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Đăng nhập - Laptop LT</title>
+    <title>Login account</title>
     <link rel="shortcut icon" type="image/x-icon" href="{{('public/client/img/ico-logo.ico')}}">
     <link href="{{asset('public/server/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -23,15 +23,15 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-warning mb-4">Đăng nhập</h1>
+                                        <h1 class="h4 text-warning mb-4">Login</h1>
                                     </div>
                                     <form class="user" action="{{route('client.login.handle')}}" method="post">
                                     {{csrf_field()}}
                                         <div class="form-group">
-                                            <input type="text" name="client_user" class="form-control form-control-user" placeholder="Tên đăng nhập..." required>
+                                            <input type="text" name="client_user" class="form-control form-control-user" placeholder="User name..." required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="client_password" class="form-control form-control-user" placeholder="Mật khẩu..." required>
+                                            <input type="password" name="client_password" class="form-control form-control-user" placeholder="Password..." required>
                                         </div>
                                         <p style="color: red; font-size: 12px;">
                                             <?php
@@ -48,14 +48,14 @@
                                             }
                                             ?>
                                         </p>
-                                        <button type="submit" class="btn btn-warning btn-user btn-block">Đăng nhập</button>
+                                        <button type="submit" class="btn btn-warning btn-user btn-block">Login</button>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Quên mật khẩu?</a>
+                                        <a class="small" href="forgot-password.html">Forgot password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="{{route('client.register')}}">Tạo tài khoản mới!</a>
+                                        <a class="small" href="{{route('client.register')}}">Create a new account!</a>
                                     </div>
                                 </div>
                             </div>

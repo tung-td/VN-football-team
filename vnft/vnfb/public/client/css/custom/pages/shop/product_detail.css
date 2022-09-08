@@ -423,3 +423,13 @@ select {
 	}
 }
 
+#buy_it > .buy-product.form-control.btn.btn-grape.add-to-cart {
+	background-color: #d34646;
+    color: #fff;
+}
+
+.buy-product.form-control.btn.btn-grape.add-to-cart:hover {
+	background-color: #999 !important;
+	border: unset !important;
+	color: #fff !important;
+}

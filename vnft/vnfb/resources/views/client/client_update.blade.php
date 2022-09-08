@@ -25,7 +25,7 @@
 <!-- Announce when update  successful -->
 @if($status_update == 'success')
     <div class="announcement">
-      <p>Thông tin của {{$name}} đã được cập nhật thành công vào lúc {{$updated_at}}</p>
+      <p>Information of {{$name}} was updated at {{$updated_at}}</p>
     </div>
 <?php Session::put('status_update',null); ?>
 @endif
@@ -37,25 +37,25 @@
         @csrf
         <div class=" checkout row">
           <div class=" checkout col-50">
-            <h3>Thông tin tài khoản</h3>
-            <label for="fname"><i class=" checkout fa fa-user"></i> Họ và Tên</label>
+            <h3>Account information</h3>
+            <label for="fname"><i class=" checkout fa fa-user"></i> Full name</label>
             <input type="text" id="fname" name="name" value="{{$name}}" placeholder="Nguyễn Văn A">
             <label for="email"><i class=" checkout fa fa-envelope"></i> Email</label>
             <input type="text" id="email" name="email" value="{{$email}}" placeholder="nguyenvana@gmail.com">
-            <label for="password"><i class=" checkout fa fa-lock"></i> Mật khẩu</label>
-            <input type="password" id="email" name="password" placeholder="Nhập lại mật khẩu hoặc sửa mật khẩu mới...">
-            <label for="phone"><i class=" checkout fa fa-phone"></i> Phone</label>
+            <label for="password"><i class=" checkout fa fa-lock"></i> Password</label>
+            <input type="password" id="email" name="password" placeholder="Re-enter password or correct new password...">
+            <label for="phone"><i class=" checkout fa fa-phone"></i> Phone number</label>
             <input type="num" id="phone" name="phone" value="{{$phone}}" placeholder="0123456789">
-            <label for="adr"><i class=" checkout fa fa-address-card-o"></i> Địa chỉ</label>
+            <label for="adr"><i class=" checkout fa fa-address-card-o"></i> Address</label>
             <input type="text" id="adr" name="street_address" value="{{$street_address}}"  placeholder="470 Đường Trần Đại Nghĩa">
 
             <div class=" checkout row">
               <div class=" checkout col-50">
-                <label for="city"><i class=" checkout fa fa-institution"></i> Thành phố</label>
+                <label for="city"><i class=" checkout fa fa-institution"></i> City</label>
                 <select id="city" name="city" class="form-control form-control-sm choose city" style="height: 50px;">
                     <!-- <option value="">---Chọn tỉnh/thành phố---</option> -->
                     @if($city_id == null)
-                      <option value="">---Chọn tỉnh/thành phố---</option>
+                      <option value="">---Choose city---</option>
                     @endif
                     @foreach ($city as $key => $ci)
                         @if($ci->matp == $city_id)
@@ -67,7 +67,7 @@
                 </select>
               </div>
               <div class=" checkout col-50">
-                <label for="province">Chọn quận/huyện</label>
+                <label for="province">Choose local</label>
                 <select id="province" name="province" class="form-control form-control-sm choose province" style="height: 50px;">
                     <!-- <option value="">---Chọn quận/huyện---</option> -->
                     <option value="{{$district_id}}">
@@ -80,7 +80,7 @@
                         @endif
                       @endforeach
                     @else
-                    ---Chọn quận/huyện---
+                    ---Choose local---
                     @endif
                     </option>
                 </select>
@@ -89,7 +89,7 @@
 
             <div class=" checkout row">
               <div class=" checkout col-50">
-                <label for="wards">Chọn xã/phường</label>
+                <label for="wards">Choose wards</label>
                 <select id="wards" name="wards" class="form-control form-control-sm wards" style="height: 50px;">
                     <!-- <option value="">---Chọn xã/phường---</option> -->
                     <option value="{{$ward_id}}">
@@ -102,13 +102,13 @@
                         @endif
                       @endforeach
                     @else
-                    ---Chọn xã/phường---
+                    ---Choose wards---
                     @endif
                     </option>
                 </select>
               </div>
               <div class=" checkout col-50">
-                <label for="zip">Mã vận chuyển Zip</label>
+                <label for="zip">Zip code</label>
                 <input type="text" id="zip" name="zip_code" value="{{$zip_code}}" placeholder="550000">
               </div>
             </div>
@@ -116,7 +116,7 @@
           </div>
 
           <div class=" checkout col-50">
-            <h3>Phương thức thanh toán</h3>
+            <h3>Payment methods</h3>
             <!-- <label for="fname">Loại được phép dùng</label>
             <div class=" checkout icon-container">
               <i class=" checkout fa fa-cc-visa" style="color:navy;"></i>
@@ -124,26 +124,26 @@
               <i class=" checkout fa fa-cc-mastercard" style="color:red;"></i>
               <i class=" checkout fa fa-cc-discover" style="color:orange;"></i>
             </div> -->
-            <label for="cname">Tên trên thẻ</label>
+            <label for="cname">Name card</label>
             <input type="text" id="cname" name="credit_card_name" value="{{$credit_card_name}}" placeholder="NGUYEN VAN A">
-            <label for="ccnum">Số thẻ tín dụng</label>
+            <label for="ccnum">Credit card number</label>
             <input type="text" id="ccnum" name="credit_card_num" value="{{$credit_card_num}}" placeholder="1111-2222-3333-4444">
-            <label for="expmonth">Tháng hết hạn</label>
+            <label for="expmonth">Expiration month</label>
             <input type="text" id="expmonth" name="exp_month" value="{{$exp_month}}" placeholder="Tháng 9">
             <div class=" checkout row">
               <div class=" checkout col-50">
-                <label for="expyear">Năm hết hạn</label>
+                <label for="expyear">Expiration year</label>
                 <input type="text" id="expyear" name="exp_year" value="{{$exp_year}}" placeholder="2021">
               </div>
               <div class=" checkout col-50">
-                <label for="cvv_cvc">Mã xác thực CVV</label>
+                <label for="cvv_cvc">Verification CVV code</label>
                 <input type="text" id="cvv_cvc" name="cvv_cvc" value="{{$cvv_cvc}}" placeholder="352">
               </div>
             </div>
           </div>
           
         </div>
-        <input type="submit" value="Lưu thông tin" class=" checkout btn btn-grape">
+        <input type="submit" value="Submit" class=" checkout btn btn-grape">
       </form>
     </div>
   </div>
