@@ -40,7 +40,8 @@
                         <td>{{ $pro->product_name}}</td>
                         <td>{{ $pro->category_name}}</td>
                         <td>{{ $pro->product_parameters}}</td>
-                        <td>{{number_format($pro->product_price,0,',','.')}} VNĐ</td>
+                        
+                        <td>{{$pro->product_price}} VNĐ</td>
                         <td class="text-center">
                             <?php if($pro->product_status == 0) { ?>
                                 <a href="{{URL('/unactive-product/'.$pro->product_id)}}">
