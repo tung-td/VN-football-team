@@ -35,8 +35,8 @@ class UserController extends Controller
                 Session::put('name', $result_name->name);
                 Session::put('id', $result_name->id);
 
-                if($result->status == 'locked') {
-                    return back()->with('status', 'Account '.$result->name.' is locked! Please create a new account or use another account to log in');
+                if($result_name->status == 'locked') {
+                    return back()->with('status', 'Account '.$result_name->name.' is locked! Please create a new account or use another account to log in');
                 } else {
                     // echo 'login successful !!';
                     return redirect(session('back_url'));
