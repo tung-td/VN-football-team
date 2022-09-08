@@ -66,6 +66,11 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/* ADD TICKET PRICE */
+.add-ticket-price {
+    display: none;
+}
 </style>
 <!-- Single pro tab start-->
 <div class="single-product-tab-area mg-b-30">
@@ -137,18 +142,18 @@ input:checked + .slider:before {
                                                     </span>
                                                     <input name="type" type="text" class="form-control" placeholder="Type">
                                                 </div>
-                                                <select name="ticket" class="form-control pro-edt-select form-control-primary">
+                                                <select id="addTicketPrice" name="ticket" class="form-control pro-edt-select form-control-primary">
                                                     <option value="0" selected>No ticket sales</option>
                                                     <option value="1">Tickets sales</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <hr>
-                                    <div class="row">
+                                    <hr class="add-ticket-price">
+                                    <div class="row add-ticket-price">
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="review-content-section">
-                                                <h4>Ticket Price</h4>
+                                                <h4 style="color: white">Ticket Price</h4>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -157,11 +162,11 @@ input:checked + .slider:before {
                                                     <input type="checkbox">
                                                     <span class="slider round"></span>
                                                 </label>
-                                                 Default Price
+                                                 <span style="color: white">Default Price</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row add-ticket-price">
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="review-content-section">
                                                 <div class="input-group mg-b-pro-edt">
@@ -255,5 +260,14 @@ var loadDemoImgFile = function(event,x) {
         });
         // <div id="hehe" class="team">oke</div>
     });
+</script>
+<script>
+$('#addTicketPrice').on('change', function() {
+  if( this.value == 1) {
+    $('.add-ticket-price').css('display', 'block');
+  } else {
+    $('.add-ticket-price').css('display', 'none');
+  }
+});
 </script>
 @endsection
