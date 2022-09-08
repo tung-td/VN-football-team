@@ -1,78 +1,134 @@
 @extends('admin.layout')
+@section('title', 'Edit News')
+@section('head_icon', 'inventory')
+@section('heading', 'Edit News')
 @section('admin_content')
-<!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Bài viết</h1>
-<p class="mb-4"></p>
-
-<!-- DataTales Example -->
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Chỉnh sửa bài viết</h6>
-    </div>
-    <div class="container card-body">
-        <form action="{{URL('/update-post/'.$edit_post->post_id)}}" method="post" enctype="multipart/form-data">
-            {{ csrf_field() }}
+<!-- Single pro tab start-->
+<div class="single-product-tab-area mg-b-30">
+    <!-- Single pro tab review Start-->
+    <div class="single-pro-review-area">
+        <div class="container-fluid">
             <div class="row">
-                <div class="form-group col-md-6">
-                    <label for="cate_post_id">Danh mục bài viết</label>
-                    <select id="cate_post_id" name="cate_post_id" class="form-control form-control-sm" value="{{$edit_post->cate_post_id}}">
-                    @foreach($cate_post as $key => $cate)
-                        @if($cate->category_id==$cate->category_id)
-                        <option selected value="{{$cate->category_id}}">{{$cate->category_name}}</option>
-                        @else
-                        <option value="{{$cate->category_id}}">{{$cate->category_name}}</option>
-                        @endif
-                    @endforeach
-                    </select>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="review-tab-pro-inner">
+                        <!-- <ul id="myTab3" class="tab-review-design">
+                            <li class="active"><a href="#description"><i class="icon nalika-edit" aria-hidden="true"></i>Add Product</a></li>
+                        </ul> -->
+                        <div id="myTabContent" class="tab-content custom-product-edit">
+                            <div class="product-tab-list tab-pane fade active in" id="description">
+                                <form action="{{URL('/update-post/'.$edit_post->post_id)}}" method="post" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <!-- <i class="icon nalika-user" aria-hidden="true"></i> -->
+                                                        <i class="material-icons" aria-hidden="true">drive_file_rename_outline</i>
+                                                    </span>
+                                                    <input name="post_title" type="text" class="form-control" value="{{$edit_post->post_title}}" placeholder="Title">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <!-- <i class="icon nalika-edit" aria-hidden="true"></i> -->
+                                                        <i class="material-icons" aria-hidden="true">add_photo_alternate</i>
+                                                    </span>
+                                                    <input name="post_thumbnail" type="file" class="form-control" placeholder="Thumbnail" accept="image/*" onchange="loadDemoImgFile(event,1)">
+                                                    @if($edit_post->post_thumbnail == null)
+                                                        <img id="output1" style="max-width:50px">
+                                                    @else
+                                                        <img id="output1" src="{{URL('public/uploads/post/'.$edit_post->post_thumbnail)}}" alt="{{$edit_post->post_title}}" style="max-width:50px">
+                                                    @endif
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <!-- <i class="fa fa-usd" aria-hidden="true"></i> -->
+                                                        <i class="material-icons" aria-hidden="true">request_quote</i>
+                                                    </span>
+                                                    <input name="post_meta_desc" type="text" class="form-control" placeholder="Meta SEO description" value="{{$edit_post->post_meta_desc}}">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <!-- <i class="icon nalika-new-file" aria-hidden="true"></i> -->
+                                                        <i class="material-icons" aria-hidden="true">assessment</i>
+                                                    </span>
+                                                    <input name="post_meta_keywords" type="text" class="form-control" placeholder="Meta SEO keywords" value="{{$edit_post->post_meta_keywords}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                <select name="cate_post_id" class="form-control pro-edt-select form-control-primary">
+                                                    @foreach($cate_post as $key => $cate)
+                                                        @if($cate->category_id==$cate->category_id)
+                                                        <option selected value="{{$cate->category_id}}">{{$cate->category_name}}</option>
+                                                        @else
+                                                        <option value="{{$cate->category_id}}">{{$cate->category_name}}</option>
+                                                        @endif
+                                                    @endforeach
+                                                </select>
+                                                <select name="post_status" class="form-control pro-edt-select form-control-primary">
+                                                    @if($edit_post->post_status == 1)
+                                                    <option value="1" selected>Public</option>
+                                                    <option value="0">Private</option>
+                                                    @else
+                                                    <option value="1">Public</option>
+                                                    <option value="0" selected>Private</option>
+                                                    @endif
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="custom-pro-edt-ds">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <!-- <i class="icon nalika-favorites" aria-hidden="true"></i> -->
+                                                        <i class="material-icons" aria-hidden="true">description</i>
+                                                    </span>
+                                                    <textarea id="editor1" name="post_content" row="8" type="text" class="form-control" placeholder="Product Description">
+                                                        {{$edit_post->post_content}}
+                                                    </textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="text-center custom-pro-edt-ds">
+                                                <button name="add_product" type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Update
+                                                    </button>
+                                                <!-- <button type="button" class="btn btn-ctl-bt waves-effect waves-light">Discard
+                                                    </button> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="post_status">Tình trạng</label>
-                    <select id="post_status" name="post_status" class="form-control form-control-sm">
-                        @if($edit_post->post_status == 1)
-                        <option value="1">Công khai</option>
-                        <option value="0">Bị ẩn</option>
-                        @else
-                        <option value="0">Bị ẩn</option>
-                        <option value="1">Công khai</option>
-                        @endif
-                    </select>
-                </div>
             </div>
-            <div class="form-group">
-                <label for="post_title">Tiêu đề bài viết</label>
-                <input type="text" class="form-control" id="post_title" name="post_title" value="{{$edit_post->post_title}}" placeholder="Tên bài viết...">
-            </div>
-            <div class="form-group">
-                <label for="post_thumbnail">Hình ảnh bài viết</label>
-                <input style="padding: .2rem .75rem;" type="file" class="form-control" id="post_thumbnail" name="post_thumbnail">
-                <img src="{{URL('public/uploads/post/'.$edit_post->post_thumbnail)}}" alt="{{$edit_post->post_title}}" width="100" height="100">
-            </div>
-            <div class="form-group">
-                <label for="post_desc">Nội dung bài viết</label>
-                <textarea style="resize: none;" class="form-control" id="editor1" name="post_desc" rows="3" placeholder="Mô tả bài viết...">
-                    {{$edit_post->post_content}}
-                </textarea>
-            </div>
-            <div class="form-group">
-                <label for="post_meta_desc">Meta mô tả (SEO)</label>
-                <input type="text" class="form-control" id="post_meta_desc" name="post_meta_desc" placeholder="Meta mô tả bài viết..." value="{{$edit_post->post_meta_desc}}">
-            </div>
-            <div class="form-group">
-                <label for="post_meta_keywords">Meta từ khoá (SEO)</label>
-                <input type="text" class="form-control" id="post_meta_keywords" name="post_meta_keywords" placeholder="Meta từ khoá bài viết..." value="{{$edit_post->post_meta_keywords}}">
-            </div>
-
-            <button type="submit" name="add_post" class="btn btn-primary">Cập nhật bài viết</button>
-        </form>
+        </div>
     </div>
 </div>
-<!-- Success Modal-->
+<!-- Success Modal ???-->
 
-    <!-- CKEditor/CKFinder -->
-    <!-- <script src="{{asset('public/ckeditor1/ckeditor.js') }}"></script> -->
-    <script src="//cdn.ckeditor.com/4.17.1/full/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace('editor1'); 
-    </script>
 
+
+<!-- CKEditor/CKFinder-->
+<script src="{{asset('public/ckeditor1/ckeditor.js') }}"></script>
+<script>
+    CKEDITOR.replace( 'editor1' );
+</script>
+<script>
+var loadDemoImgFile = function(event,x) {
+    var output = document.getElementById('output'+x);
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+    URL.revokeObjectURL(output.src) // free memory
+    }
+};
+</script>
 @endsection
