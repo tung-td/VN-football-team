@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 08, 2022 lúc 10:15 AM
+-- Thời gian đã tạo: Th9 08, 2022 lúc 11:00 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -179,7 +179,8 @@ CREATE TABLE `payment` (
 INSERT INTO `payment` (`id`, `user_id`, `zip_code`, `payment_status`, `credit_card_name`, `credit_card_num`, `exp_month`, `exp_year`, `cvv_cvc`, `created_at`, `updated_at`) VALUES
 (3, '14', 550000, NULL, 'client2', '1345-2413-5755', 'Tháng 12', '2030', '423', '2022-08-12 21:38:50', '2022-08-12 22:07:13'),
 (4, '1', 550000, NULL, 'client1', '1345-2413-5755', 'Tháng 12', '2030', '423', '2022-08-12 21:38:50', '2022-08-12 22:07:13'),
-(5, '15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-04 04:42:07', NULL);
+(5, '15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-04 04:42:07', NULL),
+(6, '16', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-08 08:57:11', NULL);
 
 -- --------------------------------------------------------
 
@@ -555,7 +556,31 @@ INSERT INTO `tbl_player` (`player_id`, `player_position`, `player_name`, `player
 (68, 3, 'Khuat Van Khang', 'khuất văn khang189.jpg', '2003-05-11', 10, 'Pho Hien club', 3, 0, 0),
 (69, 4, 'Le Minh Binh', 'le minh binh291.jpg', '1999-12-25', 10, 'Cong An Nhan Dan club', 3, 0, 0),
 (70, 4, 'Tran Danh Trung', 'trần danh trung425.jpg', '2000-10-03', 19, 'Viettel club', 3, 0, 0),
-(71, 3, 'Khuat Van Khang', 'khuất văn khang392.jpg', '2003-05-11', 10, 'Pho Hien club', 3, 0, 0);
+(71, 3, 'Khuat Van Khang', 'khuất văn khang392.jpg', '2003-05-11', 10, 'Pho Hien club', 3, 0, 0),
+(72, 1, 'DUONG HONG SON', 'dương hồng sơn182.jpg', '1960-11-11', 1, 'VIETNAM', 4, 0, 0),
+(73, 1, 'PHAN VAN RANG', 'phan văn rạng561.jpg', '1950-01-01', 1, 'VIETNAM', 4, 0, 0),
+(74, 2, 'DOAN VAN HAU', 'van-hau-5x3-3252-1626427717965.jpg', '2000-01-01', 5, 'VIETNAM', 4, 0, 0),
+(75, 2, 'QUE NGOC HAI', 'que-ngoc-hai-5x3-4035-16267643147.jpg', '1985-01-01', 4, 'VIETNAM', 4, 0, 0),
+(76, 2, 'DO KHAI', 'dokhai912.webp', '1950-01-01', 3, 'VIETNAM', 4, 0, 0),
+(77, 2, 'PHAM HUYNH TAM LANG', 'phạm huỳnh tam lang48.jpg', '1950-01-01', 6, 'VIETNAM', 4, 0, 0),
+(78, 2, 'TRAN CONG MINH', 'tran-cong-minh-94906773.jpg', '1950-01-01', 3, 'VIETNAM', 1, 0, 0),
+(79, 2, 'DO DUY MANH', 'do-duy-manh-6472-1631247877947.jpg', '1997-01-01', 3, 'VIETNAM', 4, 0, 0),
+(80, 2, 'VU NHU THANH', 'vũ như thành913.jpg', '1950-01-01', 6, 'VIETNAM', 4, 0, 0),
+(81, 3, 'NGUYEN HONG SON', 'hong-son-189.jpeg', '1960-01-01', 8, 'VIETNAM', 4, 0, 0),
+(82, 3, 'NGUYEN MINH PHUONG', 'nguyễn minh phương33.jpg', '1980-01-01', 7, 'VIETNAM', 4, 0, 0),
+(83, 3, 'DO HUNG DUNG', 'hung-dung-1305-1-doc-lap-459622.jpg', '1996-01-01', 14, 'VIETNAM', 4, 0, 0),
+(84, 3, 'PHAM THANH LUONG', 'phạm thành lương818.jpg', '1980-01-01', 11, 'VIETNAM', 4, 0, 0),
+(85, 3, 'LE TAN TAI', 'Le-Tan-Tai2796.jpg', '1950-01-01', 15, 'VIETNAM', 4, 0, 0),
+(86, 3, 'LUONG XUAN TRUONG', 'Luong-Xuan-Truong-5x3-8369-1626766493908.jpg', '1999-01-01', 6, 'VIETNAM', 4, 0, 0),
+(87, 3, 'NGUYEN TRONG HOANG', 'nguyễn trọng hoàng714.jpg', '1985-01-01', 18, 'VIETNAM', 4, 0, 0),
+(88, 3, 'VO HOANG BUU', 'võ hoàng bữu621.webp', '1950-01-01', 22, 'VIETNAM', 4, 0, 0),
+(89, 3, 'NGUYEN TUAN ANH', 'Tuan-Anh-01288.jpg', '1990-01-01', 14, 'VIETNAM', 4, 0, 0),
+(90, 4, 'NGUYEN QUANG HAI', 'nguyen quang hai306.webp', '1997-01-01', 19, 'VIETNAM', 4, 0, 0),
+(91, 4, 'LE HUYNH DUC', 'le huynh duc995.jpg', '1970-01-01', 10, 'VIETNAM', 4, 0, 0),
+(92, 4, 'LE CONG VINH', 'Lê công vinh345.jpg', '1980-01-01', 9, 'VIETNAM', 4, 0, 0),
+(93, 4, 'NGUYEN CAO CUONG', 'nguyễn cao cường314.jpg', '1950-01-01', 11, 'VIETNAM', 4, 0, 0),
+(94, 4, 'NGUYEN VAN QUYET', 'nguyễn văn quyét903.jpg', '1980-02-02', 9, 'VIETNAM', 4, 0, 0),
+(95, 4, 'NGUYEN CONG PHUONG', 'cong-phuong-viet-nam837.jpg', '1995-01-01', 10, 'VIETNAM', 4, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -12820,7 +12845,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ph
 (3, 'staff1', 'staff1@staff1.com', NULL, '4d7d719ac0cf3d78ea8a94701913fe47', '032845164', '25 đường Trần Phú', 20287, 494, 48, 'unlocked', '1', '2021-11-17 05:39:09', '2021-11-17 06:39:32'),
 (4, 'staff2', 'staff2@staff2.com', NULL, '8bc01711b8163ec3f2aa0688d12cdf3b', '0354186462', '85 đường Ông Ích Khiêm', 20287, 494, 48, 'locked', '1', '2021-11-17 05:41:04', NULL),
 (14, 'client2', 'client2@gmail.com', NULL, '2c66045d4e4a90814ce9280272e510ec', '0748923940', '123 Nam Kì Khởi Nghĩa', 20287, 494, 48, 'unlocked', NULL, '2022-08-12 21:38:50', '2022-08-12 22:07:13'),
-(15, 'client3', 'client3@gmail.com', NULL, 'c27af3f6460eb10979adb366fc7f6856', NULL, NULL, NULL, NULL, NULL, 'unlocked', NULL, '2022-09-04 04:42:07', NULL);
+(15, 'client3', 'client3@gmail.com', NULL, 'c27af3f6460eb10979adb366fc7f6856', NULL, NULL, NULL, NULL, NULL, 'unlocked', NULL, '2022-09-04 04:42:07', NULL),
+(16, 'admin1', 'namphungdn134@gmail.com', NULL, 'e00cf25ad42683b3df678c61f42c6bda', NULL, NULL, NULL, NULL, NULL, 'unlocked', NULL, '2022-09-08 08:57:11', NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -13037,7 +13063,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`
@@ -13097,7 +13123,7 @@ ALTER TABLE `tbl_payment`
 -- AUTO_INCREMENT cho bảng `tbl_player`
 --
 ALTER TABLE `tbl_player`
-  MODIFY `player_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `player_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_post`
@@ -13151,7 +13177,7 @@ ALTER TABLE `tbl_tournament`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
