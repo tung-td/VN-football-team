@@ -15,7 +15,7 @@
 -> 30, 31, 1, 2: Tùng CSS lại 1. 2. 3. 9.
 
 - Frontend:
-	+ create page: edit register info, player details.
+	+ create page: css user info, player details.
 	+ update: validate input form
 - Backend:
 	+ Update data slider/page
