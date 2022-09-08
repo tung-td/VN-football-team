@@ -1521,3 +1521,12 @@ h3.h3 {
 .red-font {
     color: #c70101 !important;
 }
+
+figure {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.slide_img > img {
+    width: 200% !important;
+}
