@@ -227,7 +227,7 @@ class MatchController extends Controller
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));
             $new_image = $name_image.rand(0,999).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('public/uploads/match', $new_image);
+            // $get_image->move('public/uploads/match', $new_image);
             $data['stadium_background'] = $new_image;
         } else {
             $data['stadium_background'] = '';
@@ -236,35 +236,64 @@ class MatchController extends Controller
         Session::put('message', 'Add match successfully!');
 
         if($data['ticket'] == 1) {
-            $ticket_price = array([
-                'match_id' => $match_id,
-                'class1' => $request->$class1,
-                'class2' => $request->$class2,
-                'class3' => $request->$class3,
-                'class4' => $request->$class4
-            ]);
+            $ticket_price = array();
+            $ticket_price['match_id'] = $match_id;
+            $ticket_price['class1'] = $request->class1;
+            $ticket_price['class2'] = $request->class2;
+            $ticket_price['class3'] = $request->class3;
+            $ticket_price['class4'] = $request->class4;
             $ticket_price_id = DB::table('tbl_ticketprice')->insertGetId($ticket_price);
             
             $tickets = array();
             foreach ($tickets as $key => $ticket) {
+                $ticket = array();
                 $ticket['match_id'] = $match_id;
                 $ticket['ticket_price_id'] = $ticket_price_id;
                 $ticket['status'] = 1;
 
                 $stands = array("A","B","C","D");
+                $seat_chars = array("A","B","C","D","E","F","G","H","I","J");
                 foreach ($stands as $key => $stand) {
                     $ticket['stand'] = $stand;
                     if ($stand == "A" || $stand == "B" ) {
                         $stairs = array(2,5);
                         foreach ($stairs as $key => $stair) {
                             if ($stair == 2) {
-                                
+                                for($i = 1; $i<=10; $i++) {
+                                    $ticket['door'] = $i;
+                                    if($i<=6) {
+                                        $ticket['class'] = 4;
+                                        foreach ($seat_chars as $key => $seat_char) {
+                                            $ticket['seat_char'] = $seat_char;
+                                            for ($j=1; $j <= 14; $j++) { 
+                                                $ticket['seat_num'] = $j;
+                                                DB::table('tbl_ticket')->insert($ticket);
+                                                // print_r($ticket);
+                                            }
+                                        }
+                                    } elseif ($i>6) {
+                                        $ticket['class'] = 3;
+                                        
+                                    } elseif ($i>8) {
+                                        $ticket['class'] = 2;
+                                    }
+                                }
                             } elseif ($stair == 5) {
                                 for($i = 1; $i<=8; $i++) {
                                     $ticket['door'] = $i;
                                     if($i<=4) {
                                         $ticket['class'] = 3;
-                                        
+                                        foreach ($seat_chars as $key => $seat_char) {
+                                            $ticket['seat_char'] = $seat_char;
+                                            for ($j=1; $j <= 14; $j++) { 
+                                                $ticket['seat_num'] = $j;
+                                                // DB::table('tbl_ticket')->insert($ticket);
+                                                // print_r($ticket);
+                                            }
+                                        }
+                                    } elseif ($i>4) {
+                                        $ticket['class'] = 2;
+
                                     }
                                 }
                             }
