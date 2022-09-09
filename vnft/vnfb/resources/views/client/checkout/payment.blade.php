@@ -332,6 +332,23 @@
         }
     }
 
+    .col-md-4 {
+        position: absolute;
+        right: -331px;
+        text-align: unset !important;
+    }
+
+    .col-sm-12.col-md-4 {
+        position: unset;
+    }
+
+    .mess-update {
+        position: absolute;
+        top: 55px;
+        left: 11px;
+        color: red;
+    }
+
 </style>
 
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
