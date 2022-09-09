@@ -1,6 +1,10 @@
 @extends('layout')
 @section('content')
 <style>
+    .card:hover {
+    box-shadow: 2px 2px 15px #fd9a6ce5;
+    transform: unset !important;
+    }
     .table-responsive {
     display: block;
     width: 100%;
@@ -29,6 +33,7 @@
     .pay {
         background-color: #51af51;;
         color: #fff;
+        border: unset;
     }
 
     .col-sm-12.col-md-7.mb-5 {
@@ -137,7 +142,7 @@
                             </td>
                             <th style="text-align: right;">Total of all:</th>
                             <th style="text-align: right;">{{number_format($total, 0, ',', '.')}} VNĐ</th>
-                            <td class="text-center"><input type="submit" value="Update" name="update_qty" class="btn btn-grape"></td>
+                            <td class="text-center"><input type="submit" value="Update" name="update_qty" class="btn btn-grape back-home"></td>
                         </tr>
                     </tfoot>
                     @endif
@@ -218,7 +223,7 @@
                             <td>
                                 @php
                                 if($data['shipping_notes'] == null) {
-                                echo '(Không có)';
+                                echo '-';
                                 } else echo $data['shipping_notes'];
                                 @endphp
                             </td>
