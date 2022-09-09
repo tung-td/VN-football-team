@@ -150,10 +150,11 @@ DATABASE:
 + status
 + stand (4 fixed: A,B,C,D)
 + stair (2 fixed: 2,5)
-+ cate (5 fixed)
 + door (stair 5: 8; stair 2: 10)
 + seat (124 fixed: 10[A-J]x14 - 4[C-F]x4[6-9])
-+ class (1,2,3,4)
++ class (1,2,3,4,0)
+=> 6516 ticket for sales
+=> 6994 ticket for calculation
 
 - (num) id
 - (num) player_id

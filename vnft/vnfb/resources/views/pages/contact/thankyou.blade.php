@@ -11,9 +11,7 @@
         <div class="list_cs">
             <h4>A Gift For You</h4>
             <p>Enter coupon code #3RDTXVG12 next time to get 10% off</p>
-            <form>
-                <button class="hj sub"> TAKE 10% Off Now</button>
-            </form>
+                <button onclick="window.location='{{route('home')}}'" class="hj sub"> TAKE 10% Off Now</button>
         </div>
     </div>
 </div>
