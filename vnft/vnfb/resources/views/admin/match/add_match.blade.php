@@ -174,14 +174,14 @@ input:checked + .slider:before {
                                                         <!-- <i class="icon nalika-user" aria-hidden="true"></i> -->
                                                         <i class="material-icons-outlined" aria-hidden="true">class</i>
                                                     </span>
-                                                    <input name="class1" type="text" class="form-control" placeholder="Class 1st ticket price">
+                                                    <input id="class1" name="class1" type="text" class="form-control" placeholder="Class 1st ticket price">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
                                                         <!-- <i class="icon nalika-user" aria-hidden="true"></i> -->
                                                         <i class="material-icons-outlined" aria-hidden="true">class</i>
                                                     </span>
-                                                    <input name="class2" type="text" class="form-control" placeholder="Class 2nd ticket price">
+                                                    <input id="class2" name="class2" type="text" class="form-control" placeholder="Class 2nd ticket price">
                                                 </div>
                                             </div>
                                         </div>
@@ -192,14 +192,14 @@ input:checked + .slider:before {
                                                         <!-- <i class="icon nalika-user" aria-hidden="true"></i> -->
                                                         <i class="material-icons-outlined" aria-hidden="true">class</i>
                                                     </span>
-                                                    <input name="class3" type="text" class="form-control" placeholder="Class 3rd ticket price">
+                                                    <input id="class3" name="class3" type="text" class="form-control" placeholder="Class 3rd ticket price">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
                                                         <!-- <i class="icon nalika-user" aria-hidden="true"></i> -->
                                                         <i class="material-icons-outlined" aria-hidden="true">class</i>
                                                     </span>
-                                                    <input name="class4" type="text" class="form-control" placeholder="Class 4th ticket price">
+                                                    <input id="class4" name="class4" type="text" class="form-control" placeholder="Class 4th ticket price">
                                                 </div>
                                             </div>
                                         </div>
@@ -275,17 +275,18 @@ $('#addTicketPrice').on('change', function() {
 
 <!-- set default value price ticket -->
 <script>
-$(document).ready(function() {
-    //set initial state.
-    $('#setDefaultPrice').val(this.checked);
-
-    $('#setDefaultPrice').change(function() {
-        if(this.checked) {
-            var returnVal = confirm("Are you sure?");
-            $(this).prop("checked", returnVal);
-        }
-        $('#setDefaultPrice').val(this.checked);
-    });
+$('#setDefaultPrice').on('change', function() {
+    if(this.checked) {
+        $("#class1").val("500000");
+        $("#class2").val("700000");
+        $("#class3").val("900000");
+        $("#class4").val("1200000");
+    } else {
+        $("#class1").val("");
+        $("#class2").val("");
+        $("#class3").val("");
+        $("#class4").val("");
+    }
 });
 </script>
 @endsection

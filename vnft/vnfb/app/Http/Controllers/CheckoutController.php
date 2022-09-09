@@ -209,7 +209,7 @@ class CheckoutController extends Controller
 
             return redirect('/order-success');
             } else {
-                echo 'Có gì đó sai sai!';
+                echo 'Something wrong!';
             }
     }
 
@@ -217,7 +217,8 @@ class CheckoutController extends Controller
     {
         $cate_product = DB::table('categories_product')->where('category_status','1')->orderby('category_id','desc')->get();
         $cate_post = DB::table('categories_post')->where('category_status', '1')->orderBy('category_name', 'asc')->get();
+        $partner = DB::table('tbl_partner')->get();
 
-        return view('client.checkout.buyed')->with('category',$cate_product)->with('category_post', $cate_post);
+        return view('client.checkout.buyed')->with('category',$cate_product)->with('category_post', $cate_post)->with('partner', $partner);
     }
 }
