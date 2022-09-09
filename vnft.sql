@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 09, 2022 lúc 08:10 AM
+-- Thời gian đã tạo: Th9 09, 2022 lúc 08:34 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -599,15 +599,17 @@ CREATE TABLE `tbl_player_details` (
   `first_match` date DEFAULT NULL,
   `first_concurrent` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `quote` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `statis` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+  `all_appearance` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `all_total_goals` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `all_trophies` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_player_details`
 --
 
-INSERT INTO `tbl_player_details` (`id`, `player_id`, `img`, `appearance`, `total_goals`, `trophies`, `bio`, `joined`, `first_match`, `first_concurrent`, `quote`, `statis`) VALUES
-(1, 9, 'quangHai172.png', '42', '10', '2', 'Nguyen Quang Hai (born 12 April 1997) is a Vietnamese professional footballer who plays as an attacking midfielder or winger for French club Pau FC in Ligue 2 and the national team. Vietnam country . He is the player who received the Vietnam Golden Ball award in 2018 and is considered one of the best players in the history of Vietnamese football.', '2017', '2017-12-09', 'Myanmar(A)', 'When I told you a little bit about the vision. The first is that we must make the most of our current resources. The second is to create a strong team in Southeast Asia, gradually forming a strong and competitive team in Asia.', NULL);
+INSERT INTO `tbl_player_details` (`id`, `player_id`, `img`, `appearance`, `total_goals`, `trophies`, `bio`, `joined`, `first_match`, `first_concurrent`, `quote`, `all_appearance`, `all_total_goals`, `all_trophies`) VALUES
+(1, 9, 'quangHai172.png', '42', '10', '2', 'Nguyen Quang Hai (born 12 April 1997) is a Vietnamese professional footballer who plays as an attacking midfielder or winger for French club Pau FC in Ligue 2 and the national team. Vietnam country . He is the player who received the Vietnam Golden Ball award in 2018 and is considered one of the best players in the history of Vietnamese football.', '2017', '2017-12-09', 'Myanmar(A)', 'When I told you a little bit about the vision. The first is that we must make the most of our current resources. The second is to create a strong team in Southeast Asia, gradually forming a strong and competitive team in Asia.', '42', '10', '9');
 
 -- --------------------------------------------------------
 
