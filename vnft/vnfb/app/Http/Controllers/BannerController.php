@@ -52,7 +52,7 @@ class BannerController extends Controller {
             $slider = new SliderModel();
             $slider->slider_name = $data['slider_name'];
             $slider->slider_image = $new_image;
-            $slider->slider_name = $data['slider_level'];
+            $slider->slider_level = $data['slider_level'];
             $slider->save();
 
             Session::put('message', 'Thêm Slide thành công!');
