@@ -1528,7 +1528,7 @@ h3.h3 {
 }
 
 figure {
-    display: flex !important;
+    /* display: flex !important; */
     justify-content: center !important;
 }
 
