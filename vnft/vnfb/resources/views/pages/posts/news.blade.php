@@ -44,10 +44,8 @@
     <!-- Line 2 -->
     <div class="card-columns">
         <!-- 4 -->
-        @php
-            $count = 1;
-        @endphp
         @foreach($all_post as $key => $post)
+            @if($key>=1 && $key<=4)
             <div data-aos="fade-up" data-aos class="card">
                 <a class="card-group" href="{{URL('/bai-viet/'.$post->post_id)}}">
                 <img class="card-img-top anh_4" src="{{URL('/public/uploads/post/'.$post->post_thumbnail)}}" alt="{{$hot_post->post_title}}">
@@ -73,11 +71,6 @@
                 </div>
                 </a>
             </div>
-            @php
-                $count++;
-            @endphp
-            @if($count>=5)
-                @break
             @endif
         @endforeach
     </div>
@@ -85,10 +78,8 @@
     <!-- Line 3 -->
     <div class="card-group">
         <!-- 3 -->
-        @php
-            $count = 1;
-        @endphp
         @foreach($all_post as $key => $post)
+            @if($key>=5 && $key<=7)
             <div data-aos="fade-up" data-aos class="card">
                 <a class="card-group" href="{{URL('/bai-viet/'.$post->post_id)}}">
                 <img class="card-img-top anh_3" src="{{URL('/public/uploads/post/'.$post->post_thumbnail)}}" alt="{{$hot_post->post_title}}">
@@ -115,11 +106,6 @@
                 </div>
                 </a>
             </div>
-            @php
-                $count++;
-            @endphp
-            @if($count>=4)
-                @break
             @endif
         @endforeach
     </div>
@@ -127,10 +113,8 @@
     <!-- Line 4 -->
     <div class="card-group">
         <!-- 2 -->
-        @php
-            $count = 1;
-        @endphp
         @foreach($all_post as $key => $post)
+            @if($key>=8 && $key<=9)
             <div data-aos="fade-up" data-aos class="card mb-3 cs">
                 <a class="card-group" href="{{URL('/bai-viet/'.$post->post_id)}}">
                 <div class="row g-0">
@@ -163,11 +147,6 @@
                 </div>
                 </a>
             </div>
-            @php
-                $count++;
-            @endphp
-            @if($count>=3)
-                @break
             @endif
         @endforeach
     </div>
