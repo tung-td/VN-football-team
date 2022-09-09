@@ -223,23 +223,63 @@ class MatchController extends Controller
         $data['ticket'] = $request->ticket;
         $get_image = $request->file('stadium_background');
 
-        if($data['ticket'] == 1) {
-            
-        }
-
         if($get_image) {
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));
             $new_image = $name_image.rand(0,999).'.'.$get_image->getClientOriginalExtension();
             $get_image->move('public/uploads/match', $new_image);
             $data['stadium_background'] = $new_image;
-            DB::table('tbl_match')->insert($data);
-            Session::put('message', 'Add match successfully!');
-            return redirect()->route('match.list');
+        } else {
+            $data['stadium_background'] = '';
         }
-        $data['stadium_background'] = '';
-        DB::table('tbl_match')->insert($data);
+        $match_id = DB::table('tbl_match')->insertGetId($data);
         Session::put('message', 'Add match successfully!');
+
+        if($data['ticket'] == 1) {
+            $ticket_price = array([
+                'match_id' => $match_id,
+                'class1' => $request->$class1,
+                'class2' => $request->$class2,
+                'class3' => $request->$class3,
+                'class4' => $request->$class4
+            ]);
+            $ticket_price_id = DB::table('tbl_ticketprice')->insertGetId($ticket_price);
+            
+            $tickets = array();
+            foreach ($tickets as $key => $ticket) {
+                $ticket['match_id'] = $match_id;
+                $ticket['ticket_price_id'] = $ticket_price_id;
+                $ticket['status'] = 1;
+
+                $stands = array("A","B","C","D");
+                foreach ($stands as $key => $stand) {
+                    $ticket['stand'] = $stand;
+                    if ($stand == "A" || $stand == "B" ) {
+                        $stairs = array(2,5);
+                        foreach ($stairs as $key => $stair) {
+                            if ($stair == 2) {
+                                
+                            } elseif ($stair == 5) {
+                                for($i = 1; $i<=8; $i++) {
+                                    $ticket['door'] = $i;
+                                    if($i<=4) {
+                                        $ticket['class'] = 3;
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    } elseif ($stand == "C" || $stand == "D" ) {
+                        $ticket['stair'] = 2;
+
+                    }
+                }
+            }
+            // echo '<pre>';
+            // print_r($tickets);
+            // echo '</pre>';
+        }
+
         return redirect()->route('match.list');
     }
 }

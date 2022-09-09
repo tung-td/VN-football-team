@@ -181,7 +181,7 @@ input:checked + .slider:before {
                                                         <!-- <i class="icon nalika-user" aria-hidden="true"></i> -->
                                                         <i class="material-icons-outlined" aria-hidden="true">class</i>
                                                     </span>
-                                                    <input name="class1" type="text" class="form-control" placeholder="Class 2nd ticket price">
+                                                    <input name="class2" type="text" class="form-control" placeholder="Class 2nd ticket price">
                                                 </div>
                                             </div>
                                         </div>
@@ -192,14 +192,14 @@ input:checked + .slider:before {
                                                         <!-- <i class="icon nalika-user" aria-hidden="true"></i> -->
                                                         <i class="material-icons-outlined" aria-hidden="true">class</i>
                                                     </span>
-                                                    <input name="class1" type="text" class="form-control" placeholder="Class 3rd ticket price">
+                                                    <input name="class3" type="text" class="form-control" placeholder="Class 3rd ticket price">
                                                 </div>
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
                                                         <!-- <i class="icon nalika-user" aria-hidden="true"></i> -->
                                                         <i class="material-icons-outlined" aria-hidden="true">class</i>
                                                     </span>
-                                                    <input name="class1" type="text" class="form-control" placeholder="Class 4th ticket price">
+                                                    <input name="class4" type="text" class="form-control" placeholder="Class 4th ticket price">
                                                 </div>
                                             </div>
                                         </div>
