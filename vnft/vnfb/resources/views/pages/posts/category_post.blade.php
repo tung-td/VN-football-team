@@ -3,7 +3,7 @@
 @section('content')
 <!-- Content news -->
 <div class="container" style="margin-top: 100px !important;">
-    <h1>{{$category_name->category_name}}</h1>
+    <h1 class="heading_title">{{$category_name->category_name}}</h1>
 
     <!-- Line 1 -->
     <a class="card-group" href="{{URL('/bai-viet/'.$hot_post->post_id)}}">
