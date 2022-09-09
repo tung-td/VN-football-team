@@ -957,7 +957,7 @@ h3.h3 {
 }
 
 .cups__slider {
-    /* display: flex; */
+    display: flex;
     text-align: center;
     justify-content: center;
 }
@@ -981,6 +981,11 @@ h3.h3 {
     vertical-align: bottom;
     /* text-align: center; */
     max-height: 120px;
+}
+
+.cup-items figure {
+    display: flex;
+    flex-direction: column;
 }
 
 .cup-items figcaption {
@@ -1527,6 +1532,6 @@ figure {
     justify-content: center !important;
 }
 
-.slide_img > img {
+.slide_img>img {
     width: 200% !important;
 }
