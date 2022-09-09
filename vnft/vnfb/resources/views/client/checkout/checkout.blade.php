@@ -21,28 +21,51 @@
 
 <div class=" checkout row">
   <div class=" checkout col-75">
-    <div class=" checkout container">
-      <form action="{{route('checkout.handle')}}" method="post">
+    <div class="card">
+      <form action="{{route('checkout.handle')}}" method="post"  class="row g-3 needs-validation" novalidate>
         @csrf
         <div class=" checkout row">
           <div class=" checkout col-50">
-            <h3>Địa chỉ thanh toán</h3><hr>
-            <label for="fname"><i class=" checkout fa fa-user"></i> Họ và Tên</label>
-            <input type="text" id="fname" name="name" value="{{$name}}" placeholder="Nguyễn Văn A" required>
-            <label for="email"><i class=" checkout fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" value="{{$email}}" placeholder="nguyenvana@gmail.com" required>
-            <label for="phone"><i class=" checkout fa fa-phone"></i> Phone</label>
-            <input type="num" id="phone" name="phone" value="{{$phone}}" placeholder="0123456789" required>
-            <label for="adr"><i class=" checkout fa fa-address-card-o"></i> Địa chỉ</label>
-            <input type="text" id="adr" name="street_address" value="{{$street_address}}"  placeholder="470 Đường Trần Đại Nghĩa" required>
+            <h3>Payment address</h3><hr>
+
+            <div class="col-md-12">
+              <label for="fname"><i class=" checkout fa fa-user"></i> Full name</label>
+              <input class="form-control" type="text" id="fname" name="name" value="{{$name}}" placeholder="Nguyễn Văn A" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <label for="email"><i class=" checkout fa fa-envelope"></i> Email</label>
+              <input class="form-control" type="text" id="email" name="email" value="{{$email}}" placeholder="nguyenvana@gmail.com" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
             
-            <div class=" checkout row">
-              <div class=" checkout col-50">
-                <label for="city"><i class=" checkout fa fa-institution"></i> Thành phố</label>
-                <select id="city" name="city" class="form-control form-control-sm choose city" style="height: 50px;">
+            <div class="col-md-12">
+              <label for="phone"><i class=" checkout fa fa-phone"></i> Phone number</label>
+              <input class="form-control" type="num" id="phone" name="phone" value="{{$phone}}" placeholder="0123456789" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <label for="adr"><i class=" checkout fa fa-address-card-o"></i> Delivery address</label>
+              <input class="form-control" type="text" id="adr" name="street_address" value="{{$street_address}}"  placeholder="470 Đường Trần Đại Nghĩa" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <label for="city"><i class=" checkout fa fa-institution"></i> City</label>
+              <select id="city" name="city" class="form-control form-control-sm choose city" style="height: 50px;" required>
                     <!-- <option value="">---Chọn tỉnh/thành phố---</option> -->
                     @if($city_id == null)
-                      <option value="">---Chọn tỉnh/thành phố---</option>
+                      <option value="">---Choose city---</option>
                     @endif
                     @foreach ($city as $key => $ci)
                         @if($ci->matp == $city_id)
@@ -51,11 +74,15 @@
                         <option value="{{ $ci->matp }}">{{ $ci->name_city }}</option>
                         @endif
                     @endforeach
-                </select>
+              </select>
+              <div class="invalid-feedback">
+                Please choose a valid city.
               </div>
-              <div class=" checkout col-50">
-                <label for="province">Chọn quận/huyện</label>
-                <select id="province" name="province" class="form-control form-control-sm choose province" style="height: 50px;">
+            </div>
+
+            <div class="col-md-5">
+            <label for="province">Choose local</label>
+                <select id="province" name="province" class="form-control form-control-sm choose province" style="height: 50px;" required>
                     <!-- <option value="">---Chọn quận/huyện---</option> -->
                     <option value="{{$district_id}}">
                     @if($district_id)
@@ -67,17 +94,18 @@
                         @endif
                       @endforeach
                     @else
-                    ---Chọn quận/huyện---
+                    ---Choose local---
                     @endif
                     </option>
                 </select>
+              <div class="invalid-feedback">
+                Please choose a valid local.
               </div>
             </div>
-
-            <div class=" checkout row">
-              <div class=" checkout col-50">
-                <label for="wards">Chọn xã/phường</label>
-                <select id="wards" name="wards" class="form-control form-control-sm wards" style="height: 50px;">
+            
+            <div class="col-md-5">
+              <label for="wards">Choose wards</label>
+              <select id="wards" name="wards" class="form-control form-control-sm wards" style="height: 50px;" required>
                     <!-- <option value="">---Chọn xã/phường---</option> -->
                     <option value="{{$ward_id}}">
                     @if($ward_id)
@@ -89,87 +117,123 @@
                         @endif
                       @endforeach
                     @else
-                    ---Chọn xã/phường---
+                    ---Choose wards---
                     @endif
                     </option>
-                </select>
+              </select>
+              <div class="invalid-feedback">
+                Please choose a valid wards.
               </div>
-              <div class=" checkout col-50">
-                <label for="zip">Mã vận chuyển Zip</label>
-                <input type="text" id="zip" name="zip_code" value="{{$zip_code}}" placeholder="550000" required>
+            </div>
+
+            <div class="col-md-5">
+              <label for="zip">Zip code</label>
+              <input class="form-control" type="text" id="zip" name="zip_code" value="{{$zip_code}}" placeholder="550000" required>
+              <div class="invalid-feedback">
+                Please provide a valid zip code.
               </div>
             </div>
 
           </div>
 
           <div class=" checkout col-50">
-            <h3>Phương thức thanh toán</h3><hr>
+            <h3>Payment methods</h3><hr>
             <div class="row">
               <div class="col-md-4">
-                <input type="radio" name="payment_method" value="1" onclick="selectPayment1();" required /> Thẻ tín dụng
+                <input type="radio" name="payment_method" value="1" onclick="selectPayment1();" required /> Credit Card
               </div>
               <div class="col-md-3">
-                <input type="radio" name="payment_method" value="2" onclick="selectPayment2();" required /> Tiền mặt
+                <input type="radio" name="payment_method" value="2" onclick="selectPayment2();" required /> Cash
               </div>
               <div class="col-md-5">
-                <input type="radio" name="payment_method" value="3" onclick="selectPayment3();" required /> Cổng thanh toán
+                <input type="radio" name="payment_method" value="3" onclick="selectPayment3();" required /> Payment Grade
               </div>
-            </div><hr>
+            </div>
             <div id="div0">
-              <b style="color: red;">Chưa chọn phương thức thanh toán</b>
-              <hr>
+              <b style="color: red;">Haven't selected a payment method</b>
             </div>
             <div id="div1" style="display: none;">
-              <b style="color: green;">Đã chọn thanh toán bằng THẺ TÍN DỤNG</b>
+              <b style="color: green;">Selected to pay by CREDIT CARD</b>
               <hr>
-              <label for="fname">Loại được phép dùng</label>
+              <!-- <label for="fname">Permitted type</label>
               <div class=" checkout icon-container">
                 <i class=" checkout fa fa-cc-visa" style="color:navy;"></i>
                 <i class=" checkout fa fa-cc-amex" style="color:blue;"></i>
                 <i class=" checkout fa fa-cc-mastercard" style="color:red;"></i>
                 <i class=" checkout fa fa-cc-discover" style="color:orange;"></i>
-              </div>
-              <label for="cname">Tên trên thẻ</label>
-              <input type="text" id="cname" name="credit_card_name" value="{{$credit_card_name}}" placeholder="NGUYEN VAN A">
-              <label for="ccnum">Số thẻ tín dụng</label>
-              <input type="text" id="ccnum" name="credit_card_num" value="{{$credit_card_num}}" placeholder="1111-2222-3333-4444">
-              <label for="expmonth">Tháng hết hạn</label>
-              <input type="text" id="expmonth" name="exp_month" value="{{$exp_month}}" placeholder="Tháng 12">
-              <div class=" checkout row">
-                <div class=" checkout col-50">
-                  <label for="expyear">Năm hết hạn</label>
-                  <input type="text" id="expyear" name="exp_year" value="{{$exp_year}}" placeholder="2021">
-                </div>
-                <div class=" checkout col-50">
-                  <label for="cvv_cvc">CVV/CVC</label>
-                  <input type="text" id="cvv_cvc" name="cvv_cvc" value="{{$cvv_cvc}}" placeholder="123">
+              </div> -->
+              <div class="col-md-12">
+                <label for="cname">Name card</label>
+                <input class="form-control" type="text" id="cname" name="credit_card_name" value="{{$credit_card_name}}" placeholder="NGUYEN VAN A" required>
+                <div class="valid-feedback">
+                  Looks good!
                 </div>
               </div>
+
+              <div class="col-md-12">
+                <label for="ccnum">Credit card number</label>
+                <input class="form-control" type="text" id="ccnum" name="credit_card_num" value="{{$credit_card_num}}" placeholder="1111-2222-3333-4444" required>
+                <div class="invalid-feedback">
+                  Please provide a valid card number.
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <label class="cvv_cvc" for="expmonth">Expiration month</label>
+                <input class="form-control" type="text" id="expmonth" name="exp_month" value="{{$exp_month}}" placeholder="Tháng 9" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <label class="cvv_cvc" for="expyear">Expiration year</label>
+                <input class="form-control" type="text" id="expyear" name="exp_year" value="{{$exp_year}}" placeholder="2021" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <label class="cvv_cvc" for="cvv_cvc">Verification CVV code</label>
+                <input class="form-control" type="text" id="cvv_cvc" name="cvv_cvc" value="{{$cvv_cvc}}" placeholder="352" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+
             </div>
             <div id="div2" style="display: none;">
-              <b style="color: green;">Đã chọn thanh toán bằng TIỀN MẶT</b>
+              <b>Opening Soon!</b>
               <hr>
             </div>
             <div id="div3" style="display: none;">
-              <b style="color: green;">Đã chọn thanh toán bằng CỔNG THANH TOÁN ONLINE</b>
+              <b>Opening Soon!</b>
               <hr>
             </div>
 
-            <label for="note">Ghi chú đơn hàng</label>
-            <textarea id="note" name="note" rows="4" placeholder="Ghi chú..."></textarea> 
+            <div class="col-md-12">
+              <label for="note">Order Notes</label>
+              <textarea id="note" name="note" rows="4" placeholder="Message..."></textarea> 
+            </div>
+
           </div>
           
         </div>
-        <label>
-          <input type="checkbox" checked="checked" name="sameadr"> Địa chỉ giao hàng giống như thanh toán
+        <label class="check-pnt">
+          <input class="check-btn" type="checkbox" required> 
+          <span>Agree to terms and conditions</span>
         </label>
-        <input type="submit" value="Thanh toán" class=" checkout btn btn-grape">
+        <input type="submit" value="Pay" class="col-2 checkout btn btn-grape">
       </form>
     </div>
   </div>
   <div class=" checkout col-25">
-    <div class=" checkout container">
-      <h4>Giỏ hàng <span class=" checkout price" style="color:black"><i class=" checkout fa fa-shopping-cart"></i> </span></h4>
+
+    <div class="card">
+      <div class="card-body">
+        <h4 class="cart-title">Cart <span class=" checkout price" style="color:black"><i class=" checkout fa fa-shopping-cart"></i> </span></h4>
+
         @if(session('cart') == true)
             @php
                 $total = 0;
@@ -184,18 +248,18 @@
                 <p><a href="{{URL::to('/chi-tiet-san-pham/'.$cart['product_id'])}}">{{$cart['product_name']}}</a> x {{$cart['product_qty']}} <span class=" checkout price">{{number_format($cart['product_qty'] * $cart['product_price'])}} VNĐ</span></p>
             @endforeach
         @else
-            <hr><p class="text-center"><b>Giỏ hàng trống</b></p>
+            <hr><p class="text-center"><b>Cart is empty</b></p>
         @endif
         <hr>
-        <p>Số sản phẩm: <span class=" checkout price" style="color:black">
-            <b>{{$count}} loại</b></span></p>
+        <p>Quantity of products: <span class=" checkout price" style="color:black">
+            <b>{{$count}}</b></span></p>
         <hr>
-        <p>Tổng: <span class=" checkout price" style="color:black"><b>{{number_format($total)}} VNĐ</b></span></p>
+        <p>Total: <span class=" checkout price" style="color:black"><b>{{number_format($total)}} VNĐ</b></span></p>
         <hr>
         @if (Session::get('coupon'))
           @foreach (Session::get('coupon') as $key => $cou)
               @if ($cou['coupon_condition']== 1)
-                  <p>Giảm giá ({{$cou['coupon_number']}}%): 
+                  <p>Discount ({{$cou['coupon_number']}}%): 
                     <span class=" checkout price" style="color:black">
                       <b>
                       @php
@@ -206,7 +270,7 @@
                       </b></span>
                   </p>
               @else
-                  <p>Giảm giá: <span class=" checkout price" style="color:black"><b>
+                  <p>Discount: <span class=" checkout price" style="color:black"><b>
                       @php
                           $total_coupon = ($total - $cou['coupon_number']);
                       @endphp
@@ -217,13 +281,17 @@
           @endforeach
           <hr>
         @endif
-        <p>Thành tiền: <span class=" checkout price" style="color:red"><b>
+        <p>Total of all: <span class=" checkout price" style="color:red"><b>
           @if (Session::get('coupon'))
             {{number_format($total_coupon)}} VNĐ
           @else
             {{number_format($total)}} VNĐ
           @endif
           </b></span></p>
+    </div>
+
+      
+       
     </div>
   </div>
 </div>
@@ -248,8 +316,8 @@ body.checkout {
 }
 
 .col-25.checkout {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
 }
 
 .col-50.checkout {
@@ -258,8 +326,13 @@ body.checkout {
 }
 
 .col-75 {
-  -ms-flex: 75%; /* IE10 */
-  flex: 75%;
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+}
+
+.col-75 > .card:hover {
+  box-shadow: 2px 2px 15px #fd9a6ce5;
+  transform: unset !important;
 }
 
 .col-25,
@@ -284,8 +357,10 @@ input[type=text],input[type=num],textarea {
 }
 
 label {
+  margin-top: 20px;
   margin-bottom: 10px;
   display: block;
+  font-weight: 700;
 }
 
 .icon-container.checkout {
@@ -296,6 +371,7 @@ label {
 
 .btn.checkout {
   color: white;
+  background-color: #dc3545;
   padding: 12px;
   margin: 10px 0;
   border: none;
@@ -306,7 +382,7 @@ label {
 }
 
 .checkout.btn:hover {
-  background-color: #45a049;
+  background-color: #999;
 }
 
 a {
@@ -331,6 +407,70 @@ span.price {
     margin-bottom: 20px;
   }
 }
+
+.col-md-12 {
+  margin-bottom: 20px !important;
+  max-width: 99%;
+  text-align: left;
+}
+
+.col-md-5 {
+  display: inline-block;
+  max-width: 49%;
+  margin-bottom: 20px !important;
+  text-align: left;
+}
+
+.cart-title {
+  font-weight: 700;
+}
+
+#div0, 
+#div1 {
+  font-weight: 700;
+  text-align: center;
+}
+
+h3 {
+  font-weight: 700;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cvv_cvc {
+  margin: unset;
+  margin-top: 9px;
+}
+
+.check-pnt {
+  padding: 0px 45px;
+  margin: unset;
+  display: flex;
+  align-items: center;
+}
+
+.check-btn {
+  height: 18px;
+    display: inline-block;
+    width: 19px;
+    margin-right: 10px;
+}
+
+#div2,
+#div3 {
+  text-align: center;
+  font-weight: 700;
+}
+
+#div2 > b,
+#div3 > b{
+  color: red;
+}
+
+.card {
+  margin-top: 80px;
+}
+
 </style>
 
 <!-- Function select Payment way -->
@@ -353,5 +493,24 @@ function selectPayment3(){
   document.getElementById('div3').style.display = 'block';
   document.getElementById('div0').style.display ='none';
 }
+</script>
+
+<script>
+(function () {
+  'use strict'
+  var forms = document.querySelectorAll('.needs-validation')
+
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
 </script>
 @endsection
