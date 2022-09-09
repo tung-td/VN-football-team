@@ -159,7 +159,7 @@ input:checked + .slider:before {
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="review-content-section">
                                                 <label class="switch">
-                                                    <input type="checkbox">
+                                                    <input id="setDefaultPrice" type="checkbox">
                                                     <span class="slider round"></span>
                                                 </label>
                                                  <span style="color: white">Default Price</span>
@@ -261,6 +261,8 @@ var loadDemoImgFile = function(event,x) {
         // <div id="hehe" class="team">oke</div>
     });
 </script>
+
+<!-- expand ticket price -->
 <script>
 $('#addTicketPrice').on('change', function() {
   if( this.value == 1) {
@@ -268,6 +270,22 @@ $('#addTicketPrice').on('change', function() {
   } else {
     $('.add-ticket-price').css('display', 'none');
   }
+});
+</script>
+
+<!-- set default value price ticket -->
+<script>
+$(document).ready(function() {
+    //set initial state.
+    $('#setDefaultPrice').val(this.checked);
+
+    $('#setDefaultPrice').change(function() {
+        if(this.checked) {
+            var returnVal = confirm("Are you sure?");
+            $(this).prop("checked", returnVal);
+        }
+        $('#setDefaultPrice').val(this.checked);
+    });
 });
 </script>
 @endsection
