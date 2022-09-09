@@ -1527,8 +1527,8 @@ h3.h3 {
     color: #c70101 !important;
 }
 
-figure {
-    /* display: flex !important; */
+.body_news > figure {
+    display: flex !important;
     justify-content: center !important;
 }
 
