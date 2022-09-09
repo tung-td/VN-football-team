@@ -1283,7 +1283,7 @@ h3.h3 {
 }
 
 .matches-content .content-body .matches.item .item-background.view-all-result {
-    background-image: url(/assests/img2/carousel/pic2.jpg);
+    background-image: url(https://i.pinimg.com/564x/cf/5b/91/cf5b918c6ae9b0aec121bd585e22e2c5.jpg);
 }
 
 .matches-content .content-body .matches.item .item-content {
@@ -1527,7 +1527,7 @@ h3.h3 {
     color: #c70101 !important;
 }
 
-.body_news > figure {
+.body_news>figure {
     display: flex !important;
     justify-content: center !important;
 }

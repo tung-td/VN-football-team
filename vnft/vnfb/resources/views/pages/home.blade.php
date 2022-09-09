@@ -104,9 +104,9 @@
                     <div
                         class="item-content position-absolute d-flex justify-content-center align-items-center">
                         <div>
-                            <a href="{{route('ticket')}}">
+                            <h1 href="https://toigingiuvedep.vn/wp-content/uploads/2021/08/hinh-anh-doi-tuyen-viet-nam.jpg">
                                 VIEW ALL RESULT
-                            </a>
+                            </h1>
                         </div>
                     </div>
                 </div>
@@ -155,14 +155,14 @@
                                 </div>
                             </div>
                             <div>
-                                <img style="width: 100px;" src="./assests/img2/logo/malaysiaflag.jpg"
+                                <img style="width: 100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Flag_of_Malaysia.svg/2560px-Flag_of_Malaysia.svg.png"
                                     alt="Malaysia">
                             </div>
                         </div>
                         <div class="d-flex justify-content-center align-items-center text-dark pt-2">
                             <div class="px-2">
                                 <img class="logo-tournament"
-                                    src="./assests/img2/logo/image-removebg-preview.png" alt="logo-tournament">
+                                    src="{{asset('public/uploads/tournament/image-removebg-preview.png')}}" alt="logo-tournament">
                             </div>
                         </div>
                         <div class="text-dark pt-2">
@@ -231,7 +231,7 @@
                         <div class="d-flex justify-content-center align-items-center text-dark pt-2">
                             <div class="px-2">
                                 <img class="logo-tournament"
-                                    src="./assests/img2/logo/image-removebg-preview.png" alt="logo-tournament">
+                                    src="{{asset('public/uploads/tournament/image-removebg-preview.png')}}" alt="logo-tournament">
                             </div>
                         </div>
                         <div class="text-dark pt-2">
@@ -361,7 +361,7 @@
                         <div class="d-flex justify-content-center align-items-center">
                             <div>
                                 <img style="width: 100px;"
-                                    src="./assests/img2/playersAvatar/managers/Flag_of_South_Korea.svg.webp"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Flag_of_South_Korea.png/1024px-Flag_of_South_Korea.png"
                                     alt="korea">
                             </div>
                             <div class="text-dark px-1">
@@ -446,7 +446,7 @@
                                 </div>
                             </div>
                             <div>
-                                <img style="width: 100px;" src="./assests/img2/logo/malaysiaflag.jpg"
+                                <img style="width: 100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Flag_of_Malaysia.svg/2560px-Flag_of_Malaysia.svg.png"
                                     alt="MALAYSIA">
                             </div>
                         </div>
@@ -474,7 +474,7 @@
                 <div class="matches item container bg-dark mx-2 p-0"
                     style="width: 300px; height: 350px; border-radius: 25px;">
                     <div class="position-absolute ml-0"
-                        style="width: 300px; height: inherit; opacity: 0.3; border-radius: 25px; background-image: url(./assests/img2/carousel/pic2.jpg); background-size: cover;">
+                        style="width: 300px; height: inherit; opacity: 0.3; border-radius: 25px; background-image: url(https://i.pinimg.com/564x/45/dc/87/45dc873741b58dc48170c6e1294e40f1.jpg); background-size: cover;">
                     </div>
                     <div class="position-absolute d-flex justify-content-center align-items-center"
                         style="width: 300PX; height: inherit;">
