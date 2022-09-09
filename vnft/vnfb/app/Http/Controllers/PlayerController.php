@@ -144,6 +144,7 @@ class PlayerController extends Controller
         $data['first_match'] = $request->first_match;
         $data['first_concurrent'] = $request->first_concurrent;
         $data['quote'] = $request->quote;
+        $data['statis'] = $request->statis;
         $get_image = $request->file('img');
 
         if($get_image) {

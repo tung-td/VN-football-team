@@ -55,7 +55,15 @@
                         <div class="player-shortcut-items ">
                             <div class="player-sub-items ">
                                 <p class="player-items-title ">position</p>
-                                <p class="player-items-position player-items-inf ">{{$player_details->player_position}}</p>
+                                <p class="player-items-position player-items-inf ">
+                                    @switch($player_details->player_position)
+                                        @case(1) Goalkeeper @break
+                                        @case(2) Defender @break
+                                        @case(3) Midfielder @break
+                                        @case(4) Forward @break
+                                        @default None
+                                    @endswitch
+                                </p>
                             </div>
                             <div class="player-sub-items ">
                                 <p class="player-items-title ">joined</p>

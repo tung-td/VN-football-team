@@ -88,6 +88,12 @@
                                                     </span>
                                                     <input name="quote" type="text" class="form-control" placeholder="Quote">
                                                 </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">request_quote</i>
+                                                    </span>
+                                                    <input name="statis" type="text" class="form-control" placeholder="Statistics">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
