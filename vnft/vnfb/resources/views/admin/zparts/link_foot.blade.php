@@ -1,5 +1,8 @@
 <!-- CUSTOM -->
 
+    <!-- select2
+    ============================================ -->
+    <script src="{{asset('public/server/js/custom/select2/select2.full.min.js')}}"></script>
     <!-- jquery
     ============================================ -->
     <script src="{{asset('public/server/js/custom/vendor/jquery-1.12.4.min.js')}}"></script>

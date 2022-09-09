@@ -3,7 +3,6 @@
 @section('head_icon', 'newspaper')
 @section('heading', 'Add Product')
 @section('admin_content')
-
 <!-- Single pro tab start-->
 <div class="single-product-tab-area mg-b-30">
     <!-- Single pro tab review Start-->
@@ -102,6 +101,27 @@
                                                     <option value="1">Stocking</option>
                                                     <option value="0">Out of stock</option>
                                                 </select>
+                                                <!-- tag select2 -->
+                                                <select class="form-control select2" multiple="multiple"></select>
+                                                <script>
+                                                    $(function () {
+                                                        $(".select2").select2({
+                                                            tags: true,
+                                                            tokenSeparators: [',', ' ']
+                                                        });
+                                                    });
+                                                </script>
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+
+<select id="appbundle_items_accountdebet" name="appbundle_items[accountdebet]" class="js-example-basic-single"><option value="1">001 - Środki trwałe x</option><option value="2">001-001 - Środek trwały 1 </option><option value="3">001-002 - Środek trwały 2 </option><option value="4">002 - Kasa</option><option value="7">04-33 - test</option><option value="10">05 - dff</option></select>
+
+<script>
+    $(document).ready(function() {
+    $(".js-example-basic-single").select2();
+});
+</script>
                                             </div>
                                         </div>
                                     </div>
