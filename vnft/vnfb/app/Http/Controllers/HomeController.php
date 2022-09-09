@@ -19,7 +19,7 @@ class HomeController extends Controller
         // $list_product = DB::table('product')->join('categories_product','categories_product.category_id','=','product.category_id')
         //->orderBy('product.product_id', 'desc')->get();
 
-        $all_post = DB::table('tbl_post')->where('post_status',1)->orderBy('created_at', 'asc')->get();
+        $all_post = DB::table('tbl_post')->where('post_status',1)->orderBy('created_at', 'asc')->take(5)->get();
         $list_product = DB::table('product')->where('product_status', '1')->orderBy('product_id', 'desc')->get();
 
         $slider = SliderModel::orderby('slider_id', 'desc')->get();
