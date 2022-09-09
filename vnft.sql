@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 09, 2022 lúc 09:48 AM
+-- Thời gian đã tạo: Th9 09, 2022 lúc 11:27 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -1484,13 +1484,13 @@ CREATE TABLE `tbl_slider` (
 --
 
 INSERT INTO `tbl_slider` (`slider_id`, `slider_name`, `slider_image`, `slider_level`) VALUES
-(14, 'slider001', 'DTVN_V3-16273180943801.jpg', 1),
-(15, 'slider002', 'Doi-Tuyen-Nu-549.jpg', 1),
-(16, 'slider003', 'fanHamMo48.jpg', 1),
-(18, 'slider004', 'u23-396.jpeg', 1),
-(19, 'slider005', 'pic38.jpg', 1),
-(21, 'slider006', 'u23-482.jpg', 1),
-(22, 'slider007', 'dt nu vietnam67.jpg', 1);
+(23, '1', 'u23-431.jpg', 1),
+(24, '2', 'Vietnam_vs44.jpg', 1),
+(25, '3', 'Anh-doi-tuyen-Viet-Nam64.jpg', 1),
+(26, '4', 'pic352.jpg', 1),
+(27, '5', 'u23-324.jpeg', 1),
+(28, '6', 'pic875.jpeg', 1),
+(29, '7', 'Vietnam_vs94.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -13208,7 +13208,7 @@ ALTER TABLE `tbl_shipping`
 -- AUTO_INCREMENT cho bảng `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
-  MODIFY `slider_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `slider_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_statistial`

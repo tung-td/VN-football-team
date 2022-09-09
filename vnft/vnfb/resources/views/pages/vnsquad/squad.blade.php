@@ -3,8 +3,8 @@
 @section('content')
 <link rel="stylesheet" href="{{asset('public/client/css/custom/responsive-myUtd.css')}}">
 <!-- Slider -->
-<div class="slider-homepage" style="margin-bottom: 200px;">
-    <div class=" position-relative " style="width: 100%; height:1000px;">
+<div class="slider-homepage" style="margin-bottom: 150px;">
+    <!-- <div class=" position-relative " style="width: 100%; height:1000px;">
         <div class="d-flex " style="position: absolute; width: inherit; ">
             <div class="slider-previous ti-angle-left " style="top: 17rem ;"></div>
             <div class="slider-next ti-angle-right " style="top: 17rem ;"></div>
@@ -16,10 +16,10 @@
             </div>
             @endforeach
         </div>
-    </div>
+    </div> -->
 </div>
 <div class="slider-homepage" style="margin: 57px 0px;">
-    <div class=" position-relative ">
+    <!-- <div class=" position-relative ">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 @php
@@ -69,7 +69,7 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <!-- Start Content -->
