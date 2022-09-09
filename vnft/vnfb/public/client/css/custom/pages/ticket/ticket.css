@@ -9,10 +9,12 @@
     --font-moments: 'Emojis', Arial, Helvetica, sans-serif;
 }
 
+
 /* Next Match */
+
 .next-match {
     width: 100%;
-    height: 450px;
+    height: 500px;
     /* background-image: url('../../../img2/background/svdmydinhbackground.webp'); */
     /* background-image: url(https://www.footballticketnet.com/theme/images/venues_cover/Buy-Milliy_Stadium-Football-Tickets-FootballTicketNet-Cover.png); */
     background-size: cover;
@@ -23,7 +25,8 @@
     opacity: 0.5;
 }
 
-.next-match .overlay, .next-match .content {
+.next-match .overlay,
+.next-match .content {
     width: inherit;
     height: inherit;
 }
@@ -42,11 +45,14 @@
     margin: 20px;
 }
 
-.next-match .content .team-left img, .next-match .content .team-right img {
+.next-match .content .team-left img,
+.next-match .content .team-right img {
     width: 150px;
 }
 
-.next-match .content .responsive.match-date, .next-match .content .match-vs h2, .next-match .content .responsive.match-kick-off {
+.next-match .content .responsive.match-date,
+.next-match .content .match-vs h2,
+.next-match .content .responsive.match-kick-off {
     display: none;
 }
 
@@ -59,21 +65,28 @@
 .next-match .content .match-button .btn:hover {
     background-color: var(--dark-red);
 }
+
+
 /* End Next Match */
 
+
 /* Match List */
+
 .component-title-after {
-    width: 100px; border: 1px solid var(--basic-red);
+    width: 100px;
+    border: 1px solid var(--basic-red);
 }
 
-.match-list .filter .way-to-show:focus, .match-list .filter .way-to-show:checked {
+.match-list .filter .way-to-show:focus,
+.match-list .filter .way-to-show:checked {
     box-shadow: 0 0 0 0.2rem rgb(255 0 0 / 25%) !important;
 }
 
-.match-list-item .item-head, .match-list-item .buy-ticket .btn {
+.match-list-item .item-head,
+.match-list-item .buy-ticket .btn {
     /* background-color: var(--basic-red); */
     background: linear-gradient(90deg, rgba(25, 18, 147, 1) 0%, rgba(131, 10, 79, 1) 50%, rgba(255, 0, 0, 1) 100%);
-/* .match-list-item .item-head, .match-list-item .logo-tournament img, .match-list-item .buy-ticket .btn {
+    /* .match-list-item .item-head, .match-list-item .logo-tournament img, .match-list-item .buy-ticket .btn {
     background-color: var(--basic-red); */
     color: white;
 }
@@ -86,7 +99,8 @@
     /* width: 100px !important; */
 }
 
-#matchList1 .logo-team1 img, #matchList1 .logo-team2 img {
+#matchList1 .logo-team1 img,
+#matchList1 .logo-team2 img {
     width: 70px;
     margin: 10px;
     border: 1px solid grey;
@@ -97,17 +111,31 @@
 }
 
 #matchList2 .match-list-item {
-    width: 300px; height: 350px;
+    width: 300px;
+    height: 350px;
 }
+
+.container {
+    margin-top: 10px !important;
+    margin-bottom: auto !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    width: 100%;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
 
 /* Ened Match List */
 
+
 /* Match Category */
+
 .match-category {
     display: flex;
 }
 
-.match-category .ticket-cate-item  {
+.match-category .ticket-cate-item {
     overflow: hidden;
     width: 310px;
     height: 400px;
@@ -115,11 +143,13 @@
 }
 
 .ticket-cate-item .ticket-cate-progress {
-    width: 50%; border: 1px solid var(--basic-red);
+    width: 50%;
+    border: 1px solid var(--basic-red);
 }
 
 .ticket-cate-item button {
-    background-color: var(--basic-red); border-radius: 25px;
+    background-color: var(--basic-red);
+    border-radius: 25px;
 }
 
 .ticket-cate-item button:hover {
@@ -131,7 +161,8 @@
     transition-duration: 1.5s;
 }
 
-.ticket-cate-item .image, .ticket-cate-item .ticket-cate-progress {
+.ticket-cate-item .image,
+.ticket-cate-item .ticket-cate-progress {
     transition-duration: 1.5s;
 }
 
@@ -140,99 +171,96 @@
     transition-duration: 1.5s;
 }
 
+
 /* End Match Category */
+
 
 /* 
     RESPONSIVE
 */
 
+
 /* Extra small devices (phones, 739px and down) */
+
 @media only screen and (max-width: 739px) {
     /* next match */
-    .next-match {
-        height: 400px;
+    .content-match {
+        margin-top: 0px !important;
+        padding-top: 0 !important;
     }
-    
+    .next-match {
+        /* height: 500px; */
+    }
     .next-match .content .logo-tournament img {
         /* width: 100px; */
-        margin-top: -30px;
+        /* margin-top: -30px; */
     }
-
     .next-match .content .team-left,
     .next-match .content .team-right {
         width: 42%;
     }
-
     .next-match .content .match-vs {
         width: 16%;
     }
-    
     .next-match .content .team-left img,
     .next-match .content .team-right img {
         width: 70px;
     }
-
     .next-match .content .team-left h1,
     .next-match .content .team-right h1 {
         font-size: 20px;
     }
-
     .next-match .content .match-date,
     .next-match .content .match-vs h1,
     .next-match .content .match-kick-off {
         display: none;
     }
-    
     .next-match .content .responsive.match-date,
     .next-match .content .match-vs h2,
     .next-match .content .responsive.match-kick-off {
         display: contents;
     }
-    
     .next-match .content .match-button .btn {
         width: 110px;
     }
     /* end next match */
-
     /* match list */
     .match-list {
         width: 100% !important;
     }
-
-    #matchList1, .match-list .filter .month, .match-list .filter .way-to-show {
+    #matchList1,
+    .match-list .filter .month,
+    .match-list .filter .way-to-show {
         display: none;
     }
-
     #matchList2 {
         display: contents !important;
     }
-
     .match-list .filter .input-group {
         width: 100% !important;
         height: inherit;
     }
-    
     .match-list .match-list-item {
         margin-bottom: 15px;
     }
     /* end match list */
-
     /* match category */
     .container.category-match {
         width: 100% !important;
     }
-
     .match-category {
         display: contents;
     }
-
     .match-category .ticket-cate-item {
         margin-bottom: 15px;
         display: block;
         width: 300px;
     }
+    #matchList2 .match-list-item {
+        width: 300px;
+        height: 400px;
+    }
     /* end match category */
-
     /* buy ticket - choose seat */
     .stadium {
         display: none !important;
@@ -248,42 +276,51 @@
     }
 }
 
+
 /* Small devices (portrait tablets and large phones, 739px and up) */
+
 @media (min-width: 739px) and (max-width: 1024px) {
     /* match category */
+    .match-list {
+        width: 100% !important;
+    }
     .match-list .filter .month {
         display: none;
     }
-
     .match-list .filter .input-group {
         width: 30% !important;
     }
-
     .match-category {
         display: flex;
         flex-wrap: wrap;
     }
-
     .match-category .ticket-cate-item {
         margin-bottom: 15px;
     }
-
     .container.category-match {
         width: 100% !important;
+    }
+    .ticket-info .text-start h3 {
+        font-size: 1.45rem !important;
     }
     /* end match category */
 }
 
 
-
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {} 
+
+@media only screen and (min-width: 768px) {}
+
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {} 
+
+@media only screen and (min-width: 992px) {}
+
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
+
 @media only screen and (min-width: 1200px) {}
+
 
 /* 
     END RESPONSIVE
