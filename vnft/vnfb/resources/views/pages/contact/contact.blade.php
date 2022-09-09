@@ -13,9 +13,9 @@
     </div>
     <div class="form_bottom">
         <form action="{{route('thankyou')}}" class="form_input">
-            <input class="hj" type="text" placeholder="Name"/>
-            <input class="hj" type="text" placeholder="Email"/>
-            <textarea class="hj" type="text" placeholder="Message" style="height: 150px;"></textarea>
+            <input class="hj" type="text" placeholder="Name" required/>
+            <input class="hj" type="text" placeholder="Email" required/>
+            <textarea class="hj" type="text" placeholder="Message" style="height: 150px;" required></textarea>
             <input id="submit_btn" class="hj sub" type="submit" placeholder="Submit" value="Sent">
         </form>
     </div>

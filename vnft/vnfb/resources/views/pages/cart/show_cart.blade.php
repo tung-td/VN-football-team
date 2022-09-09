@@ -54,7 +54,7 @@
                 $total = 0;
             @endphp
 
-            <form id="cartForm" action="{{url('/update-cart')}}" method="post">
+            <form class="row align-items-center" id="cartForm" action="{{url('/update-cart')}}" method="post">
                 @csrf
 
                 @foreach(Session::get('cart') as $key => $cart)

@@ -188,7 +188,7 @@ function showSuccessCartToast(type,name,quantity,link) {
             title: "Successful!",
             message: "Added " + quantity + " " + name + " into your cart.",
             type: "success",
-            duration: 100000,
+            duration: 3000,
             link: link
         });
     }

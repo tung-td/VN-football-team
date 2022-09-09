@@ -1535,3 +1535,26 @@ h3.h3 {
 .slide_img>img {
     width: 200% !important;
 }
+
+.num-cart {
+    position: absolute; 
+    top: 15px; 
+    right: 15px; 
+    background: #f00; 
+    color: #fff; 
+    padding: 2px 2px; 
+    line-height: 1; 
+    border-radius: 5px; 
+    font-size: 11px;
+}
+
+@media only screen and (max-width:600px) {
+    #show-cart-qty > a > span {
+        right: 55px !important;
+    }
+
+    #toast {
+        top: 64px;
+        right: 0px;
+    }
+}

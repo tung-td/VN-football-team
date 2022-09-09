@@ -1,50 +1,6 @@
 @extends('layout')
 @section('content')
-<style>
-    .card:hover {
-    box-shadow: 2px 2px 15px #fd9a6ce5;
-    transform: unset !important;
-    }
-    .table-responsive {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    }
 
-    .row {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .back-home {
-    height: 40px;
-    line-height: 26px;
-    border: 1px solid gray;
-    color: gray;
-    }
-
-    .back-home:hover {
-    color: #fff;
-    background-color: gray;
-    }
-
-    .pay {
-        background-color: #51af51;;
-        color: #fff;
-        border: unset;
-    }
-
-    .col-sm-12.col-md-7.mb-5 {
-        margin-bottom: unset !important;
-    }
-    .col-sm-12.col-md-4 {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
-</style>
 <div class="container mb-4">
     <div class="card">
         <div class="table-responsive">
@@ -52,14 +8,16 @@
                 
                 <p class="col-md-8" style="color: red; font-size: 14px;">
                 <a href="{{url('/')}}" class="btn back-home">Back to shopping</a>
-                    <?php
-                    use Illuminate\Support\Facades\Session;
-                    $message = Session::get('message');
-                    if ($message) {
-                        echo $message;
-                        Session::put('message', null);
-                    }
-                    ?>
+                    <div class="mess-update">
+                        <?php
+                        use Illuminate\Support\Facades\Session;
+                        $message = Session::get('message');
+                        if ($message) {
+                            echo $message;
+                            Session::put('message', null);
+                        }
+                        ?>
+                    </div>
                 </p>
                 @if(Session::get('cart') == true)
                 <div style="text-align: right;" class="col-md-4">
@@ -300,6 +258,82 @@
     </div>
     @endif
 </div>
+
+<style>
+    .card:hover {
+        box-shadow: 2px 2px 15px #fd9a6ce5;
+        transform: unset !important;
+    }
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .back-home {
+        height: 40px;
+        line-height: 26px;
+        border: 1px solid gray;
+        color: gray;
+    }
+
+    .back-home:hover {
+        color: #fff;
+        background-color: gray;
+    }
+
+    .pay {
+        background-color: #51af51;;
+        color: #fff;
+        border: unset;
+    }
+
+    .col-sm-12.col-md-7.mb-5 {
+        margin-bottom: unset !important;
+    }
+    .col-sm-12.col-md-4 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    @media (max-width: 800px) {
+        .container.mb-4 {
+            margin-top: 70px !important;
+        }
+        .row > .col-md-4 {
+            position: absolute;
+            right: -249px;
+            text-align: left !important;
+        }
+        .row {
+            margin-bottom: 56px;
+            margin-left: 0px;
+        }
+        .row > .col-md-8 {
+            position: absolute;
+        }
+        .col-sm-12.col-md-4 {
+            position: unset;
+            text-align: unset !important;
+        }
+        .mess-update {
+            position: absolute;
+            top: 55px;
+            left: 14px;
+            color: red;
+        }
+    }
+
+</style>
+
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 <script>
    var usd = document.getElementById('vnd_to_usd').value;

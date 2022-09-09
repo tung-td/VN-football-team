@@ -361,6 +361,23 @@ input {
         font-size: 11px !important;
     }
 
+    .col-4 {
+        flex: unset !important;
+        max-width: unset !important;
+        width: 100%;
+    }
+
+    .btn-discount > form {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .discount {
+        margin-left: unset;
+        flex-direction: column;
+
+    }
+
     #clear-cart {
         color: #dc3545ed;
         border: 1px solid #dc3545;
@@ -437,6 +454,52 @@ input {
 
     .mr-1 {
         margin-left: 10px;
+    }
+
+    .block-subtotal {
+        width: 100%;
+    }
+
+    .discount > .col-1.cs-1.ip {
+        margin-left: 22px;
+    }
+
+    .form-control {
+        padding: 10px;
+
+    }
+
+    .col-3.cs-3 {
+        margin: 6px 52px;
+    }
+
+    .col-1.cs-1 {
+        min-width: 95px;
+    }
+
+    .col-1.cs-1.ip {
+        margin-left: 37px;
+    }
+
+    .discount {
+        flex-direction: unset;
+    }
+
+    .discount > .col-1.cs-1.ip {
+        margin-left: 83px;
+    }
+
+    .title-cart > h5 {
+        position: absolute;
+    right: 0;
+    top: 75px;
+    }
+
+    .col-2.cs-2 {
+        display: flex;
+        justify-content: space-evenly;
+        padding: unset;
+        min-width: 80%;
     }
 
 }

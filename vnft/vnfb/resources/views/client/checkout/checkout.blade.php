@@ -402,9 +402,21 @@ span.price {
 @media (max-width: 800px) {
   .checkout.row {
     flex-direction: column-reverse;
+    margin-top: 70px;
+  }
+
+  .checkout.col-75 {
+    padding: unset;
   }
   .checkout.col-25 {
     margin-bottom: 20px;
+    padding: unset;
+  }
+  .col-50.checkout {
+    flex: unset;
+  }
+  .col-md-5 {
+    max-width: 100% !important;
   }
 }
 
