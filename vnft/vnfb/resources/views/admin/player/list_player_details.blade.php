@@ -57,7 +57,7 @@
                         <td>{{ $player_details->quote}}</td>
                         <td class="text-center">
                             <a href="{{URL('/edit-player-details/'.$player_details->id)}}"><button class="btn btn-warning mb-1"><i class="fas fa-edit"></i></button></a>
-                            <a href="{{URL('/delete-player-details/'.$player_details->id)}}" onclick="return confirm('Sure you wanna delete this player details?')"><button class="btn btn-danger mb-1"><i class="fas fa-trash-alt"></i></button></a>
+                            <a href="{{URL('/player-details/delete/'.$player_details->id)}}" onclick="return confirm('Sure you wanna delete this player details?')"><button class="btn btn-danger mb-1"><i class="fas fa-trash-alt"></i></button></a>
                         </td>
                     </tr>
                     @endforeach

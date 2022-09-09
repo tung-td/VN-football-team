@@ -88,11 +88,24 @@
                                                     </span>
                                                     <input name="quote" type="text" class="form-control" placeholder="Quote">
                                                 </div>
+                                                
                                                 <div class="input-group mg-b-pro-edt">
                                                     <span class="input-group-addon">
                                                         <i class="material-icons" aria-hidden="true">request_quote</i>
                                                     </span>
-                                                    <input name="statis" type="text" class="form-control" placeholder="Statistics">
+                                                    <input name="all_appearance" type="text" class="form-control" placeholder="All Appearance">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">request_quote</i>
+                                                    </span>
+                                                    <input name="all_total_goals" type="text" class="form-control" placeholder="All Total Goals">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons" aria-hidden="true">request_quote</i>
+                                                    </span>
+                                                    <input name="all_trophies" type="text" class="form-control" placeholder="All Trophies">
                                                 </div>
                                             </div>
                                         </div>

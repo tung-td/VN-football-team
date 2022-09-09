@@ -105,13 +105,13 @@
                         <div class="player-shortcut-items player-mana-match flex-basis-3 ">
                             <div class="player-sub-items ">
                                 Apperances:
-                                <span class="number ">{{$player_details->appearance}}</span>
+                                <span class="number ">{{$player_details->all_appearance}}</span>
                             </div>
                         </div>
                         <div class="player-shortcut-items wins flex-basis-4 ">
                             <div class="player-sub-items ">
                                 Total goals:
-                                <span class="number ">{{$player_details->total_goals}}</span>
+                                <span class="number ">{{$player_details->all_total_goals}}</span>
                             </div>
                             <!-- <div class="player-sub-items ">Draws:
                                 <span class="number "> 175</span> Loses:
@@ -121,7 +121,7 @@
                         <div class="player-shortcut-items player-trophies flex-basis-3 ">
                             <div class="sub-items ">
                                 Trophies:
-                                <span class="number ">{{$player_details->trophies}}</span>
+                                <span class="number ">{{$player_details->all_trophies}}</span>
                             </div>
                         </div>
 

@@ -192,6 +192,7 @@ Route::get('/list-player', [PlayerController::class, 'list_player'])->name('play
 Route::get('/player-details', [PlayerController::class, 'player_details'])->name('player.details');
 Route::get('/player-details/{player_id}', [PlayerController::class, 'player_details']);
 Route::get('/list-player-details', [PlayerController::class, 'list_player_details'])->name('player.details.list');
+Route::get('/player-details/delete/{id}', [PlayerController::class, 'delete_player_details']);
 Route::get('/vnsquad', [PlayerController::class, 'vnsquad'])->name('vnsquad');
 
 // Route::get('/unactive-player/{player_id}', [PlayerController::class, 'unactive_player']);

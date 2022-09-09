@@ -144,7 +144,9 @@ class PlayerController extends Controller
         $data['first_match'] = $request->first_match;
         $data['first_concurrent'] = $request->first_concurrent;
         $data['quote'] = $request->quote;
-        $data['statis'] = $request->statis;
+        $data['all_appearance'] = $request->all_appearance;
+        $data['all_total_goals'] = $request->all_total_goals;
+        $data['all_trophies'] = $request->all_trophies;
         $get_image = $request->file('img');
 
         if($get_image) {
@@ -160,6 +162,13 @@ class PlayerController extends Controller
         $data['img'] = '';
         DB::table('tbl_player_details')->insert($data);
         Session::put('message', 'Add player details successfully!');
+        return redirect('list-player-details');
+    }
+
+    public function delete_player_details($id) {
+        $this->AuthLogin();
+        DB::table('tbl_player_details')->where('id', $id)->delete();
+        Session::put('message', 'Successful delete Player Details!');
         return redirect('list-player-details');
     }
 
