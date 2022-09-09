@@ -148,9 +148,10 @@ DATABASE:
 + id
 + match_id
 + status
-+ stand (6 fixed)
++ stand (4 fixed: A,B,C,D)
++ stair (2 fixed: 2,5)
 + cate (5 fixed)
-+ door (tang 5: 8; tang 2: 10)
++ door (stair 5: 8; stair 2: 10)
 + seat (124 fixed: 10[A-J]x14 - 4[C-F]x4[6-9])
 + class (1,2,3,4)
 
