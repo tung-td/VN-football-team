@@ -219,6 +219,6 @@ class CheckoutController extends Controller
         $cate_post = DB::table('categories_post')->where('category_status', '1')->orderBy('category_name', 'asc')->get();
         $partner = DB::table('tbl_partner')->get();
 
-        return view('client.checkout.buyed')->with('category',$cate_product)->with('category_post', $cate_post)->with('partner', $partner);
+        return view('client.pages.contact.thankyou')->with('category',$cate_product)->with('category_post', $cate_post)->with('partner', $partner);
     }
 }
