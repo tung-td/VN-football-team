@@ -7,12 +7,12 @@
     $datetime_now = Carbon::now()->toDateTimeString();
 ?>
 <link rel="stylesheet" href="{{asset('public/client/css/custom/pages/ticket/ticket.css')}}">
-<div class="content" style="margin-top:75px">
+<div class="content content-match" style="margin-top:75px">
 <!-- Next Match -->
 @if($next_match)
 <div class="next-match mt-5" style="background-image: url(https://www.footballticketnet.com/theme/images/venues_cover/Buy-Milliy_Stadium-Football-Tickets-FootballTicketNet-Cover.png);">
     <div class="overlay position-absolute"></div>
-    <div class="content position-absolute text-light text-center mt-4">
+    <div class="content position-absolute text-light text-center ">
         <div data-aos="fade-down" data-aos  class="logo-tournament">
             <img src="{{URL('public/uploads/tournament/'.$next_match->tournament_image)}}"
                 alt="{{$next_match->tournament_name}}">
@@ -408,8 +408,8 @@
 </div>
 <!-- End Match Category -->
 <!-- Slider -->
-<div class="slider-homepage" style="margin-bottom: 200px;">
-    <div class=" position-relative " style="width: 100%; height:1000px;">
+<div class="slider-homepage" style="margin-bottom:;">
+    <div class=" position-relative " style="width: 100%; max-height:1000px;">
         <div class="d-flex " style="position: absolute; width: inherit; ">
             <div class="slider-previous ti-angle-left " style="top: 17rem ;"></div>
             <div class="slider-next ti-angle-right " style="top: 17rem ;"></div>

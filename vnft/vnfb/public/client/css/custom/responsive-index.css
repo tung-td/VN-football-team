@@ -314,10 +314,12 @@
         .matches.item .px-3 {
             padding: 5px !important;
         }
-        .matches.item .buy-ticket,.matches.item .see-more{
+        .matches.item .buy-ticket,
+        .matches.item .see-more {
             width: 50% !important;
         }
-        .matches.item .buy-ticket h3,.matches.item .see-more h3{
+        .matches.item .buy-ticket h3,
+        .matches.item .see-more h3 {
             font-size: 16px !important;
         }
         /* End Matches/Tickets */
@@ -352,6 +354,12 @@
             margin-top: -16px !important;
             font-size: 1.7em !important;
         }
+        .cup-items img {
+            margin: 0 15px 0;
+            vertical-align: bottom;
+            /* text-align: center; */
+            max-height: 85px !important;
+        }
         /* NEWS */
         .card {
             margin: 10px 10px !important;
@@ -373,5 +381,10 @@
         }
         .see-more {
             display: none !important;
+        }
+        /* slider */
+        .carousel-inner,
+        .position-relative {
+            width: 100% !important;
         }
     }
