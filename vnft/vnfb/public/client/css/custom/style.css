@@ -1304,8 +1304,9 @@ h3.h3 {
 
 .matches.item .logo-tournament {
     /* background-color: var(--basic-red); */
-    width: 100px;
+    width: 60px;
     font-size: 20px;
+    text-align: center;
     /* border-radius: 10px; */
 }
 
