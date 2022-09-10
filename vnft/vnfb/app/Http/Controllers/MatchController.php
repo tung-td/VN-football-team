@@ -32,15 +32,18 @@ class MatchController extends Controller
         $slider = DB::table('tbl_slider')->get();
 
         // $list_match = DB::table('tbl_match')->orderBy('id', 'desc')->get();
+        $now = Carbon::now()->toDateTimeString();
         $next_match = DB::table('tbl_match')
             ->join('tbl_tournament', 'tbl_match.tournament_id', '=', 'tbl_tournament.id')
             ->select('tbl_match.*', 'tbl_tournament.tournament_name', 'tbl_tournament.tournament_image')
-            ->where('tbl_match.datetime','>=', Carbon::now()->toDateTimeString())->first();
+            ->where('tbl_match.datetime','>=', Carbon::now()->toDateTimeString())
+            ->orderBy('datetime','asc')
+            ->first();
         $recent_match = DB::table('tbl_match')
             ->join('tbl_tournament', 'tbl_match.tournament_id', '=', 'tbl_tournament.id')
             ->select('tbl_match.*', 'tbl_tournament.tournament_name', 'tbl_tournament.tournament_image')
             ->where('datetime','<', Carbon::now()->toDateTimeString())
-            ->orderBy('datetime','asc')->get();
+            ->orderBy('datetime','desc')->take(2)->get();
 
         $count = DB::table('tbl_match')->where('datetime','>=', Carbon::now()->toDateTimeString())->count();
         $limit = $count - 1; // the limit
@@ -407,4 +410,267 @@ class MatchController extends Controller
         }
         return redirect()->route('match.list');
     }
+
+    // Ticket
+    public function list_ticket() {
+        $this->AuthLogin(); //Gọi hàm kiểm tra đăng nhập
+        $list_ticket = DB::table('tbl_ticket')
+            ->join('tbl_ticketprice', 'tbl_ticket.ticket_price_id', '=', 'tbl_ticketprice.id')
+            ->select('tbl_ticket.*', 'tbl_ticketprice.class1', 'tbl_ticketprice.class2', 'tbl_ticketprice.class3', 'tbl_ticketprice.class4')
+            ->orderBy('id', 'desc')->get();
+        $manager_ticket = view('admin.ticket.list_ticket')->with('list_ticket', $list_ticket);
+        // echo '<pre>';
+        // print_r($list_ticket);
+        // echo '</pre>';
+        return view('admin.layout')->with('admin.ticket.list_ticket', $manager_ticket);
+    }
+    // Seat
+    public function showSeat(Request $request)
+	{
+        $data = $request->all();
+        switch ($data['stand']) {
+            case 'Atop': $stand = 'A'; $stair = 5; $floor = '5th'; break;
+            case 'Abot': $stand = 'A'; $stair = 2; $floor = '2nd'; break;
+            case 'Btop': $stand = 'B'; $stair = 5; $floor = '5th'; break;
+            case 'Bbot': $stand = 'B'; $stair = 2; $floor = '2nd'; break;
+            case '': $stand = 'C'; $stair = 2; $floor = '2nd'; break;
+            case '': $stand = 'D'; $stair = 2; $floor = '2nd'; break;
+            default: break;
+        }
+        switch ($data['cate']) {
+            case 1: $class = '1st'; break;
+            case 2: $class = '2nd'; break;
+            case 3: $class = '3rd'; break;
+            case 4: $class = '4th'; break;
+            default: break;
+        }
+        $output = '';
+        $output.= `
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLongTitle">Stand `.$stand.` (`.$floor.` floor) - `.$class.` class ticket</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+                </div>
+                <div class="modal-body">
+
+                    <div id="door_modal" class="door-modal">
+
+                        <div class="door-name">
+                            <div class="p-3 border rounded">
+                                <h1>DOOR 1</h1>
+                            </div>
+                        </div>
+
+                        <div class="door-seats left">
+                            <div class="door-row row-1">
+                                <div class="seat A1" data-id="A1" value="A1">
+                                    <div>A1</div>
+                                </div>
+                                <div class="seat B1" data-id="B1" value="B1">
+                                    <div>B1</div>
+                                </div>
+                                <div class="seat C1" data-id="C1" value="C1">
+                                    <div>C1</div>
+                                </div>
+                                <div class="seat D1" data-id="D1" value="D1">
+                                    <div>D1</div>
+                                </div>
+                                <div class="seat E1" data-id="E1" value="E1">
+                                    <div>E1</div>
+                                </div>
+                                <div class="seat F1" data-id="F1" value="F1">
+                                    <div>F1</div>
+                                </div>
+                                <div class="seat G1" data-id="G1" value="G1">
+                                    <div>G1</div>
+                                </div>
+                                <div class="seat H1" data-id="H1" value="H1">
+                                    <div>H1</div>
+                                </div>
+                                <div class="seat I1" data-id="I1" value="I1">
+                                    <div>I1</div>
+                                </div>
+                                <div class="seat J1" data-id="J1" value="J1">
+                                    <div>J1</div>
+                                </div>
+                            </div>
+                            <div class="door-row row-2">
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                            </div>
+                            <div class="door-row row-3">
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                            </div>
+                            <div class="door-row row-4">
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                            </div>
+                            <div class="door-row row-5">
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                            </div>
+                            <div class="door-row row-6">
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                            </div>
+                            <div class="door-row row-7">
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                            </div>
+                        </div>
+
+                        <div class="door-seats right">
+                            <div class="door-row row-1">
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                            </div>
+                            <div class="door-row row-2">
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat invisible"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                            </div>
+                            <div class="door-row row-3">
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                            </div>
+                            <div class="door-row row-4">
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                            </div>
+                            <div class="door-row row-5">
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                            </div>
+                            <div class="door-row row-6">
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                            </div>
+                            <div class="door-row row-7">
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                                <div class="seat"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                    <div class="input-seats container-fluid border rounded p-2" id="inputSeats">
+
+                    </div>
+                    <button type="button" class="border rounded btn-checkout">Checkout</button>
+                </div>
+            </div>
+        </div>
+        `;
+        echo $output;
+	}
 }

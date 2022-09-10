@@ -1,6 +1,11 @@
 @extends('layout')
 @section('title','Vietnam National Football Team Website')
 @section('content')
+<?php
+    use Carbon\Carbon;
+    Carbon::setLocale('en');
+    $datetime_now = Carbon::now()->toDateTimeString();
+?>
 <!-- Toast -->
 <div id="toast"></div>
 
@@ -45,6 +50,8 @@
                         FIRST TEAM MATCHES
                     </h1>
                 </div>
+                <input value="{{Carbon::createFromFormat('Y-m-d H:i:s', $next_match->datetime)->format('M d, Y H:i:s')}}" 
+                    type="text" hidden="hidden" id="timeCountDown" />
                 <div class="ticket-cownt-down d-flex">
                     <div>
                         <div>
@@ -111,19 +118,20 @@
                     </div>
                 </div>
 
+                @foreach($recent_match as $key => $match)
                 <!-- Matches - recent match -->
                 <div class="matches item container d-flex flex-column justify-content-between mx-2 px-0">
                     <div class="item-head d-flex justify-content-between text-light">
                         <div class="d-flex">
                             <div class="p-2">
-                                <h1 class="mb-0">19</h1>
+                                <h1 class="mb-0">{{Carbon::createFromFormat('Y-m-d H:i:s', $match->datetime)->format('d')}}</h1>
                             </div>
                             <div class="text-start py-2">
                                 <div>
-                                    <h5 class="mb-0">THURSDAY</h5>
+                                    <h5 class="mb-0" style="text-transform: uppercase;">{{Carbon::createFromFormat('Y-m-d H:i:s', $next_match->datetime)->format('l')}}</h5>
                                 </div>
                                 <div>
-                                    <h6 class="mb-0">MAY</h6>
+                                    <h6 class="mb-0">{{Carbon::createFromFormat('Y-m-d H:i:s', $match->datetime)->format('F')}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -135,39 +143,56 @@
                     <div class="text-dark">
                         <div class="px-2">
                             <h6>
-                                Viet Tri Stadium
+                                {{$match->stadium}}
                             </h6>
                         </div>
                         <div class="d-flex justify-content-center align-items-center">
                             <div>
-                                <img style="width: 100px;"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_North_Vietnam_%281955%E2%80%931976%29.svg/230px-Flag_of_North_Vietnam_%281955%E2%80%931976%29.svg.png"
-                                    alt="vn">
+                                @foreach($list_team as $key => $team)
+                                    @if($team->id == $match->teamA_id)
+                                    <img style="width: 100px;"
+                                        src="{{URL('public/uploads/team/'.$team->team_image)}}" alt="{{$team->team_name}}">
+                                    @endif
+                                @endforeach
                             </div>
                             <div class="text-dark px-1">
                                 <div>
                                     <h6 class="mb-0">
-                                        90'+1
+                                        {{$match->type}}
                                     </h6>
                                 </div>
                                 <div>
-                                    <h1 class="mb-0">1-0</h1>
+                                    <h1 class="mb-0">{{$match->teamA_goals}}-{{$match->teamB_goals}}</h1>
                                 </div>
                             </div>
                             <div>
-                                <img style="width: 100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Flag_of_Malaysia.svg/2560px-Flag_of_Malaysia.svg.png"
-                                    alt="Malaysia">
+                                @foreach($list_team as $key => $team)
+                                    @if($team->id == $match->teamB_id)
+                                    <img style="width: 100px;"
+                                        src="{{URL('public/uploads/team/'.$team->team_image)}}" alt="{{$team->team_name}}">
+                                    @endif
+                                @endforeach
                             </div>
                         </div>
                         <div class="d-flex justify-content-center align-items-center text-dark pt-2">
                             <div class="px-2">
                                 <img class="logo-tournament"
-                                    src="{{asset('public/uploads/tournament/image-removebg-preview.png')}}" alt="logo-tournament">
+                                    src="{{URL('public/uploads/tournament/'.$match->tournament_image)}}" alt="{{$match->tournament_name}}">
                             </div>
                         </div>
                         <div class="text-dark pt-2">
                             <h5 class="mb-0">
-                                U23 VIETNAM vs U23 MALAYSIA
+                                <span style="text-transform: uppercase;">
+                                @foreach($list_team as $key => $team)
+                                    @if($team->id == $match->teamA_id) {{$team->team_name}} @endif
+                                @endforeach
+                                </span>
+                                    vs 
+                                <span style="text-transform: uppercase;">
+                                @foreach($list_team as $key => $team)
+                                    @if($team->id == $match->teamB_id) {{$team->team_name}} @endif
+                                @endforeach
+                                </span>
                             </h5>
                         </div>
                     </div>
@@ -178,75 +203,7 @@
                     </div>
                 </div>
                 <!-- End Matches - recent match -->
-
-                <!-- Matches - recent match -->
-                <div class="matches item container d-flex flex-column justify-content-between mx-2 px-0">
-                    <div class="item-head d-flex justify-content-between text-light">
-                        <div class="d-flex">
-                            <div class="p-2">
-                                <h1 class="mb-0">03</h1>
-                            </div>
-                            <div class="text-start py-2">
-                                <div>
-                                    <h5 class="mb-0">TUESDAY</h5>
-                                </div>
-                                <div>
-                                    <h6 class="mb-0">MAY</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-2">
-                            <h5 class="mb-0">RECENT</h5>
-                            <h5 class="mb-0">MATCH</h5>
-                        </div>
-                    </div>
-                    <div class="text-dark">
-                        <div class="px-2">
-                            <h6>
-                                My Dinh Stadium
-                            </h6>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <div>
-                                <img style="width: 100px;"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_North_Vietnam_%281955%E2%80%931976%29.svg/230px-Flag_of_North_Vietnam_%281955%E2%80%931976%29.svg.png"
-                                    alt="vn">
-                            </div>
-                            <div class="text-dark px-1">
-                                <div>
-                                    <h6 class="mb-0">
-                                        90'+3
-                                    </h6>
-                                </div>
-                                <div>
-                                    <h1 class="mb-0">1-0</h1>
-                                </div>
-                            </div>
-                            <div>
-                                <img style="width: 100px;"
-                                    src="https://vcdn-vnexpress.vnecdn.net/2017/03/16/thailand-2103-1489654634.jpg"
-                                    alt="thai">
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center text-dark pt-2">
-                            <div class="px-2">
-                                <img class="logo-tournament"
-                                    src="{{asset('public/uploads/tournament/image-removebg-preview.png')}}" alt="logo-tournament">
-                            </div>
-                        </div>
-                        <div class="text-dark pt-2">
-                            <h5 class="mb-0">
-                                U23 VIETNAM vs U23 THAILAND
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-around p-2">
-                        <div class="btn see-more">
-                            <h3 class="mb-0">SEE MORE</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Matches - recent match -->
+                @endforeach
 
                 <!-- Matches - next match -->
                 <div
@@ -254,14 +211,14 @@
                     <div class="item-head d-flex justify-content-between text-light">
                         <div class="d-flex">
                             <div class="p-2">
-                                <h1 class="mb-0">02</h1>
+                                <h1 class="mb-0">{{Carbon::createFromFormat('Y-m-d H:i:s', $next_match->datetime)->format('d')}}</h1>
                             </div>
                             <div class="py-2" style="text-align: left !important;">
                                 <div>
-                                    <h5 class="mb-0">THURSDAY</h5>
+                                    <h5 class="mb-0" style="text-transform: uppercase;">{{Carbon::createFromFormat('Y-m-d H:i:s', $next_match->datetime)->format('l')}}</h5>
                                 </div>
                                 <div>
-                                    <h6 class="mb-0">JUNE</h6>
+                                    <h6 class="mb-0">{{Carbon::createFromFormat('Y-m-d H:i:s', $next_match->datetime)->format('F')}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -272,58 +229,78 @@
                     <div>
                         <div class="responsive-show px-2 d-none">
                             <h6>
-                                Milliy Stadion
+                                {{$next_match->stadium}}
                             </h6>
                         </div>
                         <div class="d-flex justify-content-center align-items-center">
-                            <div class="match-team">
-                                <img style="width: 150px;"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_North_Vietnam_%281955%E2%80%931976%29.svg/230px-Flag_of_North_Vietnam_%281955%E2%80%931976%29.svg.png"
-                                    alt="vn">
-                            </div>
+                            @foreach($list_team as $key => $team)
+                                @if($team->id == $next_match->teamA_id)
+                                <div class="match-team">
+                                    <img style="width: 150px;"
+                                        src="{{URL('public/uploads/team/'.$team->team_image)}}"
+                                        alt="{{$team->team_name}}">
+                                </div>
+                                @endif
+                            @endforeach
                             <div class="px-3">
                                 <div>
                                     <h6 class="mb-0">
-                                        Kick off UTC+7
+                                        {{$next_match->type}}
                                     </h6>
                                 </div>
                                 <div>
-                                    <h1 class="mb-0">22:00</h1>
+                                    <h1 class="mb-0">{{Carbon::createFromFormat('Y-m-d H:i:s', $next_match->datetime)->format('H:i')}}</h1>
                                 </div>
                                 <div class="responsive-hide">
                                     <h6>
-                                        Milliy Stadion
+                                        {{$next_match->stadium}}
                                     </h6>
                                 </div>
                                 <div class="responsive-hide">
                                     <img class="logo-tournament"
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/AFC_text_logo.png/1200px-AFC_text_logo.png"
-                                        alt="AFC">
+                                        src="{{URL('public/uploads/tournament/'.$next_match->tournament_image)}}"
+                                        alt="{{$next_match->tournament_name}}">
                                 </div>
                             </div>
-                            <div class="match-team">
-                                <img style="width: 150px;"
-                                    src="https://vcdn-vnexpress.vnecdn.net/2017/03/16/thailand-2103-1489654634.jpg"
-                                    alt="thai">
-                            </div>
+                            @foreach($list_team as $key => $team)
+                                @if($team->id == $next_match->teamB_id)
+                                <div class="match-team">
+                                    <img style="width: 150px;"
+                                        src="{{URL('public/uploads/team/'.$team->team_image)}}"
+                                        alt="{{$team->team_name}}">
+                                </div>
+                                @endif
+                            @endforeach
                         </div>
                         <div class="d-flex justify-content-center align-items-center text-dark pt-2">
                             <div class="responsive-show d-none px-2 text-center">
                                 <img class="" style="width: 100px; border-radius: 10px;"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/AFC_text_logo.png/1200px-AFC_text_logo.png"
-                                    alt="AFC">
+                                    src="{{URL('public/uploads/tournament/'.$next_match->tournament_image)}}"
+                                    alt="{{$next_match->tournament_name}}">
                             </div>
                         </div>
                         <div class="pt-2">
                             <h3 class="match-title mb-0">
-                                U23 VIETNAM vs U23 THAILAND
+                                <span style="text-transform: uppercase;">
+                                @foreach($list_team as $key => $team)
+                                    @if($team->id == $match->teamA_id) {{$team->team_name}} @endif
+                                @endforeach
+                                </span>
+                                    vs 
+                                <span style="text-transform: uppercase;">
+                                @foreach($list_team as $key => $team)
+                                    @if($team->id == $match->teamB_id) {{$team->team_name}} @endif
+                                @endforeach
+                                </span>
                             </h3>
                         </div>
                     </div>
                     <div class="d-flex justify-content-around p-2">
+                        @if($next_match->ticket == 1)
                         <div class="btn buy-ticket" style="width: 40%;">
                             <h3 class="mb-0">BUY TICKET</h3>
                         </div>
+                        @endif
                         <div class="btn see-more" style="width: 40%;">
                             <h3 class="mb-0">SEE MORE</h3>
                         </div>
@@ -331,19 +308,20 @@
                 </div>
                 <!-- End Matches - next match -->
 
+                @foreach($future_match as $key => $match)
                 <!-- Matches - future match -->
                 <div class="matches item container d-flex flex-column justify-content-between mx-2 px-0">
                     <div class="item-head d-flex justify-content-between text-light">
                         <div class="d-flex">
                             <div class="p-2">
-                                <h1 class="mb-0">05</h1>
+                                <h1 class="mb-0">{{Carbon::createFromFormat('Y-m-d H:i:s', $match->datetime)->format('d')}}</h1>
                             </div>
                             <div class="py-2" style="text-align: left !important;">
                                 <div>
-                                    <h5 class="mb-0">SUNDAY</h5>
+                                    <h5 style="text-transform: uppercase;" class="mb-0">{{Carbon::createFromFormat('Y-m-d H:i:s', $match->datetime)->format('l')}}</h5>
                                 </div>
                                 <div>
-                                    <h6 class="mb-0">JUNE</h6>
+                                    <h6 class="mb-0">{{Carbon::createFromFormat('Y-m-d H:i:s', $match->datetime)->format('M')}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -355,41 +333,57 @@
                     <div class="text-dark">
                         <div class="px-2">
                             <h6>
-                                Lokomotiv Stadium Tashkent
+                                {{$match->stadium}}
                             </h6>
                         </div>
                         <div class="d-flex justify-content-center align-items-center">
                             <div>
-                                <img style="width: 100px;"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Flag_of_South_Korea.png/1024px-Flag_of_South_Korea.png"
-                                    alt="korea">
+                                @foreach($list_team as $key => $team)
+                                    @if($team->id == $match->teamA_id)
+                                    <img style="width: 100px;"
+                                        src="{{URL('public/uploads/team/'.$team->team_image)}}" alt="{{$team->team_name}}">
+                                    @endif
+                                @endforeach
                             </div>
                             <div class="text-dark px-1">
                                 <div>
                                     <h6 class="mb-0">
-                                        Kick off UTC+7
+                                        {{$match->type}}
                                     </h6>
                                 </div>
                                 <div>
-                                    <h2 class="mb-0">20:00</h2>
+                                    <h2 class="mb-0">{{Carbon::createFromFormat('Y-m-d H:i:s', $match->datetime)->format('H:i')}}</h2>
                                 </div>
                             </div>
                             <div>
-                                <img style="width: 100px;"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_North_Vietnam_%281955%E2%80%931976%29.svg/230px-Flag_of_North_Vietnam_%281955%E2%80%931976%29.svg.png"
-                                    alt="vn">
+                                @foreach($list_team as $key => $team)
+                                    @if($team->id == $match->teamB_id)
+                                    <img style="width: 100px;"
+                                        src="{{URL('public/uploads/team/'.$team->team_image)}}" alt="{{$team->team_name}}">
+                                    @endif
+                                @endforeach
                             </div>
                         </div>
                         <div class="d-flex justify-content-center align-items-center text-dark pt-2">
                             <div class="px-2">
                                 <img class="logo-tournament"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/AFC_text_logo.png/1200px-AFC_text_logo.png"
-                                    alt="logo-tournament">
+                                src="{{URL('public/uploads/tournament/'.$match->tournament_image)}}"
+                                    alt="{{$match->tournament_name}}">
                             </div>
                         </div>
                         <div class="text-dark pt-2">
                             <h5 class="mb-0">
-                                U23 KOREA vs U23 VIETNAM
+                                <span style="text-transform: uppercase;">
+                                @foreach($list_team as $key => $team)
+                                    @if($team->id == $match->teamA_id) {{$team->team_name}} @endif
+                                @endforeach
+                                </span>
+                                    vs 
+                                <span style="text-transform: uppercase;">
+                                @foreach($list_team as $key => $team)
+                                    @if($team->id == $match->teamB_id) {{$team->team_name}} @endif
+                                @endforeach
+                                </span>
                             </h5>
                         </div>
                     </div>
@@ -401,75 +395,7 @@
 
                 </div>
                 <!-- Matches - future match -->
-
-                <!-- Matches - future match -->
-                <div class="matches item container d-flex flex-column justify-content-between mx-2 px-0">
-                    <div class="item-head d-flex justify-content-between text-light">
-                        <div class="d-flex">
-                            <div class="p-2">
-                                <h1 class="mb-0">08</h1>
-                            </div>
-                            <div class="py-2" style="text-align: left !important;">
-                                <div>
-                                    <h5 class="mb-0">WEDNESDAY</h5>
-                                </div>
-                                <div>
-                                    <h6 class="mb-0">JUNE</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-2">
-                            <h5 class="mb-0">FUTURE</h5>
-                            <h5 class="mb-0">MATCH</h5>
-                        </div>
-                    </div>
-                    <div class="text-dark">
-                        <div class="px-2">
-                            <h6>
-                                Lokomotiv Stadium Tashkent
-                            </h6>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <div>
-                                <img style="width: 100px;"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_North_Vietnam_%281955%E2%80%931976%29.svg/230px-Flag_of_North_Vietnam_%281955%E2%80%931976%29.svg.png"
-                                    alt="vn">
-                            </div>
-                            <div class="text-dark px-1">
-                                <div>
-                                    <h6 class="mb-0">
-                                        Kick off UTC+7
-                                    </h6>
-                                </div>
-                                <div>
-                                    <h2 class="mb-0">20:00</h2>
-                                </div>
-                            </div>
-                            <div>
-                                <img style="width: 100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Flag_of_Malaysia.svg/2560px-Flag_of_Malaysia.svg.png"
-                                    alt="MALAYSIA">
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center text-dark pt-2">
-                            <div class="px-2">
-                                <img class="logo-tournament"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/AFC_text_logo.png/1200px-AFC_text_logo.png"
-                                    alt="logo-tournament">
-                            </div>
-                        </div>
-                        <div class="text-dark pt-2">
-                            <h5 class="mb-0">
-                                U23 VIETNAM vs U23 MALAYSIA
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-around p-2">
-                        <div class="btn see-more">
-                            <h3 class="mb-0">COMING SOON</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- Matches - future match -->
+                @endforeach
 
                 <div class="matches item container bg-dark mx-2 p-0"
                     style="width: 300px; height: 350px; border-radius: 25px;">
@@ -493,8 +419,6 @@
 
     <!-- News -->
     <div class="container container-index" style="margin-top: 20px !important; margin-bottom: 20px !important;">
-
-        <?php use Carbon\Carbon; Carbon::setLocale('en'); // hiển thị ngôn ngữ anh. ?>
 
         <!-- Line 9 -->
         <div class="card-group">

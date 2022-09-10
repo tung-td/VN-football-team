@@ -133,8 +133,7 @@
                             <span class="mini-click-non">Tickets</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro">Product List</span></a></li>
-                            <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Product Edit</span></a></li>
+                            <li><a title="Tickets List" href="{{route('ticket.list')}}"><span class="mini-sub-pro">Tickets List</span></a></li>
                         </ul>
                     </li>
 

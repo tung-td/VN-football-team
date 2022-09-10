@@ -22,7 +22,15 @@ $('.door-seats .seat').on('click', function () {
 
     // add and remove seat tag when click on seat div
     if (this.classList.contains('active')) {
-        $("#inputSeats").append('<div class="input-seat border rounded p-2" id="' + this.getAttribute('value') + '">' + this.getAttribute('value') + '</div>');  //<i class="fa fa-times-circle-o"></i>
+        $("#inputSeats").append(
+            '<div class="input-seat border rounded p-2" id="' 
+            + this.getAttribute('value') 
+            + '" value="'
+            + this.getAttribute('value')
+            + '">' 
+            + this.getAttribute('value') 
+            // + `<div class="material-icons-outlined">highlight_off</div>`
+            + '</div>');  //<i class="fa fa-times-circle-o"></i>
     } else {
         $("#" + this.getAttribute('value')).remove();
     }

@@ -103,6 +103,8 @@ Route::get('/cam-on', [ContactController::class, 'thankyou'])->name('thankyou');
     //------Match-----
 Route::get('/match', [MatchController::class, 'match'])->name('match');
 Route::get('/ticket', [MatchController::class, 'ticket'])->name('ticket');
+Route::get('/list-ticket', [MatchController::class, 'list_ticket'])->name('ticket.list');
+Route::post('/showSeat', [MatchController::class, 'showSeat']);
 
     //-------Destroy Session-------
 Route::get('/session-destroy', function() {

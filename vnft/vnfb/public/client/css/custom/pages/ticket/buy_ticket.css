@@ -253,6 +253,15 @@ g .door:hover~g .stand {
     margin: unset !important;
 }
 
+/* .input-seat .material-icons-outlined {
+    position: relative;
+    top: 0;
+    right: 0;
+    transform: scale(0.7);
+} */
+.input-seat:hover {
+    cursor: pointer!important;
+}
 /* END STADIUM CHOOSE */
 
 

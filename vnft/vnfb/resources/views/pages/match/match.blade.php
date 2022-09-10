@@ -10,7 +10,8 @@
 <div class="content content-match" style="margin-top:75px">
 <!-- Next Match -->
 @if($next_match)
-<div class="next-match mt-5" style="background-image: url(https://www.footballticketnet.com/theme/images/venues_cover/Buy-Milliy_Stadium-Football-Tickets-FootballTicketNet-Cover.png);">
+<!-- https://www.footballticketnet.com/theme/images/venues_cover/Buy-Milliy_Stadium-Football-Tickets-FootballTicketNet-Cover.png); -->
+<div class="next-match mt-5" style="background-image: url({{URL('public/uploads/match/'.$next_match->stadium_background)}}">
     <div class="overlay position-absolute"></div>
     <div class="content position-absolute text-light text-center ">
         <div data-aos="fade-down" data-aos  class="logo-tournament">
@@ -25,7 +26,7 @@
                 @foreach($list_team as $key => $team)
                     @if($team->id == $next_match->teamA_id)
                         <img src="{{URL('public/uploads/team/'.$team->team_image)}}" alt="{{$team->team_name}}">
-                        <h1><b>{{$team->team_name}}</b></h1>
+                        <h1 style="text-transform: uppercase;"><b>{{$team->team_name}}</b></h1>
                     @endif
                 @endforeach
             </div>
@@ -45,7 +46,7 @@
                 @foreach($list_team as $key => $team)
                     @if($team->id == $next_match->teamB_id)
                         <img src="{{URL('public/uploads/team/'.$team->team_image)}}" alt="{{$team->team_name}}">
-                        <h1><b>{{$team->team_name}}</b></h1>
+                        <h1 style="text-transform: uppercase;"><b>{{$team->team_name}}</b></h1>
                     @endif
                 @endforeach
             </div>

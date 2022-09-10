@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\SliderModel;
 use App\Models\PartnerModel;
+use Carbon\Carbon;
 session_start();
 
 class HomeController extends Controller
@@ -25,7 +26,44 @@ class HomeController extends Controller
         $slider = SliderModel::orderby('slider_id', 'desc')->get();
         $partner = PartnerModel::orderby('partner_id', 'desc')->get();
 
-        return view('pages.home')->with('category', $cate_product)->with('category_post', $cate_post)->with('list_product', $list_product)->with('all_post', $all_post)->with(compact('slider', 'partner'));
+        // $list_match = DB::table('tbl_match')->orderBy('id', 'desc')->get();
+        $now = Carbon::now()->toDateTimeString();
+        $next_match = DB::table('tbl_match')
+            ->join('tbl_tournament', 'tbl_match.tournament_id', '=', 'tbl_tournament.id')
+            ->select('tbl_match.*', 'tbl_tournament.tournament_name', 'tbl_tournament.tournament_image')
+            ->where('tbl_match.datetime','>=', Carbon::now()->toDateTimeString())
+            ->orderBy('datetime','asc')
+            ->first();
+        $recent_match = DB::table('tbl_match')
+            ->join('tbl_tournament', 'tbl_match.tournament_id', '=', 'tbl_tournament.id')
+            ->select('tbl_match.*', 'tbl_tournament.tournament_name', 'tbl_tournament.tournament_image')
+            ->where('datetime','<', Carbon::now()->toDateTimeString())
+            ->orderBy('datetime','desc')->take(2)->get();
+
+        $count = DB::table('tbl_match')->where('datetime','>=', Carbon::now()->toDateTimeString())->count();
+        $limit = $count - 1; // the limit
+        $future_match = DB::table('tbl_match')
+            ->join('tbl_tournament', 'tbl_match.tournament_id', '=', 'tbl_tournament.id')
+            ->select('tbl_match.*', 'tbl_tournament.tournament_name', 'tbl_tournament.tournament_image')
+            ->where('datetime','>=', Carbon::now()->toDateTimeString())
+            ->skip(1)->take(2)->orderBy('datetime','asc')->get();
+
+        $list_team = DB::table('tbl_team')->get();
+        $list_tournament = DB::table('tbl_tournament')->orderBy('id','desc')->get();
+
+        return view('pages.home')->with([
+            'category' => $cate_product,
+            'category_post' => $cate_post,
+            'list_product' => $list_product,
+            'all_post' => $all_post,
+            'slider' => $slider,
+            'partner' => $partner,
+            'next_match' => $next_match,
+            'recent_match' => $recent_match,
+            'future_match' => $future_match,
+            'list_team' => $list_team,
+            'list_tournament' => $list_tournament,
+            ]);
     }
 
     public function search(Request $request) {
